@@ -1,0 +1,902 @@
+2025-09-02 17:48:55,228 - email_sender - INFO - Setting up Gmail credentials
+2025-09-02 17:48:55,230 - email_sender - WARNING - Gmail credentials setup - implement proper OAuth2 flow for production
+2025-09-02 17:48:55,230 - __main__ - INFO - Running comprehensive test suite
+2025-09-02 17:48:55,231 - __main__ - INFO - Running name matching test...
+2025-09-02 17:48:55,231 - __main__ - INFO - Testing name matching logic
+2025-09-02 17:48:55,235 - __main__ - INFO - Name matching: 'John Smith' vs 'Jon Smith' = 100% (Match)
+2025-09-02 17:48:55,236 - __main__ - INFO - Name matching: 'Mary Johnson' vs 'Mary Johnston' = 100% (Match)
+2025-09-02 17:48:55,238 - __main__ - INFO - Name matching: 'Robert Brown' vs 'Bob Brown' = 100% (Match)
+2025-09-02 17:48:55,238 - __main__ - INFO - Name matching: 'Elizabeth Davis' vs 'Liz Davis' = 100% (Match)
+2025-09-02 17:48:55,239 - __main__ - INFO - Name matching: 'Michael Wilson' vs 'John Wilson' = 100% (Match)
+2025-09-02 17:48:55,239 - __main__ - INFO - Name matching: 'Sarah Miller' vs 'Sarah Miller' = 100% (Match)
+2025-09-02 17:48:55,240 - __main__ - INFO - Name matching: 'James Anderson' vs 'Anderson, James' = 100% (Match)
+2025-09-02 17:48:55,241 - __main__ - INFO - Name matching: '' vs 'John Doe' = 0% (No match)
+2025-09-02 17:48:55,241 - __main__ - INFO - Name matching: 'A' vs 'B' = 0% (No match)
+2025-09-02 17:48:55,242 - __main__ - INFO - Running duplicate detection test...
+2025-09-02 17:48:55,247 - __main__ - INFO - Testing duplicate detection for PG Company ID: 4e594a84-7340-469e-82fb-b41b91930db5
+2025-09-02 17:49:00,435 - duplicate_patient_manager - INFO - Fetched 316 patients for PG Company ID: 4e594a84-7340-469e-82fb-b41b91930db5
+2025-09-02 17:49:00,445 - duplicate_patient_manager - INFO - Found 2 duplicate groups
+2025-09-02 17:49:00,445 - __main__ - INFO - Duplicate detection test results:
+2025-09-02 17:49:00,445 - __main__ - INFO -   - Total patients available: 316
+2025-09-02 17:49:00,446 - __main__ - INFO -   - Patients tested: 20
+2025-09-02 17:49:00,446 - __main__ - INFO -   - Duplicate groups found: 2
+2025-09-02 17:54:26,343 - email_sender - INFO - Setting up Gmail credentials
+2025-09-02 17:54:26,343 - email_sender - WARNING - Gmail credentials setup - implement proper OAuth2 flow for production
+2025-09-02 17:54:26,344 - __main__ - INFO - Starting duplicate processing for PG Company ID: 4e594a84-7340-469e-82fb-b41b91930db5
+2025-09-02 17:54:31,897 - __main__ - INFO - Fetched 316 patients for PG Company ID: 4e594a84-7340-469e-82fb-b41b91930db5
+2025-09-02 17:54:33,417 - __main__ - INFO - Found 51 duplicate groups
+2025-09-02 17:54:33,418 - __main__ - INFO - Processing duplicate group 1/51 with 2 patients
+2025-09-02 17:54:33,418 - __main__ - INFO - Selected primary patient: cd500f39-9593-4594-9149-644d0295ca3e with 1 orders
+2025-09-02 17:54:37,203 - __main__ - INFO - Updated order 52700783-24a0-463d-aab9-152d8e11de02 to patient cd500f39-9593-4594-9149-644d0295ca3e
+2025-09-02 17:54:41,085 - __main__ - INFO - Deleted patient 50d4af76-a106-4af7-b437-100b468aa357
+2025-09-02 17:54:42,874 - __main__ - ERROR - Error calling RCM (deleted) API for patient 50d4af76-a106-4af7-b437-100b468aa357: 405 Client Error: Method Not Allowed for url: https://dawavorderpatient-hqe2apddbje9gte0.eastus-01.azurewebsites.net/api/RCM/rcm/patient/50d4af76-a106-4af7-b437-100b468aa357
+2025-09-02 17:54:45,565 - __main__ - INFO - Called RCM Cron (kept) API for patient cd500f39-9593-4594-9149-644d0295ca3e
+2025-09-02 17:54:45,567 - __main__ - INFO - Processing duplicate group 2/51 with 2 patients
+2025-09-02 17:54:45,567 - __main__ - INFO - Selected primary patient: fcebb1cb-f548-445f-a0b6-434dee6afe09 with 1 orders
+2025-09-02 17:54:49,585 - __main__ - INFO - Updated order ed61da76-8bee-44c5-96e4-b7dd4f9da429 to patient fcebb1cb-f548-445f-a0b6-434dee6afe09
+2025-09-02 17:54:54,027 - __main__ - INFO - Deleted patient e58fcd0a-cee7-4e7e-a1ae-477dfe791344
+2025-09-02 17:54:55,938 - __main__ - ERROR - Error calling RCM (deleted) API for patient e58fcd0a-cee7-4e7e-a1ae-477dfe791344: 405 Client Error: Method Not Allowed for url: https://dawavorderpatient-hqe2apddbje9gte0.eastus-01.azurewebsites.net/api/RCM/rcm/patient/e58fcd0a-cee7-4e7e-a1ae-477dfe791344
+2025-09-02 17:54:58,024 - __main__ - INFO - Called RCM Cron (kept) API for patient fcebb1cb-f548-445f-a0b6-434dee6afe09
+2025-09-02 17:54:58,026 - __main__ - INFO - Processing duplicate group 3/51 with 4 patients
+2025-09-02 17:54:58,027 - __main__ - INFO - Found conflicts - MRN: True, DOB: False
+2025-09-02 17:55:00,238 - __main__ - WARNING - No 485 form found for patient 05e58982-1128-4e5a-970c-997bbffda2cd
+2025-09-02 17:55:02,176 - __main__ - ERROR - Error verifying patient data from PDF for fd2a3449-428a-4fce-af8b-ceaa291f172d: 'NoneType' object has no attribute 'lower'
+2025-09-02 17:55:04,507 - __main__ - WARNING - No 485 form found for patient df950ea2-6e98-4091-9a2b-67fd866e0c28
+2025-09-02 17:55:06,583 - __main__ - WARNING - No 485 form found for patient 8263ae98-8498-4399-b446-410b64c4262e
+2025-09-02 17:55:06,586 - __main__ - INFO - Selected primary patient after PDF verification: 05e58982-1128-4e5a-970c-997bbffda2cd (score: 0)
+2025-09-02 17:55:10,136 - __main__ - ERROR - Error updating order 07843886-90bd-4f95-9ccc-ca611b9b102e: 400 Client Error: Bad Request for url: https://dawavorderpatient-hqe2apddbje9gte0.eastus-01.azurewebsites.net/api/Order/07843886-90bd-4f95-9ccc-ca611b9b102e
+2025-09-02 17:55:14,117 - __main__ - INFO - Deleted patient fd2a3449-428a-4fce-af8b-ceaa291f172d
+2025-09-02 17:55:16,055 - __main__ - ERROR - Error calling RCM (deleted) API for patient fd2a3449-428a-4fce-af8b-ceaa291f172d: 405 Client Error: Method Not Allowed for url: https://dawavorderpatient-hqe2apddbje9gte0.eastus-01.azurewebsites.net/api/RCM/rcm/patient/fd2a3449-428a-4fce-af8b-ceaa291f172d
+2025-09-02 17:55:18,028 - __main__ - ERROR - Error calling RCM Cron (kept) API for patient 05e58982-1128-4e5a-970c-997bbffda2cd: 404 Client Error: Not Found for url: https://dawavorderpatient-hqe2apddbje9gte0.eastus-01.azurewebsites.net/api/RCM/cron-by-patient/05e58982-1128-4e5a-970c-997bbffda2cd
+2025-09-02 17:55:22,528 - __main__ - INFO - Updated order 9f3c07fc-b96e-451a-b977-ac99fdac55c1 to patient 05e58982-1128-4e5a-970c-997bbffda2cd
+2025-09-02 18:02:51,047 - email_sender - INFO - Setting up Gmail credentials
+2025-09-02 18:02:51,049 - email_sender - WARNING - Gmail credentials setup - implement proper OAuth2 flow for production
+2025-09-02 18:02:51,049 - __main__ - INFO - Starting duplicate processing for PG Company ID: c0926069-e956-4ed5-8775-1f462f6cff36
+2025-09-02 18:02:53,283 - __main__ - INFO - Fetched 33 patients for PG Company ID: c0926069-e956-4ed5-8775-1f462f6cff36
+2025-09-02 18:02:53,296 - __main__ - INFO - Found 4 duplicate groups
+2025-09-02 18:02:53,296 - __main__ - INFO - Processing duplicate group 1/4 with 2 patients
+2025-09-02 18:02:53,296 - __main__ - INFO - Selected primary patient: abe279a6-b4c1-4005-aab8-0fe204abacc0 with 1 orders
+2025-09-02 18:03:00,116 - __main__ - INFO - Deleted patient f69ccefd-a1de-43d1-b775-c2da7a00fa6c
+2025-09-02 18:03:01,610 - __main__ - INFO - Called RCM (deleted) API for patient f69ccefd-a1de-43d1-b775-c2da7a00fa6c using DELETE method
+2025-09-02 18:03:06,788 - __main__ - WARNING - RCM Cron (kept) API call failed with POST method: 404 Client Error: Not Found for url: https://dawavorderpatient-hqe2apddbje9gte0.eastus-01.azurewebsites.net/api/RCM/cron-by-patient/abe279a6-b4c1-4005-aab8-0fe204abacc0
+2025-09-02 18:03:06,788 - __main__ - ERROR - All HTTP methods failed for RCM Cron (kept) API for patient abe279a6-b4c1-4005-aab8-0fe204abacc0
+2025-09-02 18:03:06,790 - __main__ - INFO - Processing duplicate group 2/4 with 2 patients
+2025-09-02 18:03:06,791 - __main__ - INFO - Found conflicts - MRN: True, DOB: True
+2025-09-02 18:03:08,263 - __main__ - WARNING - No 485 form found for patient 019cbed0-7cc6-4e0b-abc6-1ca50583b873
+2025-09-02 18:03:09,766 - __main__ - WARNING - No 485 form found for patient 8f3b94b7-5df1-4421-bf6b-a98f52179693
+2025-09-02 18:03:09,767 - __main__ - INFO - Selected primary patient after PDF verification: 019cbed0-7cc6-4e0b-abc6-1ca50583b873 (score: 0)
+2025-09-02 18:03:12,669 - __main__ - INFO - Updated order b710261c-fb54-44ef-8d31-2388140ee246 to patient 019cbed0-7cc6-4e0b-abc6-1ca50583b873
+2025-09-02 18:03:15,669 - __main__ - INFO - Deleted patient 8f3b94b7-5df1-4421-bf6b-a98f52179693
+2025-09-02 18:03:17,111 - __main__ - INFO - Called RCM (deleted) API for patient 8f3b94b7-5df1-4421-bf6b-a98f52179693 using DELETE method
+2025-09-02 18:03:20,111 - __main__ - INFO - Called RCM Cron (kept) API for patient 019cbed0-7cc6-4e0b-abc6-1ca50583b873 using POST method
+2025-09-02 18:03:20,116 - __main__ - INFO - Processing duplicate group 3/4 with 2 patients
+2025-09-02 18:03:20,116 - __main__ - INFO - Selected primary patient: 649d2618-3720-4f40-8fb1-50bda2eae08d with 4 orders
+2025-09-02 18:03:24,562 - __main__ - INFO - Deleted patient 8d95258f-9ea1-4a79-bc75-c6544210d60d
+2025-09-02 18:03:26,318 - __main__ - INFO - Called RCM (deleted) API for patient 8d95258f-9ea1-4a79-bc75-c6544210d60d using DELETE method
+2025-09-02 18:03:29,937 - __main__ - WARNING - RCM Cron (kept) API call failed with POST method: 404 Client Error: Not Found for url: https://dawavorderpatient-hqe2apddbje9gte0.eastus-01.azurewebsites.net/api/RCM/cron-by-patient/649d2618-3720-4f40-8fb1-50bda2eae08d
+2025-09-02 18:03:29,937 - __main__ - ERROR - All HTTP methods failed for RCM Cron (kept) API for patient 649d2618-3720-4f40-8fb1-50bda2eae08d
+2025-09-02 18:03:29,938 - __main__ - INFO - Processing duplicate group 4/4 with 2 patients
+2025-09-02 18:03:29,938 - __main__ - INFO - Selected primary patient: df516620-2a0b-4b8d-9f7c-4b90f82f1c75 with 2 orders
+2025-09-02 18:03:34,503 - __main__ - INFO - Deleted patient e7c9fa24-eaf1-441a-bb67-528484dc78cd
+2025-09-02 18:03:36,163 - __main__ - INFO - Called RCM (deleted) API for patient e7c9fa24-eaf1-441a-bb67-528484dc78cd using DELETE method
+2025-09-02 18:03:39,187 - __main__ - WARNING - RCM Cron (kept) API call failed with POST method: 404 Client Error: Not Found for url: https://dawavorderpatient-hqe2apddbje9gte0.eastus-01.azurewebsites.net/api/RCM/cron-by-patient/df516620-2a0b-4b8d-9f7c-4b90f82f1c75
+2025-09-02 18:03:39,187 - __main__ - ERROR - All HTTP methods failed for RCM Cron (kept) API for patient df516620-2a0b-4b8d-9f7c-4b90f82f1c75
+2025-09-02 18:03:39,188 - __main__ - INFO - Duplicate processing completed
+2025-09-02 18:03:39,189 - report_generator - INFO - HTML report generated successfully
+2025-09-02 18:03:39,191 - email_sender - INFO - Email saved to email_report_20250902_180339.html
+2025-09-02 18:03:39,191 - email_sender - INFO - Email prepared for tanay@doctoralliance.com (saved to file)
+2025-09-02 18:03:39,191 - __main__ - INFO - Production run completed successfully
+2025-09-02 18:15:27,176 - email_sender - INFO - Setting up Gmail credentials
+2025-09-02 18:15:27,177 - email_sender - WARNING - Gmail credentials setup - implement proper OAuth2 flow for production
+2025-09-02 18:15:27,177 - __main__ - INFO - Starting duplicate processing for PG Company ID: c0926069-e956-4ed5-8775-1f462f6cff36
+2025-09-02 18:15:29,310 - __main__ - INFO - Fetched 29 patients for PG Company ID: c0926069-e956-4ed5-8775-1f462f6cff36
+2025-09-02 18:15:29,349 - __main__ - INFO - Found 0 duplicate groups
+2025-09-02 18:15:29,349 - __main__ - INFO - No duplicate groups found
+2025-09-02 18:15:29,350 - report_generator - INFO - HTML report generated successfully
+2025-09-02 18:15:29,629 - email_sender - INFO - Email saved to email_report_20250902_181529.html
+2025-09-02 18:15:29,629 - email_sender - INFO - Email prepared for tanay@doctoralliance.com (saved to file)
+2025-09-02 18:15:29,630 - __main__ - INFO - Production run completed successfully
+2025-09-02 18:22:45,092 - email_sender - INFO - Setting up Gmail credentials
+2025-09-02 18:22:45,092 - email_sender - WARNING - Gmail credentials setup - implement proper OAuth2 flow for production
+2025-09-02 18:22:52,830 - duplicate_patient_manager - INFO - Fetching all patients for Excel export...
+2025-09-02 18:22:55,431 - duplicate_patient_manager - INFO - Fetched 23 patients for PG Company ID: 38511e46-cc15-4856-92bc-718c5ec56cbf
+2025-09-02 18:22:55,434 - duplicate_patient_manager - INFO - Starting duplicate processing for PG Company ID: 38511e46-cc15-4856-92bc-718c5ec56cbf
+2025-09-02 18:22:57,543 - duplicate_patient_manager - INFO - Fetched 23 patients for PG Company ID: 38511e46-cc15-4856-92bc-718c5ec56cbf
+2025-09-02 18:22:57,564 - duplicate_patient_manager - INFO - Found 5 duplicate groups
+2025-09-02 18:22:57,564 - duplicate_patient_manager - INFO - Processing duplicate group 1/5 with 2 patients
+2025-09-02 18:22:57,565 - duplicate_patient_manager - INFO - Found conflicts - MRN: True, DOB: False
+2025-09-02 18:23:07,670 - httpx - INFO - HTTP Request: POST https://daplatformai.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-09-02 18:23:09,158 - duplicate_patient_manager - WARNING - No 485 form found for patient 576f805a-de4b-40d0-8140-086f265ecb2e
+2025-09-02 18:23:09,159 - duplicate_patient_manager - INFO - Selected primary patient after PDF verification: d2a1c5f1-455e-4ae7-a900-1c4831318d04 (score: 0)
+2025-09-02 18:23:13,883 - duplicate_patient_manager - INFO - Deleted patient 576f805a-de4b-40d0-8140-086f265ecb2e
+2025-09-02 18:23:15,456 - duplicate_patient_manager - INFO - Called RCM (deleted) API for patient 576f805a-de4b-40d0-8140-086f265ecb2e using DELETE method
+2025-09-02 18:23:18,529 - duplicate_patient_manager - INFO - Called RCM Cron (kept) API for patient d2a1c5f1-455e-4ae7-a900-1c4831318d04 using POST method
+2025-09-02 18:23:18,531 - duplicate_patient_manager - INFO - Processing duplicate group 2/5 with 2 patients
+2025-09-02 18:23:18,531 - duplicate_patient_manager - INFO - Selected primary patient: b05ede51-0723-4d05-9c48-0a8c5453ccfd with 2 orders
+2025-09-02 18:23:23,924 - duplicate_patient_manager - INFO - Deleted patient d4b33307-dd56-4832-85b6-5857bd587d05
+2025-09-02 18:23:25,599 - duplicate_patient_manager - INFO - Called RCM (deleted) API for patient d4b33307-dd56-4832-85b6-5857bd587d05 using DELETE method
+2025-09-02 18:23:28,697 - duplicate_patient_manager - INFO - Called RCM Cron (kept) API for patient b05ede51-0723-4d05-9c48-0a8c5453ccfd using POST method
+2025-09-02 18:23:28,707 - duplicate_patient_manager - INFO - Processing duplicate group 3/5 with 2 patients
+2025-09-02 18:23:28,710 - duplicate_patient_manager - INFO - Selected primary patient: 2a8a194a-6f90-458b-9a9a-c16b8651509f with 2 orders
+2025-09-02 18:23:33,494 - duplicate_patient_manager - INFO - Deleted patient 63bfb99d-95dd-437f-875d-28cd2980370c
+2025-09-02 18:23:35,089 - duplicate_patient_manager - INFO - Called RCM (deleted) API for patient 63bfb99d-95dd-437f-875d-28cd2980370c using DELETE method
+2025-09-02 18:23:40,387 - duplicate_patient_manager - WARNING - RCM Cron (kept) API call failed with POST method: 404 Client Error: Not Found for url: https://dawavorderpatient-hqe2apddbje9gte0.eastus-01.azurewebsites.net/api/RCM/cron-by-patient/2a8a194a-6f90-458b-9a9a-c16b8651509f
+2025-09-02 18:23:40,388 - duplicate_patient_manager - ERROR - All HTTP methods failed for RCM Cron (kept) API for patient 2a8a194a-6f90-458b-9a9a-c16b8651509f
+2025-09-02 18:23:40,390 - duplicate_patient_manager - INFO - Processing duplicate group 4/5 with 2 patients
+2025-09-02 18:23:40,391 - duplicate_patient_manager - INFO - Found conflicts - MRN: True, DOB: True
+2025-09-02 18:23:46,714 - httpx - INFO - HTTP Request: POST https://daplatformai.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-09-02 18:23:51,989 - httpx - INFO - HTTP Request: POST https://daplatformai.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-09-02 18:23:51,992 - duplicate_patient_manager - INFO - Selected primary patient after PDF verification: 35741671-a9df-461e-90cc-3c2609e5a6e6 (score: 2)
+2025-09-02 18:23:55,104 - duplicate_patient_manager - INFO - Updated order 6249b2e3-ceed-4fe9-8c9b-d1685d49d930 to patient 35741671-a9df-461e-90cc-3c2609e5a6e6
+2025-09-02 18:23:58,168 - duplicate_patient_manager - INFO - Deleted patient 4e8ffe4e-9a9f-4429-b7cf-8908f9419b5b
+2025-09-02 18:23:59,707 - duplicate_patient_manager - INFO - Called RCM (deleted) API for patient 4e8ffe4e-9a9f-4429-b7cf-8908f9419b5b using DELETE method
+2025-09-02 18:24:02,766 - duplicate_patient_manager - INFO - Called RCM Cron (kept) API for patient 35741671-a9df-461e-90cc-3c2609e5a6e6 using POST method
+2025-09-02 18:24:02,771 - duplicate_patient_manager - INFO - Processing duplicate group 5/5 with 2 patients
+2025-09-02 18:24:02,772 - duplicate_patient_manager - INFO - Found conflicts - MRN: True, DOB: True
+2025-09-02 18:24:10,684 - httpx - INFO - HTTP Request: POST https://daplatformai.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-09-02 18:24:18,940 - httpx - INFO - HTTP Request: POST https://daplatformai.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-09-02 18:24:18,943 - duplicate_patient_manager - INFO - Selected primary patient after PDF verification: 6b0b7638-11df-4bab-90ce-f9caa29a85ff (score: 0)
+2025-09-02 18:24:21,884 - duplicate_patient_manager - INFO - Updated order 9b08fce9-f7b2-4453-8b8b-2c21ba80438b to patient 6b0b7638-11df-4bab-90ce-f9caa29a85ff
+2025-09-02 18:24:25,247 - duplicate_patient_manager - INFO - Deleted patient 4382d0fe-e975-4105-9bc5-b1ddf397e68b
+2025-09-02 18:24:27,765 - duplicate_patient_manager - INFO - Called RCM (deleted) API for patient 4382d0fe-e975-4105-9bc5-b1ddf397e68b using DELETE method
+2025-09-02 18:24:31,077 - duplicate_patient_manager - INFO - Called RCM Cron (kept) API for patient 6b0b7638-11df-4bab-90ce-f9caa29a85ff using POST method
+2025-09-02 18:24:31,079 - duplicate_patient_manager - INFO - Duplicate processing completed
+2025-09-02 18:24:31,779 - excel_generator - INFO - Excel report generated: duplicate_patient_report_20250902_182431.xlsx
+2025-09-02 18:24:31,779 - report_generator - INFO - HTML report generated successfully
+2025-09-02 18:24:31,780 - email_sender - INFO - Attempting to send email to tanay@doctoralliance.com
+2025-09-02 18:24:31,780 - email_sender - INFO - SMTP not configured, skipping SMTP send
+2025-09-02 18:24:31,783 - email_sender - INFO - Email saved to email_report_20250902_182431.html
+2025-09-02 18:24:31,783 - email_sender - INFO - Note: Attachments referenced: duplicate_patient_report_20250902_182431.xlsx
+2025-09-02 18:24:31,783 - email_sender - INFO - Email prepared for tanay@doctoralliance.com (saved to file)
+2025-09-02 18:24:31,784 - duplicate_patient_manager - INFO - Production run completed successfully
+2025-09-02 18:24:31,785 - duplicate_patient_manager - INFO - Excel report generated: duplicate_patient_report_20250902_182431.xlsx
+2025-09-02 18:38:35,194 - email_sender - INFO - Setting up Gmail credentials
+2025-09-02 18:38:35,195 - email_sender - WARNING - Gmail credentials setup - implement proper OAuth2 flow for production
+2025-09-02 18:39:48,906 - email_sender - INFO - Setting up Gmail credentials
+2025-09-02 18:39:48,907 - email_sender - WARNING - Gmail credentials setup - implement proper OAuth2 flow for production
+2025-09-02 18:40:21,380 - email_sender - INFO - Setting up Gmail credentials
+2025-09-02 18:40:21,381 - email_sender - WARNING - Gmail credentials setup - implement proper OAuth2 flow for production
+2025-09-02 18:40:52,597 - email_sender - INFO - Setting up Gmail credentials
+2025-09-02 18:40:52,598 - email_sender - WARNING - Gmail credentials setup - implement proper OAuth2 flow for production
+2025-09-02 18:45:37,624 - duplicate_patient_manager - INFO - Starting TEST MODE duplicate processing for PG Company ID: 38511e46-cc15-4856-92bc-718c5ec56cbf
+2025-09-02 18:45:39,806 - duplicate_patient_manager - INFO - Fetched 18 patients for PG Company ID: 38511e46-cc15-4856-92bc-718c5ec56cbf
+2025-09-02 18:45:39,817 - duplicate_patient_manager - INFO - Found 0 duplicate groups
+2025-09-02 18:45:39,818 - duplicate_patient_manager - INFO - No duplicate groups found
+2025-09-02 18:46:24,974 - duplicate_patient_manager - INFO - Starting TEST MODE duplicate processing for PG Company ID: c5c1a894-08ac-4cb9-bfd1-0ad1384b890e
+2025-09-02 18:46:27,894 - duplicate_patient_manager - INFO - Fetched 130 patients for PG Company ID: c5c1a894-08ac-4cb9-bfd1-0ad1384b890e
+2025-09-02 18:46:28,145 - duplicate_patient_manager - INFO - Found 10 duplicate groups
+2025-09-02 18:46:28,146 - duplicate_patient_manager - INFO - TEST: Processing duplicate group 1/10 with 2 patients
+2025-09-02 18:46:28,147 - duplicate_patient_manager - INFO - Found conflicts - MRN: True, DOB: False
+2025-09-02 18:46:29,893 - duplicate_patient_manager - WARNING - No 485 form found for patient 456bd78f-68ce-4ffb-b1bd-09cad0407474
+2025-09-02 18:46:31,396 - duplicate_patient_manager - WARNING - No 485 form found for patient f4f75bd1-baa8-44a7-8403-d9cbe1a2595c
+2025-09-02 18:46:31,397 - duplicate_patient_manager - INFO - Selected primary patient after PDF verification: 456bd78f-68ce-4ffb-b1bd-09cad0407474 (score: 0)
+2025-09-02 18:46:34,513 - duplicate_patient_manager - INFO - TEST: Processing duplicate group 2/10 with 2 patients
+2025-09-02 18:46:34,518 - duplicate_patient_manager - INFO - Found conflicts - MRN: True, DOB: False
+2025-09-02 18:46:36,031 - duplicate_patient_manager - WARNING - No 485 form found for patient f0f00c82-5eae-4e2f-980e-fdf72ab2a44a
+2025-09-02 18:46:37,491 - duplicate_patient_manager - WARNING - No 485 form found for patient bf6b2cad-0b95-4232-a6be-a1d7ef099527
+2025-09-02 18:46:37,495 - duplicate_patient_manager - INFO - Selected primary patient after PDF verification: f0f00c82-5eae-4e2f-980e-fdf72ab2a44a (score: 0)
+2025-09-02 18:46:40,724 - duplicate_patient_manager - INFO - TEST: Processing duplicate group 3/10 with 2 patients
+2025-09-02 18:46:40,726 - duplicate_patient_manager - INFO - Found conflicts - MRN: True, DOB: False
+2025-09-02 18:46:42,330 - duplicate_patient_manager - WARNING - No 485 form found for patient 250b6fc9-c2f0-4af8-ae1f-c32c506a201f
+2025-09-02 18:46:43,998 - duplicate_patient_manager - WARNING - No 485 form found for patient c91b20d0-198b-41f4-a9b1-83731b2b548a
+2025-09-02 18:46:44,010 - duplicate_patient_manager - INFO - Selected primary patient after PDF verification: 250b6fc9-c2f0-4af8-ae1f-c32c506a201f (score: 0)
+2025-09-02 18:46:47,369 - duplicate_patient_manager - INFO - TEST: Processing duplicate group 4/10 with 2 patients
+2025-09-02 18:46:47,369 - duplicate_patient_manager - INFO - Found conflicts - MRN: True, DOB: False
+2025-09-02 18:46:49,010 - duplicate_patient_manager - WARNING - No 485 form found for patient be87c047-5bcc-46f8-97df-df7a18b978be
+2025-09-02 18:46:50,674 - duplicate_patient_manager - WARNING - No 485 form found for patient 83410b90-e3ff-497c-b3cc-bda6ac95451e
+2025-09-02 18:46:50,676 - duplicate_patient_manager - INFO - Selected primary patient after PDF verification: be87c047-5bcc-46f8-97df-df7a18b978be (score: 0)
+2025-09-02 18:46:54,720 - duplicate_patient_manager - INFO - TEST: Processing duplicate group 5/10 with 2 patients
+2025-09-02 18:46:54,720 - duplicate_patient_manager - INFO - Selected primary patient: 68958591-825d-4a74-b6e5-210bde9e3eee with 1 orders
+2025-09-02 18:46:58,318 - duplicate_patient_manager - INFO - TEST: Processing duplicate group 6/10 with 2 patients
+2025-09-02 18:46:58,318 - duplicate_patient_manager - INFO - Found conflicts - MRN: True, DOB: False
+2025-09-02 18:47:06,913 - httpx - INFO - HTTP Request: POST https://daplatformai.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-09-02 18:47:09,966 - duplicate_patient_manager - WARNING - No 485 form found for patient bd70e57c-4f4e-4a16-b28a-d81acda021a1
+2025-09-02 18:47:09,975 - duplicate_patient_manager - INFO - Selected primary patient after PDF verification: 5d789dbf-f7d0-42f0-9d80-25cd78a1c71e (score: 4)
+2025-09-02 18:47:13,441 - duplicate_patient_manager - INFO - TEST: Processing duplicate group 7/10 with 2 patients
+2025-09-02 18:47:13,441 - duplicate_patient_manager - INFO - Found conflicts - MRN: True, DOB: False
+2025-09-02 18:47:23,868 - httpx - INFO - HTTP Request: POST https://daplatformai.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-09-02 18:47:26,195 - duplicate_patient_manager - WARNING - No 485 form found for patient 655aea5d-3b69-4a57-bda1-515ecc9d2485
+2025-09-02 18:47:26,198 - duplicate_patient_manager - INFO - Selected primary patient after PDF verification: daa703e5-24c1-48d7-97d2-1ce4a5f2a489 (score: 4)
+2025-09-02 18:47:29,568 - duplicate_patient_manager - INFO - TEST: Processing duplicate group 8/10 with 2 patients
+2025-09-02 18:47:29,569 - duplicate_patient_manager - INFO - Found conflicts - MRN: True, DOB: False
+2025-09-02 18:47:32,125 - duplicate_patient_manager - WARNING - No 485 form found for patient 101d7657-b186-4ccb-8ea7-c0c4157dc464
+2025-09-02 18:47:33,697 - duplicate_patient_manager - WARNING - No 485 form found for patient 590f1c45-061f-4dd9-9a0b-8055bc5b3637
+2025-09-02 18:47:33,699 - duplicate_patient_manager - INFO - Selected primary patient after PDF verification: 101d7657-b186-4ccb-8ea7-c0c4157dc464 (score: 0)
+2025-09-02 18:47:37,316 - duplicate_patient_manager - INFO - TEST: Processing duplicate group 9/10 with 2 patients
+2025-09-02 18:47:37,317 - duplicate_patient_manager - INFO - Selected primary patient: f7f185ae-d1b4-412f-9147-0378fe2499bc with 2 orders
+2025-09-02 18:47:40,676 - duplicate_patient_manager - INFO - TEST: Processing duplicate group 10/10 with 2 patients
+2025-09-02 18:47:40,680 - duplicate_patient_manager - INFO - Selected primary patient: bb65be17-08f5-4bd3-b39a-78b8f7e95ca4 with 2 orders
+2025-09-02 18:47:44,047 - duplicate_patient_manager - INFO - TEST MODE duplicate processing completed
+2025-09-02 18:51:55,121 - duplicate_patient_manager - INFO - Starting TEST MODE duplicate processing for PG Company ID: c5c1a894-08ac-4cb9-bfd1-0ad1384b890e
+2025-09-02 18:51:58,516 - duplicate_patient_manager - INFO - Fetched 130 patients for PG Company ID: c5c1a894-08ac-4cb9-bfd1-0ad1384b890e
+2025-09-02 18:51:58,520 - duplicate_patient_manager - INFO - DUPLICATE FOUND: 456bd78f-68ce-4ffb-b1bd-09cad0407474 (Ana Vargas) <-> f4f75bd1-baa8-44a7-8403-d9cbe1a2595c (Ana Vargas)
+2025-09-02 18:51:58,524 - duplicate_patient_manager - INFO - DUPLICATE FOUND: f0f00c82-5eae-4e2f-980e-fdf72ab2a44a (LUZ SANTOS) <-> bf6b2cad-0b95-4232-a6be-a1d7ef099527 (LUZ SANTOS)
+2025-09-02 18:51:58,527 - duplicate_patient_manager - INFO - DUPLICATE FOUND: 250b6fc9-c2f0-4af8-ae1f-c32c506a201f (Ida Rodriguez) <-> c91b20d0-198b-41f4-a9b1-83731b2b548a (Ida Rodriguez)
+2025-09-02 18:51:58,537 - duplicate_patient_manager - INFO - DUPLICATE FOUND: be87c047-5bcc-46f8-97df-df7a18b978be (RITA MARTINEZ) <-> 83410b90-e3ff-497c-b3cc-bda6ac95451e (Rita Martinez)
+2025-09-02 18:51:58,545 - duplicate_patient_manager - INFO - DUPLICATE FOUND: 68958591-825d-4a74-b6e5-210bde9e3eee (ANA HINOA) <-> 01b95668-8a04-472b-89e8-bb0b8f174ba3 (HINOA ANA)
+2025-09-02 18:51:58,551 - duplicate_patient_manager - INFO - DUPLICATE FOUND: 5d789dbf-f7d0-42f0-9d80-25cd78a1c71e (Felix Delerme) <-> bd70e57c-4f4e-4a16-b28a-d81acda021a1 (Felix Delerme)
+2025-09-02 18:51:58,556 - duplicate_patient_manager - INFO - DUPLICATE FOUND: daa703e5-24c1-48d7-97d2-1ce4a5f2a489 (MILAGROS ARGUINZONI) <-> 655aea5d-3b69-4a57-bda1-515ecc9d2485 (Milagros Arguinzoni)
+2025-09-02 18:51:58,558 - duplicate_patient_manager - INFO - DUPLICATE FOUND: 101d7657-b186-4ccb-8ea7-c0c4157dc464 (DOLORES ALVAREZ) <-> 590f1c45-061f-4dd9-9a0b-8055bc5b3637 (Dolores Alvarez)
+2025-09-02 18:51:58,563 - duplicate_patient_manager - INFO - DUPLICATE FOUND: f7f185ae-d1b4-412f-9147-0378fe2499bc (Quito-Lluvicura, Maria) <-> 6eaf84d4-aac8-4e77-a750-3179e097da20 (Maria Quito-Lluvicura)
+2025-09-02 18:51:58,566 - duplicate_patient_manager - INFO - DUPLICATE FOUND: bb65be17-08f5-4bd3-b39a-78b8f7e95ca4 (Ortega, Jacoba) <-> e7807fd1-a505-442e-b2ef-8a5acdc706d2 (Jacoba Ortega)
+2025-09-02 18:51:58,659 - duplicate_patient_manager - INFO - Found 10 duplicate groups
+2025-09-02 18:51:58,660 - duplicate_patient_manager - INFO - TEST: Processing duplicate group 1/10 with 2 patients
+2025-09-02 18:51:58,660 - duplicate_patient_manager - INFO - Found conflicts - MRN: True, DOB: False
+2025-09-02 18:52:00,127 - duplicate_patient_manager - INFO - Found plan/cert document ('plan'): Home Health Certification and Plan of Care for patient 456bd78f-68ce-4ffb-b1bd-09cad0407474
+2025-09-02 18:52:05,062 - httpx - INFO - HTTP Request: POST https://daplatformai.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-09-02 18:52:06,667 - duplicate_patient_manager - WARNING - No plan/cert/medical form found for patient f4f75bd1-baa8-44a7-8403-d9cbe1a2595c
+2025-09-02 18:52:06,669 - duplicate_patient_manager - INFO - Selected primary patient after PDF verification: 456bd78f-68ce-4ffb-b1bd-09cad0407474 (score: 2)
+2025-09-02 18:52:09,524 - duplicate_patient_manager - INFO - TEST: Processing duplicate group 2/10 with 2 patients
+2025-09-02 18:52:09,525 - duplicate_patient_manager - INFO - Found conflicts - MRN: True, DOB: False
+2025-09-02 18:52:10,913 - duplicate_patient_manager - INFO - Found plan/cert document ('plan'): HOME HEALTH CERTIFICATION AND PLAN OF CARE for patient f0f00c82-5eae-4e2f-980e-fdf72ab2a44a
+2025-09-02 18:52:15,833 - httpx - INFO - HTTP Request: POST https://daplatformai.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-09-02 18:52:17,294 - duplicate_patient_manager - WARNING - No plan/cert/medical form found for patient bf6b2cad-0b95-4232-a6be-a1d7ef099527
+2025-09-02 18:52:17,296 - duplicate_patient_manager - INFO - Selected primary patient after PDF verification: f0f00c82-5eae-4e2f-980e-fdf72ab2a44a (score: 0)
+2025-09-02 18:52:20,187 - duplicate_patient_manager - INFO - TEST: Processing duplicate group 3/10 with 2 patients
+2025-09-02 18:52:20,187 - duplicate_patient_manager - INFO - Found conflicts - MRN: True, DOB: False
+2025-09-02 18:52:21,621 - duplicate_patient_manager - INFO - Found plan/cert document ('cert'): Recertification for patient 250b6fc9-c2f0-4af8-ae1f-c32c506a201f
+2025-09-02 18:52:25,711 - httpx - INFO - HTTP Request: POST https://daplatformai.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-09-02 18:52:27,161 - duplicate_patient_manager - WARNING - No plan/cert/medical form found for patient c91b20d0-198b-41f4-a9b1-83731b2b548a
+2025-09-02 18:52:27,163 - duplicate_patient_manager - INFO - Selected primary patient after PDF verification: 250b6fc9-c2f0-4af8-ae1f-c32c506a201f (score: 4)
+2025-09-02 18:52:30,004 - duplicate_patient_manager - INFO - TEST: Processing duplicate group 4/10 with 2 patients
+2025-09-02 18:52:30,004 - duplicate_patient_manager - INFO - Found conflicts - MRN: True, DOB: False
+2025-09-02 18:52:31,466 - duplicate_patient_manager - WARNING - No plan/cert/medical form found for patient be87c047-5bcc-46f8-97df-df7a18b978be
+2025-09-02 18:52:33,017 - duplicate_patient_manager - WARNING - No plan/cert/medical form found for patient 83410b90-e3ff-497c-b3cc-bda6ac95451e
+2025-09-02 18:52:33,019 - duplicate_patient_manager - INFO - Selected primary patient after PDF verification: be87c047-5bcc-46f8-97df-df7a18b978be (score: 0)
+2025-09-02 18:52:36,248 - duplicate_patient_manager - INFO - TEST: Processing duplicate group 5/10 with 2 patients
+2025-09-02 18:52:36,248 - duplicate_patient_manager - INFO - Selected primary patient: 68958591-825d-4a74-b6e5-210bde9e3eee with 1 orders
+2025-09-02 18:52:39,124 - duplicate_patient_manager - INFO - TEST: Processing duplicate group 6/10 with 2 patients
+2025-09-02 18:52:39,124 - duplicate_patient_manager - INFO - Found conflicts - MRN: True, DOB: False
+2025-09-02 18:52:40,546 - duplicate_patient_manager - INFO - Found plan/cert document ('485'): CMS-485 HOME HEALTH CERTIFICATION AND PLAN OF CARE for patient 5d789dbf-f7d0-42f0-9d80-25cd78a1c71e
+2025-09-02 18:52:45,648 - httpx - INFO - HTTP Request: POST https://daplatformai.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-09-02 18:52:47,222 - duplicate_patient_manager - WARNING - No plan/cert/medical form found for patient bd70e57c-4f4e-4a16-b28a-d81acda021a1
+2025-09-02 18:52:47,230 - duplicate_patient_manager - INFO - Selected primary patient after PDF verification: 5d789dbf-f7d0-42f0-9d80-25cd78a1c71e (score: 2)
+2025-09-02 18:52:50,174 - duplicate_patient_manager - INFO - TEST: Processing duplicate group 7/10 with 2 patients
+2025-09-02 18:52:50,174 - duplicate_patient_manager - INFO - Found conflicts - MRN: True, DOB: False
+2025-09-02 18:52:51,675 - duplicate_patient_manager - INFO - Found plan/cert document ('plan'): HOME HEALTH CERTIFICATION AND PLAN OF CARE for patient daa703e5-24c1-48d7-97d2-1ce4a5f2a489
+2025-09-02 18:52:58,086 - httpx - INFO - HTTP Request: POST https://daplatformai.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-09-02 18:52:59,526 - duplicate_patient_manager - WARNING - No plan/cert/medical form found for patient 655aea5d-3b69-4a57-bda1-515ecc9d2485
+2025-09-02 18:52:59,528 - duplicate_patient_manager - INFO - Selected primary patient after PDF verification: daa703e5-24c1-48d7-97d2-1ce4a5f2a489 (score: 4)
+2025-09-02 18:53:02,502 - duplicate_patient_manager - INFO - TEST: Processing duplicate group 8/10 with 2 patients
+2025-09-02 18:53:02,504 - duplicate_patient_manager - INFO - Found conflicts - MRN: True, DOB: False
+2025-09-02 18:53:04,188 - duplicate_patient_manager - INFO - Found plan/cert document ('plan'): HOME HEALTH CERTIFICATION AND PLAN OF CARE for patient 101d7657-b186-4ccb-8ea7-c0c4157dc464
+2025-09-02 18:53:09,201 - httpx - INFO - HTTP Request: POST https://daplatformai.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-09-02 18:53:10,804 - duplicate_patient_manager - WARNING - No plan/cert/medical form found for patient 590f1c45-061f-4dd9-9a0b-8055bc5b3637
+2025-09-02 18:53:10,806 - duplicate_patient_manager - INFO - Selected primary patient after PDF verification: 101d7657-b186-4ccb-8ea7-c0c4157dc464 (score: 2)
+2025-09-02 18:53:13,791 - duplicate_patient_manager - INFO - TEST: Processing duplicate group 9/10 with 2 patients
+2025-09-02 18:53:13,792 - duplicate_patient_manager - INFO - Selected primary patient: f7f185ae-d1b4-412f-9147-0378fe2499bc with 2 orders
+2025-09-02 18:53:16,725 - duplicate_patient_manager - INFO - TEST: Processing duplicate group 10/10 with 2 patients
+2025-09-02 18:53:16,725 - duplicate_patient_manager - INFO - Selected primary patient: bb65be17-08f5-4bd3-b39a-78b8f7e95ca4 with 2 orders
+2025-09-02 18:53:19,834 - duplicate_patient_manager - INFO - TEST MODE duplicate processing completed
+2025-09-02 18:57:26,999 - duplicate_patient_manager - INFO - DUPLICATE FOUND (Traditional (Name+Company+Other)): test1 (John Doe) <-> test2 (John Doe)
+2025-09-02 18:57:27,011 - duplicate_patient_manager - INFO - DUPLICATE FOUND (Traditional (Name+Company+Other)): test3 (Jane Smith) <-> test4 (Jane Smith)
+2025-09-02 18:58:00,914 - duplicate_patient_manager - INFO - Starting TEST MODE duplicate processing for PG Company ID: c5c1a894-08ac-4cb9-bfd1-0ad1384b890e
+2025-09-02 18:58:04,344 - duplicate_patient_manager - INFO - Fetched 130 patients for PG Company ID: c5c1a894-08ac-4cb9-bfd1-0ad1384b890e
+2025-09-02 18:58:04,351 - duplicate_patient_manager - INFO - DUPLICATE FOUND (Traditional (Name+Company+Other)): 456bd78f-68ce-4ffb-b1bd-09cad0407474 (Ana Vargas) <-> f4f75bd1-baa8-44a7-8403-d9cbe1a2595c (Ana Vargas)
+2025-09-02 18:58:04,352 - duplicate_patient_manager - INFO -   -> Matching DOB: 04/04/1947
+2025-09-02 18:58:04,356 - duplicate_patient_manager - INFO - DUPLICATE FOUND (Traditional (Name+Company+Other)): f0f00c82-5eae-4e2f-980e-fdf72ab2a44a (LUZ SANTOS) <-> bf6b2cad-0b95-4232-a6be-a1d7ef099527 (LUZ SANTOS)
+2025-09-02 18:58:04,356 - duplicate_patient_manager - INFO -   -> Matching DOB: 09/03/1943
+2025-09-02 18:58:04,364 - duplicate_patient_manager - INFO - DUPLICATE FOUND (Traditional (Name+Company+Other)): 250b6fc9-c2f0-4af8-ae1f-c32c506a201f (Ida Rodriguez) <-> c91b20d0-198b-41f4-a9b1-83731b2b548a (Ida Rodriguez)
+2025-09-02 18:58:04,364 - duplicate_patient_manager - INFO -   -> Matching DOB: 08/16/1949
+2025-09-02 18:58:04,374 - duplicate_patient_manager - INFO - DUPLICATE FOUND (Traditional (Name+Company+Other)): be87c047-5bcc-46f8-97df-df7a18b978be (RITA MARTINEZ) <-> 83410b90-e3ff-497c-b3cc-bda6ac95451e (Rita Martinez)
+2025-09-02 18:58:04,375 - duplicate_patient_manager - INFO -   -> Matching DOB: 08/30/1951
+2025-09-02 18:58:04,381 - duplicate_patient_manager - INFO - DUPLICATE FOUND (Traditional (Name+Company+Other)): 68958591-825d-4a74-b6e5-210bde9e3eee (ANA HINOA) <-> 01b95668-8a04-472b-89e8-bb0b8f174ba3 (HINOA ANA)
+2025-09-02 18:58:04,381 - duplicate_patient_manager - INFO -   -> Matching MRN: 0026
+2025-09-02 18:58:04,382 - duplicate_patient_manager - INFO -   -> Matching DOB: 08/29/1969
+2025-09-02 18:58:04,386 - duplicate_patient_manager - INFO - DUPLICATE FOUND (Traditional (Name+Company+Other)): 5d789dbf-f7d0-42f0-9d80-25cd78a1c71e (Felix Delerme) <-> bd70e57c-4f4e-4a16-b28a-d81acda021a1 (Felix Delerme)
+2025-09-02 18:58:04,386 - duplicate_patient_manager - INFO -   -> Matching DOB: 09/20/1957
+2025-09-02 18:58:04,394 - duplicate_patient_manager - INFO - DUPLICATE FOUND (Traditional (Name+Company+Other)): daa703e5-24c1-48d7-97d2-1ce4a5f2a489 (MILAGROS ARGUINZONI) <-> 655aea5d-3b69-4a57-bda1-515ecc9d2485 (Milagros Arguinzoni)
+2025-09-02 18:58:04,394 - duplicate_patient_manager - INFO -   -> Matching DOB: 11/27/1951
+2025-09-02 18:58:04,396 - duplicate_patient_manager - INFO - DUPLICATE FOUND (Traditional (Name+Company+Other)): 101d7657-b186-4ccb-8ea7-c0c4157dc464 (DOLORES ALVAREZ) <-> 590f1c45-061f-4dd9-9a0b-8055bc5b3637 (Dolores Alvarez)
+2025-09-02 18:58:04,396 - duplicate_patient_manager - INFO -   -> Matching DOB: 03/18/1942
+2025-09-02 18:58:04,401 - duplicate_patient_manager - INFO - DUPLICATE FOUND (Traditional (Name+Company+Other)): f7f185ae-d1b4-412f-9147-0378fe2499bc (Quito-Lluvicura, Maria) <-> 6eaf84d4-aac8-4e77-a750-3179e097da20 (Maria Quito-Lluvicura)
+2025-09-02 18:58:04,401 - duplicate_patient_manager - INFO -   -> Matching MRN: 160850200
+2025-09-02 18:58:04,401 - duplicate_patient_manager - INFO -   -> Matching DOB: 03/21/1945
+2025-09-02 18:58:04,404 - duplicate_patient_manager - INFO - DUPLICATE FOUND (Traditional (Name+Company+Other)): bb65be17-08f5-4bd3-b39a-78b8f7e95ca4 (Ortega, Jacoba) <-> e7807fd1-a505-442e-b2ef-8a5acdc706d2 (Jacoba Ortega)
+2025-09-02 18:58:04,404 - duplicate_patient_manager - INFO -   -> Matching MRN: 123620150
+2025-09-02 18:58:04,404 - duplicate_patient_manager - INFO -   -> Matching DOB: 11/28/1965
+2025-09-02 18:58:04,506 - duplicate_patient_manager - INFO - Found 10 duplicate groups
+2025-09-02 18:58:04,506 - duplicate_patient_manager - INFO - TEST: Processing duplicate group 1/10 with 2 patients
+2025-09-02 18:58:04,506 - duplicate_patient_manager - INFO - Found conflicts - MRN: True, DOB: False
+2025-09-02 18:58:06,041 - duplicate_patient_manager - INFO - Found plan/cert document ('plan'): Home Health Certification and Plan of Care for patient 456bd78f-68ce-4ffb-b1bd-09cad0407474
+2025-09-02 18:58:11,366 - httpx - INFO - HTTP Request: POST https://daplatformai.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-09-02 18:58:12,970 - duplicate_patient_manager - WARNING - No plan/cert/medical form found for patient f4f75bd1-baa8-44a7-8403-d9cbe1a2595c
+2025-09-02 18:58:12,976 - duplicate_patient_manager - INFO - Selected primary patient after PDF verification: 456bd78f-68ce-4ffb-b1bd-09cad0407474 (score: 2)
+2025-09-02 18:58:16,197 - duplicate_patient_manager - INFO - TEST: Processing duplicate group 2/10 with 2 patients
+2025-09-02 18:58:16,198 - duplicate_patient_manager - INFO - Found conflicts - MRN: True, DOB: False
+2025-09-02 18:58:17,855 - duplicate_patient_manager - INFO - Found plan/cert document ('plan'): HOME HEALTH CERTIFICATION AND PLAN OF CARE for patient f0f00c82-5eae-4e2f-980e-fdf72ab2a44a
+2025-09-02 18:58:25,660 - httpx - INFO - HTTP Request: POST https://daplatformai.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-09-02 18:58:27,239 - duplicate_patient_manager - WARNING - No plan/cert/medical form found for patient bf6b2cad-0b95-4232-a6be-a1d7ef099527
+2025-09-02 18:58:27,249 - duplicate_patient_manager - INFO - Selected primary patient after PDF verification: f0f00c82-5eae-4e2f-980e-fdf72ab2a44a (score: 0)
+2025-09-02 18:58:30,376 - duplicate_patient_manager - INFO - TEST: Processing duplicate group 3/10 with 2 patients
+2025-09-02 18:58:30,376 - duplicate_patient_manager - INFO - Found conflicts - MRN: True, DOB: False
+2025-09-02 18:58:31,853 - duplicate_patient_manager - INFO - Found plan/cert document ('cert'): Recertification for patient 250b6fc9-c2f0-4af8-ae1f-c32c506a201f
+2025-09-02 18:58:36,120 - httpx - INFO - HTTP Request: POST https://daplatformai.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-09-02 18:58:37,731 - duplicate_patient_manager - WARNING - No plan/cert/medical form found for patient c91b20d0-198b-41f4-a9b1-83731b2b548a
+2025-09-02 18:58:37,735 - duplicate_patient_manager - INFO - Selected primary patient after PDF verification: 250b6fc9-c2f0-4af8-ae1f-c32c506a201f (score: 4)
+2025-09-02 18:58:40,838 - duplicate_patient_manager - INFO - TEST: Processing duplicate group 4/10 with 2 patients
+2025-09-02 18:58:40,839 - duplicate_patient_manager - INFO - Found conflicts - MRN: True, DOB: False
+2025-09-02 18:58:42,511 - duplicate_patient_manager - WARNING - No plan/cert/medical form found for patient be87c047-5bcc-46f8-97df-df7a18b978be
+2025-09-02 18:58:44,179 - duplicate_patient_manager - WARNING - No plan/cert/medical form found for patient 83410b90-e3ff-497c-b3cc-bda6ac95451e
+2025-09-02 18:58:44,183 - duplicate_patient_manager - INFO - Selected primary patient after PDF verification: be87c047-5bcc-46f8-97df-df7a18b978be (score: 0)
+2025-09-02 18:58:47,307 - duplicate_patient_manager - INFO - TEST: Processing duplicate group 5/10 with 2 patients
+2025-09-02 18:58:47,309 - duplicate_patient_manager - INFO - Selected primary patient: 68958591-825d-4a74-b6e5-210bde9e3eee with 1 orders
+2025-09-02 18:58:50,443 - duplicate_patient_manager - INFO - TEST: Processing duplicate group 6/10 with 2 patients
+2025-09-02 18:58:50,444 - duplicate_patient_manager - INFO - Found conflicts - MRN: True, DOB: False
+2025-09-02 18:58:52,035 - duplicate_patient_manager - INFO - Found plan/cert document ('485'): CMS-485 HOME HEALTH CERTIFICATION AND PLAN OF CARE for patient 5d789dbf-f7d0-42f0-9d80-25cd78a1c71e
+2025-09-02 18:58:56,790 - httpx - INFO - HTTP Request: POST https://daplatformai.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-09-02 18:58:58,408 - duplicate_patient_manager - WARNING - No plan/cert/medical form found for patient bd70e57c-4f4e-4a16-b28a-d81acda021a1
+2025-09-02 18:58:58,412 - duplicate_patient_manager - INFO - Selected primary patient after PDF verification: 5d789dbf-f7d0-42f0-9d80-25cd78a1c71e (score: 2)
+2025-09-02 18:59:01,669 - duplicate_patient_manager - INFO - TEST: Processing duplicate group 7/10 with 2 patients
+2025-09-02 18:59:01,670 - duplicate_patient_manager - INFO - Found conflicts - MRN: True, DOB: False
+2025-09-02 18:59:03,247 - duplicate_patient_manager - INFO - Found plan/cert document ('plan'): HOME HEALTH CERTIFICATION AND PLAN OF CARE for patient daa703e5-24c1-48d7-97d2-1ce4a5f2a489
+2025-09-02 18:59:09,712 - httpx - INFO - HTTP Request: POST https://daplatformai.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-09-02 18:59:11,185 - duplicate_patient_manager - WARNING - No plan/cert/medical form found for patient 655aea5d-3b69-4a57-bda1-515ecc9d2485
+2025-09-02 18:59:11,186 - duplicate_patient_manager - INFO - Selected primary patient after PDF verification: daa703e5-24c1-48d7-97d2-1ce4a5f2a489 (score: 2)
+2025-09-02 18:59:15,064 - duplicate_patient_manager - INFO - TEST: Processing duplicate group 8/10 with 2 patients
+2025-09-02 18:59:15,066 - duplicate_patient_manager - INFO - Found conflicts - MRN: True, DOB: False
+2025-09-02 18:59:17,248 - duplicate_patient_manager - INFO - Found plan/cert document ('plan'): HOME HEALTH CERTIFICATION AND PLAN OF CARE for patient 101d7657-b186-4ccb-8ea7-c0c4157dc464
+2025-09-02 18:59:23,236 - httpx - INFO - HTTP Request: POST https://daplatformai.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-09-02 18:59:25,451 - duplicate_patient_manager - WARNING - No plan/cert/medical form found for patient 590f1c45-061f-4dd9-9a0b-8055bc5b3637
+2025-09-02 18:59:25,453 - duplicate_patient_manager - INFO - Selected primary patient after PDF verification: 101d7657-b186-4ccb-8ea7-c0c4157dc464 (score: 2)
+2025-09-02 18:59:28,570 - duplicate_patient_manager - INFO - TEST: Processing duplicate group 9/10 with 2 patients
+2025-09-02 18:59:28,573 - duplicate_patient_manager - INFO - Selected primary patient: f7f185ae-d1b4-412f-9147-0378fe2499bc with 2 orders
+2025-09-02 18:59:31,799 - duplicate_patient_manager - INFO - TEST: Processing duplicate group 10/10 with 2 patients
+2025-09-02 18:59:31,800 - duplicate_patient_manager - INFO - Selected primary patient: bb65be17-08f5-4bd3-b39a-78b8f7e95ca4 with 2 orders
+2025-09-02 18:59:36,197 - duplicate_patient_manager - INFO - TEST MODE duplicate processing completed
+2025-09-02 19:05:15,231 - duplicate_patient_manager - INFO - Starting TEST MODE duplicate processing for PG Company ID: c5c1a894-08ac-4cb9-bfd1-0ad1384b890e
+2025-09-02 19:05:19,013 - duplicate_patient_manager - INFO - Fetched 130 patients for PG Company ID: c5c1a894-08ac-4cb9-bfd1-0ad1384b890e
+2025-09-02 19:05:19,024 - duplicate_patient_manager - INFO - DUPLICATE FOUND (Traditional (Name+Company+Other)): 456bd78f-68ce-4ffb-b1bd-09cad0407474 (Ana Vargas) <-> f4f75bd1-baa8-44a7-8403-d9cbe1a2595c (Ana Vargas)
+2025-09-02 19:05:19,025 - duplicate_patient_manager - INFO -   -> Matching DOB: 04/04/1947
+2025-09-02 19:05:19,030 - duplicate_patient_manager - INFO - DUPLICATE FOUND (Traditional (Name+Company+Other)): f0f00c82-5eae-4e2f-980e-fdf72ab2a44a (LUZ SANTOS) <-> bf6b2cad-0b95-4232-a6be-a1d7ef099527 (LUZ SANTOS)
+2025-09-02 19:05:19,031 - duplicate_patient_manager - INFO -   -> Matching DOB: 09/03/1943
+2025-09-02 19:05:19,036 - duplicate_patient_manager - INFO - DUPLICATE FOUND (Traditional (Name+Company+Other)): 250b6fc9-c2f0-4af8-ae1f-c32c506a201f (Ida Rodriguez) <-> c91b20d0-198b-41f4-a9b1-83731b2b548a (Ida Rodriguez)
+2025-09-02 19:05:19,037 - duplicate_patient_manager - INFO -   -> Matching DOB: 08/16/1949
+2025-09-02 19:05:19,050 - duplicate_patient_manager - INFO - DUPLICATE FOUND (Traditional (Name+Company+Other)): be87c047-5bcc-46f8-97df-df7a18b978be (RITA MARTINEZ) <-> 83410b90-e3ff-497c-b3cc-bda6ac95451e (Rita Martinez)
+2025-09-02 19:05:19,050 - duplicate_patient_manager - INFO -   -> Matching DOB: 08/30/1951
+2025-09-02 19:05:19,058 - duplicate_patient_manager - INFO - DUPLICATE FOUND (Traditional (Name+Company+Other)): 68958591-825d-4a74-b6e5-210bde9e3eee (ANA HINOA) <-> 01b95668-8a04-472b-89e8-bb0b8f174ba3 (HINOA ANA)
+2025-09-02 19:05:19,059 - duplicate_patient_manager - INFO -   -> Matching MRN: 0026
+2025-09-02 19:05:19,059 - duplicate_patient_manager - INFO -   -> Matching DOB: 08/29/1969
+2025-09-02 19:05:19,063 - duplicate_patient_manager - INFO - DUPLICATE FOUND (Traditional (Name+Company+Other)): 5d789dbf-f7d0-42f0-9d80-25cd78a1c71e (Felix Delerme) <-> bd70e57c-4f4e-4a16-b28a-d81acda021a1 (Felix Delerme)
+2025-09-02 19:05:19,064 - duplicate_patient_manager - INFO -   -> Matching DOB: 09/20/1957
+2025-09-02 19:05:19,071 - duplicate_patient_manager - INFO - DUPLICATE FOUND (Traditional (Name+Company+Other)): daa703e5-24c1-48d7-97d2-1ce4a5f2a489 (MILAGROS ARGUINZONI) <-> 655aea5d-3b69-4a57-bda1-515ecc9d2485 (Milagros Arguinzoni)
+2025-09-02 19:05:19,072 - duplicate_patient_manager - INFO -   -> Matching DOB: 11/27/1951
+2025-09-02 19:05:19,075 - duplicate_patient_manager - INFO - DUPLICATE FOUND (Traditional (Name+Company+Other)): 101d7657-b186-4ccb-8ea7-c0c4157dc464 (DOLORES ALVAREZ) <-> 590f1c45-061f-4dd9-9a0b-8055bc5b3637 (Dolores Alvarez)
+2025-09-02 19:05:19,075 - duplicate_patient_manager - INFO -   -> Matching DOB: 03/18/1942
+2025-09-02 19:05:19,082 - duplicate_patient_manager - INFO - DUPLICATE FOUND (Traditional (Name+Company+Other)): f7f185ae-d1b4-412f-9147-0378fe2499bc (Quito-Lluvicura, Maria) <-> 6eaf84d4-aac8-4e77-a750-3179e097da20 (Maria Quito-Lluvicura)
+2025-09-02 19:05:19,082 - duplicate_patient_manager - INFO -   -> Matching MRN: 160850200
+2025-09-02 19:05:19,082 - duplicate_patient_manager - INFO -   -> Matching DOB: 03/21/1945
+2025-09-02 19:05:19,086 - duplicate_patient_manager - INFO - DUPLICATE FOUND (Traditional (Name+Company+Other)): bb65be17-08f5-4bd3-b39a-78b8f7e95ca4 (Ortega, Jacoba) <-> e7807fd1-a505-442e-b2ef-8a5acdc706d2 (Jacoba Ortega)
+2025-09-02 19:05:19,086 - duplicate_patient_manager - INFO -   -> Matching MRN: 123620150
+2025-09-02 19:05:19,086 - duplicate_patient_manager - INFO -   -> Matching DOB: 11/28/1965
+2025-09-02 19:05:19,185 - duplicate_patient_manager - INFO - Found 10 duplicate groups
+2025-09-02 19:05:19,186 - duplicate_patient_manager - INFO - TEST: Processing duplicate group 1/10 with 2 patients
+2025-09-02 19:05:19,186 - duplicate_patient_manager - INFO - Found conflicts - MRN: True, DOB: False
+2025-09-02 19:05:20,728 - duplicate_patient_manager - INFO - Found plan/cert document ('plan'): Home Health Certification and Plan of Care for patient 456bd78f-68ce-4ffb-b1bd-09cad0407474
+2025-09-02 19:05:25,753 - httpx - INFO - HTTP Request: POST https://daplatformai.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-09-02 19:05:27,285 - duplicate_patient_manager - WARNING - No plan/cert/medical form found for patient f4f75bd1-baa8-44a7-8403-d9cbe1a2595c
+2025-09-02 19:05:27,286 - duplicate_patient_manager - INFO - Selected primary patient after PDF verification: 456bd78f-68ce-4ffb-b1bd-09cad0407474 (score: 2)
+2025-09-02 19:05:30,220 - duplicate_patient_manager - INFO - TEST: Processing duplicate group 2/10 with 2 patients
+2025-09-02 19:05:30,221 - duplicate_patient_manager - INFO - Found conflicts - MRN: True, DOB: False
+2025-09-02 19:05:31,767 - duplicate_patient_manager - INFO - Found plan/cert document ('plan'): HOME HEALTH CERTIFICATION AND PLAN OF CARE for patient f0f00c82-5eae-4e2f-980e-fdf72ab2a44a
+2025-09-02 19:05:36,897 - httpx - INFO - HTTP Request: POST https://daplatformai.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-09-02 19:05:39,038 - duplicate_patient_manager - WARNING - No plan/cert/medical form found for patient bf6b2cad-0b95-4232-a6be-a1d7ef099527
+2025-09-02 19:05:39,041 - duplicate_patient_manager - INFO - Selected primary patient after PDF verification: f0f00c82-5eae-4e2f-980e-fdf72ab2a44a (score: 0)
+2025-09-02 19:05:42,040 - duplicate_patient_manager - INFO - TEST: Processing duplicate group 3/10 with 2 patients
+2025-09-02 19:05:42,040 - duplicate_patient_manager - INFO - Found conflicts - MRN: True, DOB: False
+2025-09-02 19:05:43,502 - duplicate_patient_manager - INFO - Found plan/cert document ('cert'): Recertification for patient 250b6fc9-c2f0-4af8-ae1f-c32c506a201f
+2025-09-02 19:05:47,552 - httpx - INFO - HTTP Request: POST https://daplatformai.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-09-02 19:05:49,013 - duplicate_patient_manager - WARNING - No plan/cert/medical form found for patient c91b20d0-198b-41f4-a9b1-83731b2b548a
+2025-09-02 19:05:49,014 - duplicate_patient_manager - INFO - Selected primary patient after PDF verification: 250b6fc9-c2f0-4af8-ae1f-c32c506a201f (score: 4)
+2025-09-02 19:05:52,254 - duplicate_patient_manager - INFO - TEST: Processing duplicate group 4/10 with 2 patients
+2025-09-02 19:05:52,254 - duplicate_patient_manager - INFO - Found conflicts - MRN: True, DOB: False
+2025-09-02 19:05:53,733 - duplicate_patient_manager - WARNING - No plan/cert/medical form found for patient be87c047-5bcc-46f8-97df-df7a18b978be
+2025-09-02 19:05:55,164 - duplicate_patient_manager - WARNING - No plan/cert/medical form found for patient 83410b90-e3ff-497c-b3cc-bda6ac95451e
+2025-09-02 19:05:55,166 - duplicate_patient_manager - INFO - Selected primary patient after PDF verification: be87c047-5bcc-46f8-97df-df7a18b978be (score: 0)
+2025-09-02 19:05:58,040 - duplicate_patient_manager - INFO - TEST: Processing duplicate group 5/10 with 2 patients
+2025-09-02 19:05:58,041 - duplicate_patient_manager - INFO - Selected primary patient: 68958591-825d-4a74-b6e5-210bde9e3eee with 1 orders
+2025-09-02 19:06:00,947 - duplicate_patient_manager - INFO - TEST: Processing duplicate group 6/10 with 2 patients
+2025-09-02 19:06:00,948 - duplicate_patient_manager - INFO - Found conflicts - MRN: True, DOB: False
+2025-09-02 19:06:02,419 - duplicate_patient_manager - INFO - Found plan/cert document ('485'): CMS-485 HOME HEALTH CERTIFICATION AND PLAN OF CARE for patient 5d789dbf-f7d0-42f0-9d80-25cd78a1c71e
+2025-09-02 19:06:06,993 - httpx - INFO - HTTP Request: POST https://daplatformai.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-09-02 19:06:08,500 - duplicate_patient_manager - WARNING - No plan/cert/medical form found for patient bd70e57c-4f4e-4a16-b28a-d81acda021a1
+2025-09-02 19:06:08,503 - duplicate_patient_manager - INFO - Selected primary patient after PDF verification: 5d789dbf-f7d0-42f0-9d80-25cd78a1c71e (score: 2)
+2025-09-02 19:06:11,813 - duplicate_patient_manager - INFO - TEST: Processing duplicate group 7/10 with 2 patients
+2025-09-02 19:06:11,814 - duplicate_patient_manager - INFO - Found conflicts - MRN: True, DOB: False
+2025-09-02 19:06:13,290 - duplicate_patient_manager - INFO - Found plan/cert document ('plan'): HOME HEALTH CERTIFICATION AND PLAN OF CARE for patient daa703e5-24c1-48d7-97d2-1ce4a5f2a489
+2025-09-02 19:06:19,727 - httpx - INFO - HTTP Request: POST https://daplatformai.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-09-02 19:06:21,246 - duplicate_patient_manager - WARNING - No plan/cert/medical form found for patient 655aea5d-3b69-4a57-bda1-515ecc9d2485
+2025-09-02 19:06:21,250 - duplicate_patient_manager - INFO - Selected primary patient after PDF verification: daa703e5-24c1-48d7-97d2-1ce4a5f2a489 (score: 2)
+2025-09-02 19:06:24,940 - duplicate_patient_manager - INFO - TEST: Processing duplicate group 8/10 with 2 patients
+2025-09-02 19:06:24,941 - duplicate_patient_manager - INFO - Found conflicts - MRN: True, DOB: False
+2025-09-02 19:06:26,544 - duplicate_patient_manager - INFO - Found plan/cert document ('plan'): HOME HEALTH CERTIFICATION AND PLAN OF CARE for patient 101d7657-b186-4ccb-8ea7-c0c4157dc464
+2025-09-02 19:06:32,211 - httpx - INFO - HTTP Request: POST https://daplatformai.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-09-02 19:06:33,892 - duplicate_patient_manager - WARNING - No plan/cert/medical form found for patient 590f1c45-061f-4dd9-9a0b-8055bc5b3637
+2025-09-02 19:06:33,894 - duplicate_patient_manager - INFO - Selected primary patient after PDF verification: 101d7657-b186-4ccb-8ea7-c0c4157dc464 (score: 2)
+2025-09-02 19:06:36,999 - duplicate_patient_manager - INFO - TEST: Processing duplicate group 9/10 with 2 patients
+2025-09-02 19:06:37,001 - duplicate_patient_manager - INFO - Selected primary patient: f7f185ae-d1b4-412f-9147-0378fe2499bc with 2 orders
+2025-09-02 19:06:39,978 - duplicate_patient_manager - INFO - TEST: Processing duplicate group 10/10 with 2 patients
+2025-09-02 19:06:39,979 - duplicate_patient_manager - INFO - Selected primary patient: bb65be17-08f5-4bd3-b39a-78b8f7e95ca4 with 2 orders
+2025-09-02 19:06:43,055 - duplicate_patient_manager - INFO - TEST MODE duplicate processing completed
+2025-09-02 19:09:33,403 - duplicate_patient_manager - INFO - Starting TEST MODE duplicate processing for PG Company ID: c5c1a894-08ac-4cb9-bfd1-0ad1384b890e
+2025-09-02 19:09:36,197 - duplicate_patient_manager - INFO - Fetched 130 patients for PG Company ID: c5c1a894-08ac-4cb9-bfd1-0ad1384b890e
+2025-09-02 19:09:36,204 - duplicate_patient_manager - INFO - DUPLICATE FOUND (Traditional (Name+Company+Other)): 456bd78f-68ce-4ffb-b1bd-09cad0407474 (Ana Vargas) <-> f4f75bd1-baa8-44a7-8403-d9cbe1a2595c (Ana Vargas)
+2025-09-02 19:09:36,204 - duplicate_patient_manager - INFO -   -> Matching DOB: 04/04/1947
+2025-09-02 19:09:36,211 - duplicate_patient_manager - INFO - DUPLICATE FOUND (Traditional (Name+Company+Other)): f0f00c82-5eae-4e2f-980e-fdf72ab2a44a (LUZ SANTOS) <-> bf6b2cad-0b95-4232-a6be-a1d7ef099527 (LUZ SANTOS)
+2025-09-02 19:09:36,211 - duplicate_patient_manager - INFO -   -> Matching DOB: 09/03/1943
+2025-09-02 19:09:36,214 - duplicate_patient_manager - INFO - DUPLICATE FOUND (Traditional (Name+Company+Other)): 250b6fc9-c2f0-4af8-ae1f-c32c506a201f (Ida Rodriguez) <-> c91b20d0-198b-41f4-a9b1-83731b2b548a (Ida Rodriguez)
+2025-09-02 19:09:36,214 - duplicate_patient_manager - INFO -   -> Matching DOB: 08/16/1949
+2025-09-02 19:09:36,230 - duplicate_patient_manager - INFO - DUPLICATE FOUND (Traditional (Name+Company+Other)): be87c047-5bcc-46f8-97df-df7a18b978be (RITA MARTINEZ) <-> 83410b90-e3ff-497c-b3cc-bda6ac95451e (Rita Martinez)
+2025-09-02 19:09:36,231 - duplicate_patient_manager - INFO -   -> Matching DOB: 08/30/1951
+2025-09-02 19:09:36,238 - duplicate_patient_manager - INFO - DUPLICATE FOUND (Traditional (Name+Company+Other)): 68958591-825d-4a74-b6e5-210bde9e3eee (ANA HINOA) <-> 01b95668-8a04-472b-89e8-bb0b8f174ba3 (HINOA ANA)
+2025-09-02 19:09:36,239 - duplicate_patient_manager - INFO -   -> Matching MRN: 0026
+2025-09-02 19:09:36,239 - duplicate_patient_manager - INFO -   -> Matching DOB: 08/29/1969
+2025-09-02 19:09:36,244 - duplicate_patient_manager - INFO - DUPLICATE FOUND (Traditional (Name+Company+Other)): 5d789dbf-f7d0-42f0-9d80-25cd78a1c71e (Felix Delerme) <-> bd70e57c-4f4e-4a16-b28a-d81acda021a1 (Felix Delerme)
+2025-09-02 19:09:36,244 - duplicate_patient_manager - INFO -   -> Matching DOB: 09/20/1957
+2025-09-02 19:09:36,250 - duplicate_patient_manager - INFO - DUPLICATE FOUND (Traditional (Name+Company+Other)): daa703e5-24c1-48d7-97d2-1ce4a5f2a489 (MILAGROS ARGUINZONI) <-> 655aea5d-3b69-4a57-bda1-515ecc9d2485 (Milagros Arguinzoni)
+2025-09-02 19:09:36,250 - duplicate_patient_manager - INFO -   -> Matching DOB: 11/27/1951
+2025-09-02 19:09:36,253 - duplicate_patient_manager - INFO - DUPLICATE FOUND (Traditional (Name+Company+Other)): 101d7657-b186-4ccb-8ea7-c0c4157dc464 (DOLORES ALVAREZ) <-> 590f1c45-061f-4dd9-9a0b-8055bc5b3637 (Dolores Alvarez)
+2025-09-02 19:09:36,253 - duplicate_patient_manager - INFO -   -> Matching DOB: 03/18/1942
+2025-09-02 19:09:36,259 - duplicate_patient_manager - INFO - DUPLICATE FOUND (Traditional (Name+Company+Other)): f7f185ae-d1b4-412f-9147-0378fe2499bc (Quito-Lluvicura, Maria) <-> 6eaf84d4-aac8-4e77-a750-3179e097da20 (Maria Quito-Lluvicura)
+2025-09-02 19:09:36,259 - duplicate_patient_manager - INFO -   -> Matching MRN: 160850200
+2025-09-02 19:09:36,259 - duplicate_patient_manager - INFO -   -> Matching DOB: 03/21/1945
+2025-09-02 19:09:36,262 - duplicate_patient_manager - INFO - DUPLICATE FOUND (Traditional (Name+Company+Other)): bb65be17-08f5-4bd3-b39a-78b8f7e95ca4 (Ortega, Jacoba) <-> e7807fd1-a505-442e-b2ef-8a5acdc706d2 (Jacoba Ortega)
+2025-09-02 19:09:36,262 - duplicate_patient_manager - INFO -   -> Matching MRN: 123620150
+2025-09-02 19:09:36,262 - duplicate_patient_manager - INFO -   -> Matching DOB: 11/28/1965
+2025-09-02 19:09:36,377 - duplicate_patient_manager - INFO - Found 10 duplicate groups
+2025-09-02 19:09:36,377 - duplicate_patient_manager - INFO - TEST: Processing duplicate group 1/10 with 2 patients
+2025-09-02 19:09:36,377 - duplicate_patient_manager - INFO - Found conflicts - MRN: True, DOB: False
+2025-09-02 19:09:37,792 - duplicate_patient_manager - INFO - Found plan/cert document ('plan'): Home Health Certification and Plan of Care for patient 456bd78f-68ce-4ffb-b1bd-09cad0407474
+2025-09-02 19:09:42,429 - httpx - INFO - HTTP Request: POST https://daplatformai.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-09-02 19:09:43,923 - duplicate_patient_manager - WARNING - No plan/cert/medical form found for patient f4f75bd1-baa8-44a7-8403-d9cbe1a2595c
+2025-09-02 19:09:43,925 - duplicate_patient_manager - INFO - Selected primary patient after PDF verification: 456bd78f-68ce-4ffb-b1bd-09cad0407474 (score: 4)
+2025-09-02 19:09:46,835 - duplicate_patient_manager - INFO - TEST: Processing duplicate group 2/10 with 2 patients
+2025-09-02 19:09:46,835 - duplicate_patient_manager - INFO - Found conflicts - MRN: True, DOB: False
+2025-09-02 19:09:48,272 - duplicate_patient_manager - INFO - Found plan/cert document ('plan'): HOME HEALTH CERTIFICATION AND PLAN OF CARE for patient f0f00c82-5eae-4e2f-980e-fdf72ab2a44a
+2025-09-02 19:09:52,762 - httpx - INFO - HTTP Request: POST https://daplatformai.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-09-02 19:09:54,172 - duplicate_patient_manager - WARNING - No plan/cert/medical form found for patient bf6b2cad-0b95-4232-a6be-a1d7ef099527
+2025-09-02 19:09:54,174 - duplicate_patient_manager - INFO - Selected primary patient after PDF verification: f0f00c82-5eae-4e2f-980e-fdf72ab2a44a (score: 2)
+2025-09-02 19:09:57,453 - duplicate_patient_manager - INFO - TEST: Processing duplicate group 3/10 with 2 patients
+2025-09-02 19:09:57,454 - duplicate_patient_manager - INFO - Found conflicts - MRN: True, DOB: False
+2025-09-02 19:09:58,956 - duplicate_patient_manager - INFO - Found plan/cert document ('cert'): Recertification for patient 250b6fc9-c2f0-4af8-ae1f-c32c506a201f
+2025-09-02 19:10:03,598 - httpx - INFO - HTTP Request: POST https://daplatformai.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-09-02 19:10:05,106 - duplicate_patient_manager - WARNING - No plan/cert/medical form found for patient c91b20d0-198b-41f4-a9b1-83731b2b548a
+2025-09-02 19:10:05,118 - duplicate_patient_manager - INFO - Selected primary patient after PDF verification: 250b6fc9-c2f0-4af8-ae1f-c32c506a201f (score: 4)
+2025-09-02 19:10:08,120 - duplicate_patient_manager - INFO - TEST: Processing duplicate group 4/10 with 2 patients
+2025-09-02 19:10:08,121 - duplicate_patient_manager - INFO - Found conflicts - MRN: True, DOB: False
+2025-09-02 19:10:09,572 - duplicate_patient_manager - WARNING - No plan/cert/medical form found for patient be87c047-5bcc-46f8-97df-df7a18b978be
+2025-09-02 19:10:11,021 - duplicate_patient_manager - WARNING - No plan/cert/medical form found for patient 83410b90-e3ff-497c-b3cc-bda6ac95451e
+2025-09-02 19:10:11,022 - duplicate_patient_manager - INFO - Selected primary patient after PDF verification: be87c047-5bcc-46f8-97df-df7a18b978be (score: 0)
+2025-09-02 19:10:13,900 - duplicate_patient_manager - INFO - TEST: Processing duplicate group 5/10 with 2 patients
+2025-09-02 19:10:13,900 - duplicate_patient_manager - INFO - Selected primary patient: 68958591-825d-4a74-b6e5-210bde9e3eee with 1 orders
+2025-09-02 19:10:16,914 - duplicate_patient_manager - INFO - TEST: Processing duplicate group 6/10 with 2 patients
+2025-09-02 19:10:16,915 - duplicate_patient_manager - INFO - Found conflicts - MRN: True, DOB: False
+2025-09-02 19:10:18,472 - duplicate_patient_manager - INFO - Found plan/cert document ('485'): CMS-485 HOME HEALTH CERTIFICATION AND PLAN OF CARE for patient 5d789dbf-f7d0-42f0-9d80-25cd78a1c71e
+2025-09-02 19:10:22,977 - httpx - INFO - HTTP Request: POST https://daplatformai.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-09-02 19:10:24,480 - duplicate_patient_manager - WARNING - No plan/cert/medical form found for patient bd70e57c-4f4e-4a16-b28a-d81acda021a1
+2025-09-02 19:10:24,481 - duplicate_patient_manager - INFO - Selected primary patient after PDF verification: 5d789dbf-f7d0-42f0-9d80-25cd78a1c71e (score: 4)
+2025-09-02 19:10:27,621 - duplicate_patient_manager - INFO - TEST: Processing duplicate group 7/10 with 2 patients
+2025-09-02 19:10:27,621 - duplicate_patient_manager - INFO - Found conflicts - MRN: True, DOB: False
+2025-09-02 19:10:29,116 - duplicate_patient_manager - INFO - Found plan/cert document ('plan'): HOME HEALTH CERTIFICATION AND PLAN OF CARE for patient daa703e5-24c1-48d7-97d2-1ce4a5f2a489
+2025-09-02 19:10:35,464 - httpx - INFO - HTTP Request: POST https://daplatformai.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-09-02 19:10:37,043 - duplicate_patient_manager - WARNING - No plan/cert/medical form found for patient 655aea5d-3b69-4a57-bda1-515ecc9d2485
+2025-09-02 19:10:37,046 - duplicate_patient_manager - INFO - Selected primary patient after PDF verification: daa703e5-24c1-48d7-97d2-1ce4a5f2a489 (score: 4)
+2025-09-02 19:10:40,192 - duplicate_patient_manager - INFO - TEST: Processing duplicate group 8/10 with 2 patients
+2025-09-02 19:10:40,192 - duplicate_patient_manager - INFO - Found conflicts - MRN: True, DOB: False
+2025-09-02 19:10:41,761 - duplicate_patient_manager - INFO - Found plan/cert document ('plan'): HOME HEALTH CERTIFICATION AND PLAN OF CARE for patient 101d7657-b186-4ccb-8ea7-c0c4157dc464
+2025-09-02 19:10:47,288 - httpx - INFO - HTTP Request: POST https://daplatformai.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-09-02 19:10:48,739 - duplicate_patient_manager - WARNING - No plan/cert/medical form found for patient 590f1c45-061f-4dd9-9a0b-8055bc5b3637
+2025-09-02 19:10:48,740 - duplicate_patient_manager - INFO - Selected primary patient after PDF verification: 101d7657-b186-4ccb-8ea7-c0c4157dc464 (score: 2)
+2025-09-02 19:10:51,874 - duplicate_patient_manager - INFO - TEST: Processing duplicate group 9/10 with 2 patients
+2025-09-02 19:10:51,874 - duplicate_patient_manager - INFO - Selected primary patient: f7f185ae-d1b4-412f-9147-0378fe2499bc with 2 orders
+2025-09-02 19:10:55,036 - duplicate_patient_manager - INFO - TEST: Processing duplicate group 10/10 with 2 patients
+2025-09-02 19:10:55,038 - duplicate_patient_manager - INFO - Selected primary patient: bb65be17-08f5-4bd3-b39a-78b8f7e95ca4 with 2 orders
+2025-09-02 19:10:58,375 - duplicate_patient_manager - INFO - TEST MODE duplicate processing completed
+2025-09-02 19:12:05,797 - duplicate_patient_manager - INFO - Starting TEST MODE duplicate processing for PG Company ID: c5c1a894-08ac-4cb9-bfd1-0ad1384b890e
+2025-09-02 19:12:08,703 - duplicate_patient_manager - INFO - Fetched 130 patients for PG Company ID: c5c1a894-08ac-4cb9-bfd1-0ad1384b890e
+2025-09-02 19:12:08,722 - duplicate_patient_manager - INFO - DUPLICATE FOUND (Traditional (Name+Company+Other)): 456bd78f-68ce-4ffb-b1bd-09cad0407474 (Ana Vargas) <-> f4f75bd1-baa8-44a7-8403-d9cbe1a2595c (Ana Vargas)
+2025-09-02 19:12:08,722 - duplicate_patient_manager - INFO -   -> Matching DOB: 04/04/1947
+2025-09-02 19:12:08,730 - duplicate_patient_manager - INFO - DUPLICATE FOUND (Traditional (Name+Company+Other)): f0f00c82-5eae-4e2f-980e-fdf72ab2a44a (LUZ SANTOS) <-> bf6b2cad-0b95-4232-a6be-a1d7ef099527 (LUZ SANTOS)
+2025-09-02 19:12:08,731 - duplicate_patient_manager - INFO -   -> Matching DOB: 09/03/1943
+2025-09-02 19:12:08,746 - duplicate_patient_manager - INFO - DUPLICATE FOUND (Traditional (Name+Company+Other)): 250b6fc9-c2f0-4af8-ae1f-c32c506a201f (Ida Rodriguez) <-> c91b20d0-198b-41f4-a9b1-83731b2b548a (Ida Rodriguez)
+2025-09-02 19:12:08,747 - duplicate_patient_manager - INFO -   -> Matching DOB: 08/16/1949
+2025-09-02 19:12:08,776 - duplicate_patient_manager - INFO - DUPLICATE FOUND (Traditional (Name+Company+Other)): be87c047-5bcc-46f8-97df-df7a18b978be (RITA MARTINEZ) <-> 83410b90-e3ff-497c-b3cc-bda6ac95451e (Rita Martinez)
+2025-09-02 19:12:08,776 - duplicate_patient_manager - INFO -   -> Matching DOB: 08/30/1951
+2025-09-02 19:12:08,785 - duplicate_patient_manager - INFO - DUPLICATE FOUND (Traditional (Name+Company+Other)): 68958591-825d-4a74-b6e5-210bde9e3eee (ANA HINOA) <-> 01b95668-8a04-472b-89e8-bb0b8f174ba3 (HINOA ANA)
+2025-09-02 19:12:08,785 - duplicate_patient_manager - INFO -   -> Matching MRN: 0026
+2025-09-02 19:12:08,786 - duplicate_patient_manager - INFO -   -> Matching DOB: 08/29/1969
+2025-09-02 19:12:08,793 - duplicate_patient_manager - INFO - DUPLICATE FOUND (Traditional (Name+Company+Other)): 5d789dbf-f7d0-42f0-9d80-25cd78a1c71e (Felix Delerme) <-> bd70e57c-4f4e-4a16-b28a-d81acda021a1 (Felix Delerme)
+2025-09-02 19:12:08,793 - duplicate_patient_manager - INFO -   -> Matching DOB: 09/20/1957
+2025-09-02 19:12:08,803 - duplicate_patient_manager - INFO - DUPLICATE FOUND (Traditional (Name+Company+Other)): daa703e5-24c1-48d7-97d2-1ce4a5f2a489 (MILAGROS ARGUINZONI) <-> 655aea5d-3b69-4a57-bda1-515ecc9d2485 (Milagros Arguinzoni)
+2025-09-02 19:12:08,803 - duplicate_patient_manager - INFO -   -> Matching DOB: 11/27/1951
+2025-09-02 19:12:08,806 - duplicate_patient_manager - INFO - DUPLICATE FOUND (Traditional (Name+Company+Other)): 101d7657-b186-4ccb-8ea7-c0c4157dc464 (DOLORES ALVAREZ) <-> 590f1c45-061f-4dd9-9a0b-8055bc5b3637 (Dolores Alvarez)
+2025-09-02 19:12:08,807 - duplicate_patient_manager - INFO -   -> Matching DOB: 03/18/1942
+2025-09-02 19:12:08,813 - duplicate_patient_manager - INFO - DUPLICATE FOUND (Traditional (Name+Company+Other)): f7f185ae-d1b4-412f-9147-0378fe2499bc (Quito-Lluvicura, Maria) <-> 6eaf84d4-aac8-4e77-a750-3179e097da20 (Maria Quito-Lluvicura)
+2025-09-02 19:12:08,813 - duplicate_patient_manager - INFO -   -> Matching MRN: 160850200
+2025-09-02 19:12:08,814 - duplicate_patient_manager - INFO -   -> Matching DOB: 03/21/1945
+2025-09-02 19:12:08,820 - duplicate_patient_manager - INFO - DUPLICATE FOUND (Traditional (Name+Company+Other)): bb65be17-08f5-4bd3-b39a-78b8f7e95ca4 (Ortega, Jacoba) <-> e7807fd1-a505-442e-b2ef-8a5acdc706d2 (Jacoba Ortega)
+2025-09-02 19:12:08,820 - duplicate_patient_manager - INFO -   -> Matching MRN: 123620150
+2025-09-02 19:12:08,820 - duplicate_patient_manager - INFO -   -> Matching DOB: 11/28/1965
+2025-09-02 19:12:08,959 - duplicate_patient_manager - INFO - Found 10 duplicate groups
+2025-09-02 19:12:08,959 - duplicate_patient_manager - INFO - TEST: Processing duplicate group 1/10 with 2 patients
+2025-09-02 19:12:08,959 - duplicate_patient_manager - INFO - Found conflicts - MRN: True, DOB: False
+2025-09-02 19:12:08,966 - duplicate_patient_manager - INFO -    Current MRN: 041947
+2025-09-02 19:12:08,966 - duplicate_patient_manager - INFO -    Current DOB: 04/04/1947
+2025-09-02 19:12:10,560 - duplicate_patient_manager - INFO - Found plan/cert document ('plan'): Home Health Certification and Plan of Care for patient 456bd78f-68ce-4ffb-b1bd-09cad0407474
+2025-09-02 19:12:15,577 - httpx - INFO - HTTP Request: POST https://daplatformai.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-09-02 19:12:15,612 - duplicate_patient_manager - INFO -    Current MRN: 419470
+2025-09-02 19:12:15,612 - duplicate_patient_manager - INFO -    Current DOB: 04/04/1947
+2025-09-02 19:12:17,168 - duplicate_patient_manager - WARNING - No plan/cert/medical form found for patient f4f75bd1-baa8-44a7-8403-d9cbe1a2595c
+2025-09-02 19:12:20,249 - duplicate_patient_manager - INFO - TEST: Processing duplicate group 2/10 with 2 patients
+2025-09-02 19:12:20,252 - duplicate_patient_manager - INFO - Found conflicts - MRN: True, DOB: False
+2025-09-02 19:12:20,261 - duplicate_patient_manager - INFO -    Current MRN: M0300003782001
+2025-09-02 19:12:20,262 - duplicate_patient_manager - INFO -    Current DOB: 09/03/1943
+2025-09-02 19:12:21,792 - duplicate_patient_manager - INFO - Found plan/cert document ('plan'): HOME HEALTH CERTIFICATION AND PLAN OF CARE for patient f0f00c82-5eae-4e2f-980e-fdf72ab2a44a
+2025-09-02 19:12:26,586 - httpx - INFO - HTTP Request: POST https://daplatformai.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-09-02 19:12:26,604 - duplicate_patient_manager - INFO -    Current MRN: 1091657860
+2025-09-02 19:12:26,605 - duplicate_patient_manager - INFO -    Current DOB: 09/03/1943
+2025-09-02 19:12:28,170 - duplicate_patient_manager - WARNING - No plan/cert/medical form found for patient bf6b2cad-0b95-4232-a6be-a1d7ef099527
+2025-09-02 19:12:31,745 - duplicate_patient_manager - INFO - TEST: Processing duplicate group 3/10 with 2 patients
+2025-09-02 19:12:31,750 - duplicate_patient_manager - INFO - Found conflicts - MRN: True, DOB: False
+2025-09-02 19:12:31,769 - duplicate_patient_manager - INFO -    Current MRN: 161949
+2025-09-02 19:12:31,769 - duplicate_patient_manager - INFO -    Current DOB: 08/16/1949
+2025-09-02 19:12:33,402 - duplicate_patient_manager - INFO - Found plan/cert document ('cert'): Recertification for patient 250b6fc9-c2f0-4af8-ae1f-c32c506a201f
+2025-09-02 19:12:37,622 - httpx - INFO - HTTP Request: POST https://daplatformai.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-09-02 19:12:37,665 - duplicate_patient_manager - INFO -    Current MRN: 1619490
+2025-09-02 19:12:37,665 - duplicate_patient_manager - INFO -    Current DOB: 08/16/1949
+2025-09-02 19:12:39,216 - duplicate_patient_manager - WARNING - No plan/cert/medical form found for patient c91b20d0-198b-41f4-a9b1-83731b2b548a
+2025-09-02 19:12:42,598 - duplicate_patient_manager - INFO - TEST: Processing duplicate group 4/10 with 2 patients
+2025-09-02 19:12:42,599 - duplicate_patient_manager - INFO - Found conflicts - MRN: True, DOB: False
+2025-09-02 19:12:42,616 - duplicate_patient_manager - INFO -    Current MRN: 3382
+2025-09-02 19:12:42,616 - duplicate_patient_manager - INFO -    Current DOB: 08/30/1951
+2025-09-02 19:12:44,232 - duplicate_patient_manager - WARNING - No plan/cert/medical form found for patient be87c047-5bcc-46f8-97df-df7a18b978be
+2025-09-02 19:12:44,244 - duplicate_patient_manager - INFO -    Current MRN: 33820
+2025-09-02 19:12:44,245 - duplicate_patient_manager - INFO -    Current DOB: 08/30/1951
+2025-09-02 19:12:45,865 - duplicate_patient_manager - WARNING - No plan/cert/medical form found for patient 83410b90-e3ff-497c-b3cc-bda6ac95451e
+2025-09-02 19:12:49,229 - duplicate_patient_manager - INFO - TEST: Processing duplicate group 5/10 with 2 patients
+2025-09-02 19:12:49,229 - duplicate_patient_manager - INFO - Selected primary patient: 68958591-825d-4a74-b6e5-210bde9e3eee with 1 orders
+2025-09-02 19:12:52,498 - duplicate_patient_manager - INFO - TEST: Processing duplicate group 6/10 with 2 patients
+2025-09-02 19:12:52,500 - duplicate_patient_manager - INFO - Found conflicts - MRN: True, DOB: False
+2025-09-02 19:12:52,522 - duplicate_patient_manager - INFO -    Current MRN: 3899005
+2025-09-02 19:12:52,522 - duplicate_patient_manager - INFO -    Current DOB: 09/20/1957
+2025-09-02 19:12:54,135 - duplicate_patient_manager - INFO - Found plan/cert document ('485'): CMS-485 HOME HEALTH CERTIFICATION AND PLAN OF CARE for patient 5d789dbf-f7d0-42f0-9d80-25cd78a1c71e
+2025-09-02 19:12:59,176 - httpx - INFO - HTTP Request: POST https://daplatformai.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-09-02 19:12:59,193 - duplicate_patient_manager - INFO -    Current MRN: 38990050
+2025-09-02 19:12:59,194 - duplicate_patient_manager - INFO -    Current DOB: 09/20/1957
+2025-09-02 19:13:00,790 - duplicate_patient_manager - WARNING - No plan/cert/medical form found for patient bd70e57c-4f4e-4a16-b28a-d81acda021a1
+2025-09-02 19:13:04,549 - duplicate_patient_manager - INFO - TEST: Processing duplicate group 7/10 with 2 patients
+2025-09-02 19:13:04,549 - duplicate_patient_manager - INFO - Found conflicts - MRN: True, DOB: False
+2025-09-02 19:13:04,565 - duplicate_patient_manager - INFO -    Current MRN: 00611
+2025-09-02 19:13:04,565 - duplicate_patient_manager - INFO -    Current DOB: 11/27/1951
+2025-09-02 19:13:06,104 - duplicate_patient_manager - INFO - Found plan/cert document ('plan'): HOME HEALTH CERTIFICATION AND PLAN OF CARE for patient daa703e5-24c1-48d7-97d2-1ce4a5f2a489
+2025-09-02 19:13:12,600 - httpx - INFO - HTTP Request: POST https://daplatformai.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-09-02 19:13:12,623 - duplicate_patient_manager - INFO -    Current MRN: 6110
+2025-09-02 19:13:12,624 - duplicate_patient_manager - INFO -    Current DOB: 11/27/1951
+2025-09-02 19:13:14,132 - duplicate_patient_manager - WARNING - No plan/cert/medical form found for patient 655aea5d-3b69-4a57-bda1-515ecc9d2485
+2025-09-02 19:13:17,242 - duplicate_patient_manager - INFO - TEST: Processing duplicate group 8/10 with 2 patients
+2025-09-02 19:13:17,242 - duplicate_patient_manager - INFO - Found conflicts - MRN: True, DOB: False
+2025-09-02 19:13:17,247 - duplicate_patient_manager - INFO -    Current MRN: MRN595957
+2025-09-02 19:13:17,247 - duplicate_patient_manager - INFO -    Current DOB: 03/18/1942
+2025-09-02 19:13:18,825 - duplicate_patient_manager - INFO - Found plan/cert document ('plan'): HOME HEALTH CERTIFICATION AND PLAN OF CARE for patient 101d7657-b186-4ccb-8ea7-c0c4157dc464
+2025-09-02 19:13:24,271 - httpx - INFO - HTTP Request: POST https://daplatformai.openai.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-09-02 19:13:24,280 - duplicate_patient_manager - INFO -    Current MRN: 13102015
+2025-09-02 19:13:24,281 - duplicate_patient_manager - INFO -    Current DOB: 03/18/1942
+2025-09-02 19:13:25,978 - duplicate_patient_manager - WARNING - No plan/cert/medical form found for patient 590f1c45-061f-4dd9-9a0b-8055bc5b3637
+2025-09-02 19:13:29,167 - duplicate_patient_manager - INFO - TEST: Processing duplicate group 9/10 with 2 patients
+2025-09-02 19:13:29,168 - duplicate_patient_manager - INFO - Selected primary patient: f7f185ae-d1b4-412f-9147-0378fe2499bc with 2 orders
+2025-09-02 19:13:32,491 - duplicate_patient_manager - INFO - TEST: Processing duplicate group 10/10 with 2 patients
+2025-09-02 19:13:32,492 - duplicate_patient_manager - INFO - Selected primary patient: bb65be17-08f5-4bd3-b39a-78b8f7e95ca4 with 2 orders
+2025-09-02 19:13:35,854 - duplicate_patient_manager - INFO - TEST MODE duplicate processing completed
+2025-09-02 19:18:43,381 - duplicate_patient_manager - INFO - Starting TEST MODE duplicate processing for PG Company ID: c5c1a894-08ac-4cb9-bfd1-0ad1384b890e
+2025-09-02 19:18:47,047 - duplicate_patient_manager - INFO - Fetched 130 patients for PG Company ID: c5c1a894-08ac-4cb9-bfd1-0ad1384b890e
+2025-09-02 19:18:47,056 - duplicate_patient_manager - INFO - DUPLICATE FOUND (Traditional (Name+Company+Other)): 456bd78f-68ce-4ffb-b1bd-09cad0407474 (Ana Vargas) <-> f4f75bd1-baa8-44a7-8403-d9cbe1a2595c (Ana Vargas)
+2025-09-02 19:18:47,057 - duplicate_patient_manager - INFO -   -> Matching DOB: 04/04/1947
+2025-09-02 19:18:47,064 - duplicate_patient_manager - INFO - DUPLICATE FOUND (Traditional (Name+Company+Other)): f0f00c82-5eae-4e2f-980e-fdf72ab2a44a (LUZ SANTOS) <-> bf6b2cad-0b95-4232-a6be-a1d7ef099527 (LUZ SANTOS)
+2025-09-02 19:18:47,064 - duplicate_patient_manager - INFO -   -> Matching DOB: 09/03/1943
+2025-09-02 19:18:47,070 - duplicate_patient_manager - INFO - DUPLICATE FOUND (Traditional (Name+Company+Other)): 250b6fc9-c2f0-4af8-ae1f-c32c506a201f (Ida Rodriguez) <-> c91b20d0-198b-41f4-a9b1-83731b2b548a (Ida Rodriguez)
+2025-09-02 19:18:47,072 - duplicate_patient_manager - INFO -   -> Matching DOB: 08/16/1949
+2025-09-02 19:18:47,091 - duplicate_patient_manager - INFO - DUPLICATE FOUND (Traditional (Name+Company+Other)): be87c047-5bcc-46f8-97df-df7a18b978be (RITA MARTINEZ) <-> 83410b90-e3ff-497c-b3cc-bda6ac95451e (Rita Martinez)
+2025-09-02 19:18:47,092 - duplicate_patient_manager - INFO -   -> Matching DOB: 08/30/1951
+2025-09-02 19:18:47,098 - duplicate_patient_manager - INFO - DUPLICATE FOUND (Traditional (Name+Company+Other)): 68958591-825d-4a74-b6e5-210bde9e3eee (ANA HINOA) <-> 01b95668-8a04-472b-89e8-bb0b8f174ba3 (HINOA ANA)
+2025-09-02 19:18:47,099 - duplicate_patient_manager - INFO -   -> Matching MRN: 0026
+2025-09-02 19:18:47,099 - duplicate_patient_manager - INFO -   -> Matching DOB: 08/29/1969
+2025-09-02 19:18:47,105 - duplicate_patient_manager - INFO - DUPLICATE FOUND (Traditional (Name+Company+Other)): 5d789dbf-f7d0-42f0-9d80-25cd78a1c71e (Felix Delerme) <-> bd70e57c-4f4e-4a16-b28a-d81acda021a1 (Felix Delerme)
+2025-09-02 19:18:47,105 - duplicate_patient_manager - INFO -   -> Matching DOB: 09/20/1957
+2025-09-02 19:18:47,112 - duplicate_patient_manager - INFO - DUPLICATE FOUND (Traditional (Name+Company+Other)): daa703e5-24c1-48d7-97d2-1ce4a5f2a489 (MILAGROS ARGUINZONI) <-> 655aea5d-3b69-4a57-bda1-515ecc9d2485 (Milagros Arguinzoni)
+2025-09-02 19:18:47,112 - duplicate_patient_manager - INFO -   -> Matching DOB: 11/27/1951
+2025-09-02 19:18:47,114 - duplicate_patient_manager - INFO - DUPLICATE FOUND (Traditional (Name+Company+Other)): 101d7657-b186-4ccb-8ea7-c0c4157dc464 (DOLORES ALVAREZ) <-> 590f1c45-061f-4dd9-9a0b-8055bc5b3637 (Dolores Alvarez)
+2025-09-02 19:18:47,116 - duplicate_patient_manager - INFO -   -> Matching DOB: 03/18/1942
+2025-09-02 19:18:47,122 - duplicate_patient_manager - INFO - DUPLICATE FOUND (Traditional (Name+Company+Other)): f7f185ae-d1b4-412f-9147-0378fe2499bc (Quito-Lluvicura, Maria) <-> 6eaf84d4-aac8-4e77-a750-3179e097da20 (Maria Quito-Lluvicura)
+2025-09-02 19:18:47,122 - duplicate_patient_manager - INFO -   -> Matching MRN: 160850200
+2025-09-02 19:18:47,122 - duplicate_patient_manager - INFO -   -> Matching DOB: 03/21/1945
+2025-09-02 19:18:47,126 - duplicate_patient_manager - INFO - DUPLICATE FOUND (Traditional (Name+Company+Other)): bb65be17-08f5-4bd3-b39a-78b8f7e95ca4 (Ortega, Jacoba) <-> e7807fd1-a505-442e-b2ef-8a5acdc706d2 (Jacoba Ortega)
+2025-09-02 19:18:47,126 - duplicate_patient_manager - INFO -   -> Matching MRN: 123620150
+2025-09-02 19:18:47,127 - duplicate_patient_manager - INFO -   -> Matching DOB: 11/28/1965
+2025-09-02 19:18:47,269 - duplicate_patient_manager - INFO - Found 10 duplicate groups
+2025-09-02 19:18:47,270 - duplicate_patient_manager - INFO - TEST: Processing duplicate group 1/10 with 2 patients
+2025-09-02 19:18:47,270 - duplicate_patient_manager - INFO - Found conflicts - MRN: True, DOB: False
+2025-09-02 19:18:47,272 - duplicate_patient_manager - INFO - Starting PDF verification for conflict resolution...
+2025-09-02 19:18:47,272 - duplicate_patient_manager - INFO - [1/2] Extracting PDF data for: Unknown (456bd78f-68ce-4ffb-b1bd-09cad0407474)
+2025-09-02 19:18:47,272 - duplicate_patient_manager - INFO -    Current MRN: 041947
+2025-09-02 19:18:47,273 - duplicate_patient_manager - INFO -    Current DOB: 04/04/1947
+2025-09-02 19:18:49,275 - duplicate_patient_manager - INFO - Found plan/cert document ('plan'): Home Health Certification and Plan of Care for patient 456bd78f-68ce-4ffb-b1bd-09cad0407474
+2025-09-02 19:18:55,490 - duplicate_patient_manager - INFO -    PDF Extracted MRN: 041947
+2025-09-02 19:18:55,490 - duplicate_patient_manager - INFO -    PDF Extracted DOB: 04/04/1947
+2025-09-02 19:18:55,490 - duplicate_patient_manager - INFO - [2/2] Extracting PDF data for: Unknown (f4f75bd1-baa8-44a7-8403-d9cbe1a2595c)
+2025-09-02 19:18:55,490 - duplicate_patient_manager - INFO -    Current MRN: 419470
+2025-09-02 19:18:55,491 - duplicate_patient_manager - INFO -    Current DOB: 04/04/1947
+2025-09-02 19:18:57,252 - duplicate_patient_manager - WARNING - No plan/cert/medical form found for patient f4f75bd1-baa8-44a7-8403-d9cbe1a2595c
+2025-09-02 19:18:57,259 - duplicate_patient_manager - INFO -    No MRN/DOB data extracted from PDF
+2025-09-02 19:18:57,260 - duplicate_patient_manager - INFO - Scoring patients based on PDF verification...
+2025-09-02 19:18:57,261 - duplicate_patient_manager - INFO -    Unknown: Score = 4 (MRN matches PDF (+2), DOB matches PDF (+2))
+2025-09-02 19:18:57,262 - duplicate_patient_manager - INFO -    Unknown: Score = 0 (No PDF matches)
+2025-09-02 19:18:57,263 - duplicate_patient_manager - INFO - Selected primary patient after PDF verification: Unknown (456bd78f-68ce-4ffb-b1bd-09cad0407474) - Score: 4
+2025-09-02 19:18:57,264 - duplicate_patient_manager - INFO - Will delete: Unknown (f4f75bd1-baa8-44a7-8403-d9cbe1a2595c) - Score: 0
+2025-09-02 19:19:00,493 - duplicate_patient_manager - INFO - TEST: Processing duplicate group 2/10 with 2 patients
+2025-09-02 19:19:00,494 - duplicate_patient_manager - INFO - Found conflicts - MRN: True, DOB: False
+2025-09-02 19:19:00,495 - duplicate_patient_manager - INFO - Starting PDF verification for conflict resolution...
+2025-09-02 19:19:00,495 - duplicate_patient_manager - INFO - [1/2] Extracting PDF data for: Unknown (f0f00c82-5eae-4e2f-980e-fdf72ab2a44a)
+2025-09-02 19:19:00,496 - duplicate_patient_manager - INFO -    Current MRN: M0300003782001
+2025-09-02 19:19:00,497 - duplicate_patient_manager - INFO -    Current DOB: 09/03/1943
+2025-09-02 19:19:02,144 - duplicate_patient_manager - INFO - Found plan/cert document ('plan'): HOME HEALTH CERTIFICATION AND PLAN OF CARE for patient f0f00c82-5eae-4e2f-980e-fdf72ab2a44a
+2025-09-02 19:19:08,307 - duplicate_patient_manager - INFO -    PDF Extracted MRN: M0300003782001
+2025-09-02 19:19:08,307 - duplicate_patient_manager - INFO -    PDF Extracted DOB: 9/3/1943
+2025-09-02 19:19:08,307 - duplicate_patient_manager - INFO - [2/2] Extracting PDF data for: Unknown (bf6b2cad-0b95-4232-a6be-a1d7ef099527)
+2025-09-02 19:19:08,307 - duplicate_patient_manager - INFO -    Current MRN: 1091657860
+2025-09-02 19:19:08,308 - duplicate_patient_manager - INFO -    Current DOB: 09/03/1943
+2025-09-02 19:19:10,293 - duplicate_patient_manager - WARNING - No plan/cert/medical form found for patient bf6b2cad-0b95-4232-a6be-a1d7ef099527
+2025-09-02 19:19:10,298 - duplicate_patient_manager - INFO -    No MRN/DOB data extracted from PDF
+2025-09-02 19:19:10,301 - duplicate_patient_manager - INFO - Scoring patients based on PDF verification...
+2025-09-02 19:19:10,301 - duplicate_patient_manager - INFO -    Unknown: Score = 2 (MRN matches PDF (+2))
+2025-09-02 19:19:10,302 - duplicate_patient_manager - INFO -    Unknown: Score = 0 (No PDF matches)
+2025-09-02 19:19:10,302 - duplicate_patient_manager - INFO - Selected primary patient after PDF verification: Unknown (f0f00c82-5eae-4e2f-980e-fdf72ab2a44a) - Score: 2
+2025-09-02 19:19:10,302 - duplicate_patient_manager - INFO - Will delete: Unknown (bf6b2cad-0b95-4232-a6be-a1d7ef099527) - Score: 0
+2025-09-02 19:19:13,342 - duplicate_patient_manager - INFO - TEST: Processing duplicate group 3/10 with 2 patients
+2025-09-02 19:19:13,343 - duplicate_patient_manager - INFO - Found conflicts - MRN: True, DOB: False
+2025-09-02 19:19:13,343 - duplicate_patient_manager - INFO - Starting PDF verification for conflict resolution...
+2025-09-02 19:19:13,344 - duplicate_patient_manager - INFO - [1/2] Extracting PDF data for: Unknown (250b6fc9-c2f0-4af8-ae1f-c32c506a201f)
+2025-09-02 19:19:13,345 - duplicate_patient_manager - INFO -    Current MRN: 161949
+2025-09-02 19:19:13,345 - duplicate_patient_manager - INFO -    Current DOB: 08/16/1949
+2025-09-02 19:19:14,892 - duplicate_patient_manager - INFO - Found plan/cert document ('cert'): Recertification for patient 250b6fc9-c2f0-4af8-ae1f-c32c506a201f
+2025-09-02 19:19:19,399 - duplicate_patient_manager - INFO -    PDF Extracted MRN: 161949
+2025-09-02 19:19:19,399 - duplicate_patient_manager - INFO -    PDF Extracted DOB: 08/16/1949
+2025-09-02 19:19:19,399 - duplicate_patient_manager - INFO - [2/2] Extracting PDF data for: Unknown (c91b20d0-198b-41f4-a9b1-83731b2b548a)
+2025-09-02 19:19:19,400 - duplicate_patient_manager - INFO -    Current MRN: 1619490
+2025-09-02 19:19:19,400 - duplicate_patient_manager - INFO -    Current DOB: 08/16/1949
+2025-09-02 19:19:20,980 - duplicate_patient_manager - WARNING - No plan/cert/medical form found for patient c91b20d0-198b-41f4-a9b1-83731b2b548a
+2025-09-02 19:19:20,982 - duplicate_patient_manager - INFO -    No MRN/DOB data extracted from PDF
+2025-09-02 19:19:20,983 - duplicate_patient_manager - INFO - Scoring patients based on PDF verification...
+2025-09-02 19:19:20,983 - duplicate_patient_manager - INFO -    Unknown: Score = 4 (MRN matches PDF (+2), DOB matches PDF (+2))
+2025-09-02 19:19:20,983 - duplicate_patient_manager - INFO -    Unknown: Score = 0 (No PDF matches)
+2025-09-02 19:19:20,984 - duplicate_patient_manager - INFO - Selected primary patient after PDF verification: Unknown (250b6fc9-c2f0-4af8-ae1f-c32c506a201f) - Score: 4
+2025-09-02 19:19:20,984 - duplicate_patient_manager - INFO - Will delete: Unknown (c91b20d0-198b-41f4-a9b1-83731b2b548a) - Score: 0
+2025-09-02 19:19:24,493 - duplicate_patient_manager - INFO - TEST: Processing duplicate group 4/10 with 2 patients
+2025-09-02 19:19:24,496 - duplicate_patient_manager - INFO - Found conflicts - MRN: True, DOB: False
+2025-09-02 19:19:24,497 - duplicate_patient_manager - INFO - Starting PDF verification for conflict resolution...
+2025-09-02 19:19:24,497 - duplicate_patient_manager - INFO - [1/2] Extracting PDF data for: Unknown (be87c047-5bcc-46f8-97df-df7a18b978be)
+2025-09-02 19:19:24,499 - duplicate_patient_manager - INFO -    Current MRN: 3382
+2025-09-02 19:19:24,500 - duplicate_patient_manager - INFO -    Current DOB: 08/30/1951
+2025-09-02 19:19:26,519 - duplicate_patient_manager - WARNING - No plan/cert/medical form found for patient be87c047-5bcc-46f8-97df-df7a18b978be
+2025-09-02 19:19:26,527 - duplicate_patient_manager - INFO -    No MRN/DOB data extracted from PDF
+2025-09-02 19:19:26,530 - duplicate_patient_manager - INFO - [2/2] Extracting PDF data for: Unknown (83410b90-e3ff-497c-b3cc-bda6ac95451e)
+2025-09-02 19:19:26,533 - duplicate_patient_manager - INFO -    Current MRN: 33820
+2025-09-02 19:19:26,535 - duplicate_patient_manager - INFO -    Current DOB: 08/30/1951
+2025-09-02 19:19:28,472 - duplicate_patient_manager - WARNING - No plan/cert/medical form found for patient 83410b90-e3ff-497c-b3cc-bda6ac95451e
+2025-09-02 19:19:28,484 - duplicate_patient_manager - INFO -    No MRN/DOB data extracted from PDF
+2025-09-02 19:19:28,485 - duplicate_patient_manager - INFO - Scoring patients based on PDF verification...
+2025-09-02 19:19:28,487 - duplicate_patient_manager - INFO -    Unknown: Score = 0 (No PDF matches)
+2025-09-02 19:19:28,487 - duplicate_patient_manager - INFO -    Unknown: Score = 0 (No PDF matches)
+2025-09-02 19:19:28,489 - duplicate_patient_manager - INFO - Selected primary patient after PDF verification: Unknown (be87c047-5bcc-46f8-97df-df7a18b978be) - Score: 0
+2025-09-02 19:19:28,490 - duplicate_patient_manager - INFO - Will delete: Unknown (83410b90-e3ff-497c-b3cc-bda6ac95451e) - Score: 0
+2025-09-02 19:19:31,975 - duplicate_patient_manager - INFO - TEST: Processing duplicate group 5/10 with 2 patients
+2025-09-02 19:19:31,977 - duplicate_patient_manager - INFO - Selected primary patient: 68958591-825d-4a74-b6e5-210bde9e3eee with 1 orders
+2025-09-02 19:19:35,661 - duplicate_patient_manager - INFO - TEST: Processing duplicate group 6/10 with 2 patients
+2025-09-02 19:19:35,662 - duplicate_patient_manager - INFO - Found conflicts - MRN: True, DOB: False
+2025-09-02 19:19:35,663 - duplicate_patient_manager - INFO - Starting PDF verification for conflict resolution...
+2025-09-02 19:19:35,663 - duplicate_patient_manager - INFO - [1/2] Extracting PDF data for: Unknown (5d789dbf-f7d0-42f0-9d80-25cd78a1c71e)
+2025-09-02 19:19:35,663 - duplicate_patient_manager - INFO -    Current MRN: 3899005
+2025-09-02 19:19:35,663 - duplicate_patient_manager - INFO -    Current DOB: 09/20/1957
+2025-09-02 19:19:37,479 - duplicate_patient_manager - INFO - Found plan/cert document ('485'): CMS-485 HOME HEALTH CERTIFICATION AND PLAN OF CARE for patient 5d789dbf-f7d0-42f0-9d80-25cd78a1c71e
+2025-09-02 19:19:42,999 - duplicate_patient_manager - INFO -    PDF Extracted MRN: 3899005
+2025-09-02 19:19:42,999 - duplicate_patient_manager - INFO -    PDF Extracted DOB: 09/20/1957
+2025-09-02 19:19:43,000 - duplicate_patient_manager - INFO - [2/2] Extracting PDF data for: Unknown (bd70e57c-4f4e-4a16-b28a-d81acda021a1)
+2025-09-02 19:19:43,000 - duplicate_patient_manager - INFO -    Current MRN: 38990050
+2025-09-02 19:19:43,000 - duplicate_patient_manager - INFO -    Current DOB: 09/20/1957
+2025-09-02 19:19:44,504 - duplicate_patient_manager - WARNING - No plan/cert/medical form found for patient bd70e57c-4f4e-4a16-b28a-d81acda021a1
+2025-09-02 19:19:44,512 - duplicate_patient_manager - INFO -    No MRN/DOB data extracted from PDF
+2025-09-02 19:19:44,513 - duplicate_patient_manager - INFO - Scoring patients based on PDF verification...
+2025-09-02 19:19:44,514 - duplicate_patient_manager - INFO -    Unknown: Score = 4 (MRN matches PDF (+2), DOB matches PDF (+2))
+2025-09-02 19:19:44,516 - duplicate_patient_manager - INFO -    Unknown: Score = 0 (No PDF matches)
+2025-09-02 19:19:44,518 - duplicate_patient_manager - INFO - Selected primary patient after PDF verification: Unknown (5d789dbf-f7d0-42f0-9d80-25cd78a1c71e) - Score: 4
+2025-09-02 19:19:44,519 - duplicate_patient_manager - INFO - Will delete: Unknown (bd70e57c-4f4e-4a16-b28a-d81acda021a1) - Score: 0
+2025-09-02 19:19:47,974 - duplicate_patient_manager - INFO - TEST: Processing duplicate group 7/10 with 2 patients
+2025-09-02 19:19:47,974 - duplicate_patient_manager - INFO - Found conflicts - MRN: True, DOB: False
+2025-09-02 19:19:47,975 - duplicate_patient_manager - INFO - Starting PDF verification for conflict resolution...
+2025-09-02 19:19:47,975 - duplicate_patient_manager - INFO - [1/2] Extracting PDF data for: Unknown (daa703e5-24c1-48d7-97d2-1ce4a5f2a489)
+2025-09-02 19:19:47,975 - duplicate_patient_manager - INFO -    Current MRN: 00611
+2025-09-02 19:19:47,975 - duplicate_patient_manager - INFO -    Current DOB: 11/27/1951
+2025-09-02 19:19:49,508 - duplicate_patient_manager - INFO - Found plan/cert document ('plan'): HOME HEALTH CERTIFICATION AND PLAN OF CARE for patient daa703e5-24c1-48d7-97d2-1ce4a5f2a489
+2025-09-02 19:19:56,425 - duplicate_patient_manager - INFO -    PDF Extracted MRN: 00611
+2025-09-02 19:19:56,426 - duplicate_patient_manager - INFO -    PDF Extracted DOB: 11/27/1951
+2025-09-02 19:19:56,426 - duplicate_patient_manager - INFO - [2/2] Extracting PDF data for: Unknown (655aea5d-3b69-4a57-bda1-515ecc9d2485)
+2025-09-02 19:19:56,426 - duplicate_patient_manager - INFO -    Current MRN: 6110
+2025-09-02 19:19:56,426 - duplicate_patient_manager - INFO -    Current DOB: 11/27/1951
+2025-09-02 19:19:58,439 - duplicate_patient_manager - WARNING - No plan/cert/medical form found for patient 655aea5d-3b69-4a57-bda1-515ecc9d2485
+2025-09-02 19:19:58,441 - duplicate_patient_manager - INFO -    No MRN/DOB data extracted from PDF
+2025-09-02 19:19:58,441 - duplicate_patient_manager - INFO - Scoring patients based on PDF verification...
+2025-09-02 19:19:58,442 - duplicate_patient_manager - INFO -    Unknown: Score = 4 (MRN matches PDF (+2), DOB matches PDF (+2))
+2025-09-02 19:19:58,442 - duplicate_patient_manager - INFO -    Unknown: Score = 0 (No PDF matches)
+2025-09-02 19:19:58,442 - duplicate_patient_manager - INFO - Selected primary patient after PDF verification: Unknown (daa703e5-24c1-48d7-97d2-1ce4a5f2a489) - Score: 4
+2025-09-02 19:19:58,442 - duplicate_patient_manager - INFO - Will delete: Unknown (655aea5d-3b69-4a57-bda1-515ecc9d2485) - Score: 0
+2025-09-02 19:20:02,068 - duplicate_patient_manager - INFO - TEST: Processing duplicate group 8/10 with 2 patients
+2025-09-02 19:20:02,070 - duplicate_patient_manager - INFO - Found conflicts - MRN: True, DOB: False
+2025-09-02 19:20:02,071 - duplicate_patient_manager - INFO - Starting PDF verification for conflict resolution...
+2025-09-02 19:20:02,072 - duplicate_patient_manager - INFO - [1/2] Extracting PDF data for: Unknown (101d7657-b186-4ccb-8ea7-c0c4157dc464)
+2025-09-02 19:20:02,073 - duplicate_patient_manager - INFO -    Current MRN: MRN595957
+2025-09-02 19:20:02,073 - duplicate_patient_manager - INFO -    Current DOB: 03/18/1942
+2025-09-02 19:20:03,681 - duplicate_patient_manager - INFO - Found plan/cert document ('plan'): HOME HEALTH CERTIFICATION AND PLAN OF CARE for patient 101d7657-b186-4ccb-8ea7-c0c4157dc464
+2025-09-02 19:20:10,096 - duplicate_patient_manager - INFO -    PDF Extracted MRN: 1310-2015
+2025-09-02 19:20:10,097 - duplicate_patient_manager - INFO -    PDF Extracted DOB: 03/18/1942
+2025-09-02 19:20:10,102 - duplicate_patient_manager - INFO - [2/2] Extracting PDF data for: Unknown (590f1c45-061f-4dd9-9a0b-8055bc5b3637)
+2025-09-02 19:20:10,104 - duplicate_patient_manager - INFO -    Current MRN: 13102015
+2025-09-02 19:20:10,105 - duplicate_patient_manager - INFO -    Current DOB: 03/18/1942
+2025-09-02 19:20:11,686 - duplicate_patient_manager - WARNING - No plan/cert/medical form found for patient 590f1c45-061f-4dd9-9a0b-8055bc5b3637
+2025-09-02 19:20:11,692 - duplicate_patient_manager - INFO -    No MRN/DOB data extracted from PDF
+2025-09-02 19:20:11,693 - duplicate_patient_manager - INFO - Scoring patients based on PDF verification...
+2025-09-02 19:20:11,694 - duplicate_patient_manager - INFO -    Unknown: Score = 2 (DOB matches PDF (+2))
+2025-09-02 19:20:11,694 - duplicate_patient_manager - INFO -    Unknown: Score = 0 (No PDF matches)
+2025-09-02 19:20:11,695 - duplicate_patient_manager - INFO - Selected primary patient after PDF verification: Unknown (101d7657-b186-4ccb-8ea7-c0c4157dc464) - Score: 2
+2025-09-02 19:20:11,695 - duplicate_patient_manager - INFO - Will delete: Unknown (590f1c45-061f-4dd9-9a0b-8055bc5b3637) - Score: 0
+2025-09-02 19:20:15,470 - duplicate_patient_manager - INFO - TEST: Processing duplicate group 9/10 with 2 patients
+2025-09-02 19:20:15,470 - duplicate_patient_manager - INFO - Selected primary patient: f7f185ae-d1b4-412f-9147-0378fe2499bc with 2 orders
+2025-09-02 19:20:18,753 - duplicate_patient_manager - INFO - TEST: Processing duplicate group 10/10 with 2 patients
+2025-09-02 19:20:18,754 - duplicate_patient_manager - INFO - Selected primary patient: bb65be17-08f5-4bd3-b39a-78b8f7e95ca4 with 2 orders
+2025-09-02 19:20:21,870 - duplicate_patient_manager - INFO - TEST MODE duplicate processing completed
+2025-09-02 19:23:28,497 - duplicate_patient_manager - INFO - Starting TEST MODE duplicate processing for PG Company ID: c5c1a894-08ac-4cb9-bfd1-0ad1384b890e
+2025-09-02 19:23:34,051 - duplicate_patient_manager - INFO - Fetched 130 patients for PG Company ID: c5c1a894-08ac-4cb9-bfd1-0ad1384b890e
+2025-09-02 19:23:34,054 - duplicate_patient_manager - INFO - DUPLICATE FOUND (Traditional (Name+Company+Other)): 456bd78f-68ce-4ffb-b1bd-09cad0407474 (Ana Vargas) <-> f4f75bd1-baa8-44a7-8403-d9cbe1a2595c (Ana Vargas)
+2025-09-02 19:23:34,054 - duplicate_patient_manager - INFO -   -> Matching DOB: 04/04/1947
+2025-09-02 19:23:34,057 - duplicate_patient_manager - INFO - DUPLICATE FOUND (Traditional (Name+Company+Other)): f0f00c82-5eae-4e2f-980e-fdf72ab2a44a (LUZ SANTOS) <-> bf6b2cad-0b95-4232-a6be-a1d7ef099527 (LUZ SANTOS)
+2025-09-02 19:23:34,057 - duplicate_patient_manager - INFO -   -> Matching DOB: 09/03/1943
+2025-09-02 19:23:34,062 - duplicate_patient_manager - INFO - DUPLICATE FOUND (Traditional (Name+Company+Other)): 250b6fc9-c2f0-4af8-ae1f-c32c506a201f (Ida Rodriguez) <-> c91b20d0-198b-41f4-a9b1-83731b2b548a (Ida Rodriguez)
+2025-09-02 19:23:34,062 - duplicate_patient_manager - INFO -   -> Matching DOB: 08/16/1949
+2025-09-02 19:23:34,077 - duplicate_patient_manager - INFO - DUPLICATE FOUND (Traditional (Name+Company+Other)): be87c047-5bcc-46f8-97df-df7a18b978be (RITA MARTINEZ) <-> 83410b90-e3ff-497c-b3cc-bda6ac95451e (Rita Martinez)
+2025-09-02 19:23:34,077 - duplicate_patient_manager - INFO -   -> Matching DOB: 08/30/1951
+2025-09-02 19:23:34,084 - duplicate_patient_manager - INFO - DUPLICATE FOUND (Traditional (Name+Company+Other)): 68958591-825d-4a74-b6e5-210bde9e3eee (ANA HINOA) <-> 01b95668-8a04-472b-89e8-bb0b8f174ba3 (HINOA ANA)
+2025-09-02 19:23:34,084 - duplicate_patient_manager - INFO -   -> Matching MRN: 0026
+2025-09-02 19:23:34,084 - duplicate_patient_manager - INFO -   -> Matching DOB: 08/29/1969
+2025-09-02 19:23:34,091 - duplicate_patient_manager - INFO - DUPLICATE FOUND (Traditional (Name+Company+Other)): 5d789dbf-f7d0-42f0-9d80-25cd78a1c71e (Felix Delerme) <-> bd70e57c-4f4e-4a16-b28a-d81acda021a1 (Felix Delerme)
+2025-09-02 19:23:34,091 - duplicate_patient_manager - INFO -   -> Matching DOB: 09/20/1957
+2025-09-02 19:23:34,095 - duplicate_patient_manager - INFO - DUPLICATE FOUND (Traditional (Name+Company+Other)): daa703e5-24c1-48d7-97d2-1ce4a5f2a489 (MILAGROS ARGUINZONI) <-> 655aea5d-3b69-4a57-bda1-515ecc9d2485 (Milagros Arguinzoni)
+2025-09-02 19:23:34,095 - duplicate_patient_manager - INFO -   -> Matching DOB: 11/27/1951
+2025-09-02 19:23:34,100 - duplicate_patient_manager - INFO - DUPLICATE FOUND (Traditional (Name+Company+Other)): 101d7657-b186-4ccb-8ea7-c0c4157dc464 (DOLORES ALVAREZ) <-> 590f1c45-061f-4dd9-9a0b-8055bc5b3637 (Dolores Alvarez)
+2025-09-02 19:23:34,101 - duplicate_patient_manager - INFO -   -> Matching DOB: 03/18/1942
+2025-09-02 19:23:34,106 - duplicate_patient_manager - INFO - DUPLICATE FOUND (Traditional (Name+Company+Other)): f7f185ae-d1b4-412f-9147-0378fe2499bc (Quito-Lluvicura, Maria) <-> 6eaf84d4-aac8-4e77-a750-3179e097da20 (Maria Quito-Lluvicura)
+2025-09-02 19:23:34,106 - duplicate_patient_manager - INFO -   -> Matching MRN: 160850200
+2025-09-02 19:23:34,107 - duplicate_patient_manager - INFO -   -> Matching DOB: 03/21/1945
+2025-09-02 19:23:34,109 - duplicate_patient_manager - INFO - DUPLICATE FOUND (Traditional (Name+Company+Other)): bb65be17-08f5-4bd3-b39a-78b8f7e95ca4 (Ortega, Jacoba) <-> e7807fd1-a505-442e-b2ef-8a5acdc706d2 (Jacoba Ortega)
+2025-09-02 19:23:34,110 - duplicate_patient_manager - INFO -   -> Matching MRN: 123620150
+2025-09-02 19:23:34,110 - duplicate_patient_manager - INFO -   -> Matching DOB: 11/28/1965
+2025-09-02 19:23:34,225 - duplicate_patient_manager - INFO - Found 10 duplicate groups
+2025-09-02 19:23:34,225 - duplicate_patient_manager - INFO - TEST: Processing duplicate group 1/10 with 2 patients
+2025-09-02 19:23:34,225 - duplicate_patient_manager - INFO - Found conflicts - MRN: True, DOB: False
+2025-09-02 19:23:34,226 - duplicate_patient_manager - INFO - Starting PDF verification for conflict resolution...
+2025-09-02 19:23:34,226 - duplicate_patient_manager - INFO - [1/2] Extracting PDF data for: Ana Vargas (456bd78f-68ce-4ffb-b1bd-09cad0407474)
+2025-09-02 19:23:34,226 - duplicate_patient_manager - INFO -    Current MRN: 041947
+2025-09-02 19:23:34,226 - duplicate_patient_manager - INFO -    Current DOB: 04/04/1947
+2025-09-02 19:23:35,869 - duplicate_patient_manager - INFO - Found plan/cert document ('plan'): Home Health Certification and Plan of Care for patient 456bd78f-68ce-4ffb-b1bd-09cad0407474
+2025-09-02 19:23:41,256 - duplicate_patient_manager - INFO -    PDF Extracted MRN: 041947
+2025-09-02 19:23:41,256 - duplicate_patient_manager - INFO -    PDF Extracted DOB: 04/04/1947
+2025-09-02 19:23:41,257 - duplicate_patient_manager - INFO - [2/2] Extracting PDF data for: Ana Vargas (f4f75bd1-baa8-44a7-8403-d9cbe1a2595c)
+2025-09-02 19:23:41,257 - duplicate_patient_manager - INFO -    Current MRN: 419470
+2025-09-02 19:23:41,257 - duplicate_patient_manager - INFO -    Current DOB: 04/04/1947
+2025-09-02 19:23:42,785 - duplicate_patient_manager - WARNING - No plan/cert/medical form found for patient f4f75bd1-baa8-44a7-8403-d9cbe1a2595c
+2025-09-02 19:23:42,792 - duplicate_patient_manager - INFO -    No MRN/DOB data extracted from PDF
+2025-09-02 19:23:42,792 - duplicate_patient_manager - INFO - Scoring patients based on PDF verification...
+2025-09-02 19:23:42,794 - duplicate_patient_manager - INFO -    Ana Vargas: Score = 4 (MRN matches PDF (+2), DOB matches PDF (+2))
+2025-09-02 19:23:42,795 - duplicate_patient_manager - INFO -    Ana Vargas: Score = 0 (No PDF matches)
+2025-09-02 19:23:42,798 - duplicate_patient_manager - INFO - Selected primary patient after PDF verification: Ana Vargas (456bd78f-68ce-4ffb-b1bd-09cad0407474) - Score: 4
+2025-09-02 19:23:42,801 - duplicate_patient_manager - INFO - Will delete: Ana Vargas (f4f75bd1-baa8-44a7-8403-d9cbe1a2595c) - Score: 0
+2025-09-02 19:23:46,090 - duplicate_patient_manager - INFO - TEST: Processing duplicate group 2/10 with 2 patients
+2025-09-02 19:23:46,092 - duplicate_patient_manager - INFO - Found conflicts - MRN: True, DOB: False
+2025-09-02 19:23:46,093 - duplicate_patient_manager - INFO - Starting PDF verification for conflict resolution...
+2025-09-02 19:23:46,093 - duplicate_patient_manager - INFO - [1/2] Extracting PDF data for: LUZ SANTOS (f0f00c82-5eae-4e2f-980e-fdf72ab2a44a)
+2025-09-02 19:23:46,094 - duplicate_patient_manager - INFO -    Current MRN: M0300003782001
+2025-09-02 19:23:46,097 - duplicate_patient_manager - INFO -    Current DOB: 09/03/1943
+2025-09-02 19:23:47,629 - duplicate_patient_manager - INFO - Found plan/cert document ('plan'): HOME HEALTH CERTIFICATION AND PLAN OF CARE for patient f0f00c82-5eae-4e2f-980e-fdf72ab2a44a
+2025-09-02 19:23:52,519 - duplicate_patient_manager - INFO -    PDF Extracted MRN: M0300003782001
+2025-09-02 19:23:52,520 - duplicate_patient_manager - INFO -    PDF Extracted DOB: 9/3/1943
+2025-09-02 19:23:52,520 - duplicate_patient_manager - INFO - [2/2] Extracting PDF data for: LUZ SANTOS (bf6b2cad-0b95-4232-a6be-a1d7ef099527)
+2025-09-02 19:23:52,520 - duplicate_patient_manager - INFO -    Current MRN: 1091657860
+2025-09-02 19:23:52,520 - duplicate_patient_manager - INFO -    Current DOB: 09/03/1943
+2025-09-02 19:23:54,233 - duplicate_patient_manager - WARNING - No plan/cert/medical form found for patient bf6b2cad-0b95-4232-a6be-a1d7ef099527
+2025-09-02 19:23:54,238 - duplicate_patient_manager - INFO -    No MRN/DOB data extracted from PDF
+2025-09-02 19:23:54,238 - duplicate_patient_manager - INFO - Scoring patients based on PDF verification...
+2025-09-02 19:23:54,239 - duplicate_patient_manager - INFO -    LUZ SANTOS: Score = 2 (MRN matches PDF (+2))
+2025-09-02 19:23:54,239 - duplicate_patient_manager - INFO -    LUZ SANTOS: Score = 0 (No PDF matches)
+2025-09-02 19:23:54,240 - duplicate_patient_manager - INFO - Selected primary patient after PDF verification: LUZ SANTOS (f0f00c82-5eae-4e2f-980e-fdf72ab2a44a) - Score: 2
+2025-09-02 19:23:54,240 - duplicate_patient_manager - INFO - Will delete: LUZ SANTOS (bf6b2cad-0b95-4232-a6be-a1d7ef099527) - Score: 0
+2025-09-02 19:23:57,429 - duplicate_patient_manager - INFO - TEST: Processing duplicate group 3/10 with 2 patients
+2025-09-02 19:23:57,430 - duplicate_patient_manager - INFO - Found conflicts - MRN: True, DOB: False
+2025-09-02 19:23:57,430 - duplicate_patient_manager - INFO - Starting PDF verification for conflict resolution...
+2025-09-02 19:23:57,431 - duplicate_patient_manager - INFO - [1/2] Extracting PDF data for: Ida Rodriguez (250b6fc9-c2f0-4af8-ae1f-c32c506a201f)
+2025-09-02 19:23:57,431 - duplicate_patient_manager - INFO -    Current MRN: 161949
+2025-09-02 19:23:57,432 - duplicate_patient_manager - INFO -    Current DOB: 08/16/1949
+2025-09-02 19:23:59,261 - duplicate_patient_manager - INFO - Found plan/cert document ('cert'): Recertification for patient 250b6fc9-c2f0-4af8-ae1f-c32c506a201f
+2025-09-02 19:24:03,839 - duplicate_patient_manager - INFO -    PDF Extracted MRN: 161949
+2025-09-02 19:24:03,839 - duplicate_patient_manager - INFO -    PDF Extracted DOB: 08/16/1949
+2025-09-02 19:24:03,839 - duplicate_patient_manager - INFO - [2/2] Extracting PDF data for: Ida Rodriguez (c91b20d0-198b-41f4-a9b1-83731b2b548a)
+2025-09-02 19:24:03,839 - duplicate_patient_manager - INFO -    Current MRN: 1619490
+2025-09-02 19:24:03,839 - duplicate_patient_manager - INFO -    Current DOB: 08/16/1949
+2025-09-02 19:24:05,357 - duplicate_patient_manager - WARNING - No plan/cert/medical form found for patient c91b20d0-198b-41f4-a9b1-83731b2b548a
+2025-09-02 19:24:05,361 - duplicate_patient_manager - INFO -    No MRN/DOB data extracted from PDF
+2025-09-02 19:24:05,361 - duplicate_patient_manager - INFO - Scoring patients based on PDF verification...
+2025-09-02 19:24:05,362 - duplicate_patient_manager - INFO -    Ida Rodriguez: Score = 4 (MRN matches PDF (+2), DOB matches PDF (+2))
+2025-09-02 19:24:05,362 - duplicate_patient_manager - INFO -    Ida Rodriguez: Score = 0 (No PDF matches)
+2025-09-02 19:24:05,362 - duplicate_patient_manager - INFO - Selected primary patient after PDF verification: Ida Rodriguez (250b6fc9-c2f0-4af8-ae1f-c32c506a201f) - Score: 4
+2025-09-02 19:24:05,362 - duplicate_patient_manager - INFO - Will delete: Ida Rodriguez (c91b20d0-198b-41f4-a9b1-83731b2b548a) - Score: 0
+2025-09-02 19:24:09,096 - duplicate_patient_manager - INFO - TEST: Processing duplicate group 4/10 with 2 patients
+2025-09-02 19:24:09,096 - duplicate_patient_manager - INFO - Found conflicts - MRN: True, DOB: False
+2025-09-02 19:24:09,098 - duplicate_patient_manager - INFO - Starting PDF verification for conflict resolution...
+2025-09-02 19:24:09,098 - duplicate_patient_manager - INFO - [1/2] Extracting PDF data for: RITA MARTINEZ (be87c047-5bcc-46f8-97df-df7a18b978be)
+2025-09-02 19:24:09,101 - duplicate_patient_manager - INFO -    Current MRN: 3382
+2025-09-02 19:24:09,102 - duplicate_patient_manager - INFO -    Current DOB: 08/30/1951
+2025-09-02 19:24:10,729 - duplicate_patient_manager - WARNING - No plan/cert/medical form found for patient be87c047-5bcc-46f8-97df-df7a18b978be
+2025-09-02 19:24:10,737 - duplicate_patient_manager - INFO -    No MRN/DOB data extracted from PDF
+2025-09-02 19:24:10,738 - duplicate_patient_manager - INFO - [2/2] Extracting PDF data for: Rita Martinez (83410b90-e3ff-497c-b3cc-bda6ac95451e)
+2025-09-02 19:24:10,739 - duplicate_patient_manager - INFO -    Current MRN: 33820
+2025-09-02 19:24:10,739 - duplicate_patient_manager - INFO -    Current DOB: 08/30/1951
+2025-09-02 19:24:12,400 - duplicate_patient_manager - WARNING - No plan/cert/medical form found for patient 83410b90-e3ff-497c-b3cc-bda6ac95451e
+2025-09-02 19:24:12,402 - duplicate_patient_manager - INFO -    No MRN/DOB data extracted from PDF
+2025-09-02 19:24:12,403 - duplicate_patient_manager - INFO - Scoring patients based on PDF verification...
+2025-09-02 19:24:12,403 - duplicate_patient_manager - INFO -    RITA MARTINEZ: Score = 0 (No PDF matches)
+2025-09-02 19:24:12,403 - duplicate_patient_manager - INFO -    Rita Martinez: Score = 0 (No PDF matches)
+2025-09-02 19:24:12,404 - duplicate_patient_manager - INFO - Selected primary patient after PDF verification: RITA MARTINEZ (be87c047-5bcc-46f8-97df-df7a18b978be) - Score: 0
+2025-09-02 19:24:12,404 - duplicate_patient_manager - INFO - Will delete: Rita Martinez (83410b90-e3ff-497c-b3cc-bda6ac95451e) - Score: 0
+2025-09-02 19:24:16,517 - duplicate_patient_manager - INFO - TEST: Processing duplicate group 5/10 with 2 patients
+2025-09-02 19:24:16,518 - duplicate_patient_manager - INFO - Selected primary patient: 68958591-825d-4a74-b6e5-210bde9e3eee with 1 orders
+2025-09-02 19:24:19,692 - duplicate_patient_manager - INFO - TEST: Processing duplicate group 6/10 with 2 patients
+2025-09-02 19:24:19,692 - duplicate_patient_manager - INFO - Found conflicts - MRN: True, DOB: False
+2025-09-02 19:24:19,692 - duplicate_patient_manager - INFO - Starting PDF verification for conflict resolution...
+2025-09-02 19:24:19,693 - duplicate_patient_manager - INFO - [1/2] Extracting PDF data for: Felix Delerme (5d789dbf-f7d0-42f0-9d80-25cd78a1c71e)
+2025-09-02 19:24:19,693 - duplicate_patient_manager - INFO -    Current MRN: 3899005
+2025-09-02 19:24:19,693 - duplicate_patient_manager - INFO -    Current DOB: 09/20/1957
+2025-09-02 19:24:21,356 - duplicate_patient_manager - INFO - Found plan/cert document ('485'): CMS-485 HOME HEALTH CERTIFICATION AND PLAN OF CARE for patient 5d789dbf-f7d0-42f0-9d80-25cd78a1c71e
+2025-09-02 19:24:27,004 - duplicate_patient_manager - INFO -    PDF Extracted MRN: 3899005
+2025-09-02 19:24:27,005 - duplicate_patient_manager - INFO -    PDF Extracted DOB: 09/20/1957
+2025-09-02 19:24:27,006 - duplicate_patient_manager - INFO - [2/2] Extracting PDF data for: Felix Delerme (bd70e57c-4f4e-4a16-b28a-d81acda021a1)
+2025-09-02 19:24:27,007 - duplicate_patient_manager - INFO -    Current MRN: 38990050
+2025-09-02 19:24:27,007 - duplicate_patient_manager - INFO -    Current DOB: 09/20/1957
+2025-09-02 19:24:28,861 - duplicate_patient_manager - WARNING - No plan/cert/medical form found for patient bd70e57c-4f4e-4a16-b28a-d81acda021a1
+2025-09-02 19:24:28,864 - duplicate_patient_manager - INFO -    No MRN/DOB data extracted from PDF
+2025-09-02 19:24:28,865 - duplicate_patient_manager - INFO - Scoring patients based on PDF verification...
+2025-09-02 19:24:28,865 - duplicate_patient_manager - INFO -    Felix Delerme: Score = 4 (MRN matches PDF (+2), DOB matches PDF (+2))
+2025-09-02 19:24:28,865 - duplicate_patient_manager - INFO -    Felix Delerme: Score = 0 (No PDF matches)
+2025-09-02 19:24:28,865 - duplicate_patient_manager - INFO - Selected primary patient after PDF verification: Felix Delerme (5d789dbf-f7d0-42f0-9d80-25cd78a1c71e) - Score: 4
+2025-09-02 19:24:28,865 - duplicate_patient_manager - INFO - Will delete: Felix Delerme (bd70e57c-4f4e-4a16-b28a-d81acda021a1) - Score: 0
+2025-09-02 19:24:32,279 - duplicate_patient_manager - INFO - TEST: Processing duplicate group 7/10 with 2 patients
+2025-09-02 19:24:32,294 - duplicate_patient_manager - INFO - Found conflicts - MRN: True, DOB: False
+2025-09-02 19:24:32,297 - duplicate_patient_manager - INFO - Starting PDF verification for conflict resolution...
+2025-09-02 19:24:32,298 - duplicate_patient_manager - INFO - [1/2] Extracting PDF data for: MILAGROS ARGUINZONI (daa703e5-24c1-48d7-97d2-1ce4a5f2a489)
+2025-09-02 19:24:32,305 - duplicate_patient_manager - INFO -    Current MRN: 00611
+2025-09-02 19:24:32,308 - duplicate_patient_manager - INFO -    Current DOB: 11/27/1951
+2025-09-02 19:24:34,162 - duplicate_patient_manager - INFO - Found plan/cert document ('plan'): HOME HEALTH CERTIFICATION AND PLAN OF CARE for patient daa703e5-24c1-48d7-97d2-1ce4a5f2a489
+2025-09-02 19:24:47,493 - duplicate_patient_manager - INFO -    PDF Extracted MRN: 5365681938
+2025-09-02 19:24:47,493 - duplicate_patient_manager - INFO -    PDF Extracted DOB: 11/27/1951
+2025-09-02 19:24:47,493 - duplicate_patient_manager - INFO - [2/2] Extracting PDF data for: Milagros Arguinzoni (655aea5d-3b69-4a57-bda1-515ecc9d2485)
+2025-09-02 19:24:47,493 - duplicate_patient_manager - INFO -    Current MRN: 6110
+2025-09-02 19:24:47,494 - duplicate_patient_manager - INFO -    Current DOB: 11/27/1951
+2025-09-02 19:24:49,031 - duplicate_patient_manager - WARNING - No plan/cert/medical form found for patient 655aea5d-3b69-4a57-bda1-515ecc9d2485
+2025-09-02 19:24:49,033 - duplicate_patient_manager - INFO -    No MRN/DOB data extracted from PDF
+2025-09-02 19:24:49,033 - duplicate_patient_manager - INFO - Scoring patients based on PDF verification...
+2025-09-02 19:24:49,034 - duplicate_patient_manager - INFO -    MILAGROS ARGUINZONI: Score = 2 (DOB matches PDF (+2))
+2025-09-02 19:24:49,034 - duplicate_patient_manager - INFO -    Milagros Arguinzoni: Score = 0 (No PDF matches)
+2025-09-02 19:24:49,034 - duplicate_patient_manager - INFO - Selected primary patient after PDF verification: MILAGROS ARGUINZONI (daa703e5-24c1-48d7-97d2-1ce4a5f2a489) - Score: 2
+2025-09-02 19:24:49,034 - duplicate_patient_manager - INFO - Will delete: Milagros Arguinzoni (655aea5d-3b69-4a57-bda1-515ecc9d2485) - Score: 0
+2025-09-02 19:24:53,226 - duplicate_patient_manager - INFO - TEST: Processing duplicate group 8/10 with 2 patients
+2025-09-02 19:24:53,226 - duplicate_patient_manager - INFO - Found conflicts - MRN: True, DOB: False
+2025-09-02 19:24:53,227 - duplicate_patient_manager - INFO - Starting PDF verification for conflict resolution...
+2025-09-02 19:24:53,227 - duplicate_patient_manager - INFO - [1/2] Extracting PDF data for: DOLORES ALVAREZ (101d7657-b186-4ccb-8ea7-c0c4157dc464)
+2025-09-02 19:24:53,227 - duplicate_patient_manager - INFO -    Current MRN: MRN595957
+2025-09-02 19:24:53,228 - duplicate_patient_manager - INFO -    Current DOB: 03/18/1942
+2025-09-02 19:24:55,255 - duplicate_patient_manager - INFO - Found plan/cert document ('plan'): HOME HEALTH CERTIFICATION AND PLAN OF CARE for patient 101d7657-b186-4ccb-8ea7-c0c4157dc464

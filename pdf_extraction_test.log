@@ -1,0 +1,76 @@
+2025-09-02 19:02:43,452 - __main__ - INFO - ============================================================
+2025-09-02 19:02:43,452 - __main__ - INFO - AZURE OPENAI PDF EXTRACTION TEST
+2025-09-02 19:02:43,452 - __main__ - INFO - ============================================================
+2025-09-02 19:03:14,086 - __main__ - INFO - ============================================================
+2025-09-02 19:03:14,086 - __main__ - INFO - AZURE OPENAI PDF EXTRACTION TEST
+2025-09-02 19:03:14,086 - __main__ - INFO - ============================================================
+2025-09-02 19:03:14,978 - __main__ - INFO - Testing PDF extraction for PG Company ID: c5c1a894-08ac-4cb9-bfd1-0ad1384b890e
+2025-09-02 19:03:14,978 - __main__ - INFO - Fetching patients...
+2025-09-02 19:03:14,978 - __main__ - ERROR - Test failed: 'DuplicatePatientManager' object has no attribute '_fetch_patients'
+2025-09-02 19:03:43,845 - __main__ - INFO - ============================================================
+2025-09-02 19:03:43,845 - __main__ - INFO - AZURE OPENAI PDF EXTRACTION TEST
+2025-09-02 19:03:43,845 - __main__ - INFO - ============================================================
+2025-09-02 19:03:44,760 - __main__ - INFO - Testing PDF extraction for PG Company ID: c5c1a894-08ac-4cb9-bfd1-0ad1384b890e
+2025-09-02 19:03:44,761 - __main__ - INFO - Fetching patients...
+2025-09-02 19:03:48,083 - duplicate_patient_manager - INFO - Fetched 130 patients for PG Company ID: c5c1a894-08ac-4cb9-bfd1-0ad1384b890e
+2025-09-02 19:03:48,086 - __main__ - INFO - Fetched 130 patients
+2025-09-02 19:03:48,087 - __main__ - ERROR - Test failed: 'DuplicatePatientManager' object has no attribute 'find_duplicates'
+2025-09-02 19:04:16,953 - __main__ - INFO - ============================================================
+2025-09-02 19:04:16,953 - __main__ - INFO - AZURE OPENAI PDF EXTRACTION TEST
+2025-09-02 19:04:16,953 - __main__ - INFO - ============================================================
+2025-09-02 19:04:17,908 - __main__ - INFO - Testing PDF extraction for PG Company ID: c5c1a894-08ac-4cb9-bfd1-0ad1384b890e
+2025-09-02 19:04:17,909 - __main__ - INFO - Fetching patients...
+2025-09-02 19:04:20,660 - duplicate_patient_manager - INFO - Fetched 130 patients for PG Company ID: c5c1a894-08ac-4cb9-bfd1-0ad1384b890e
+2025-09-02 19:04:20,661 - __main__ - INFO - Fetched 130 patients
+2025-09-02 19:04:20,664 - duplicate_patient_manager - INFO - DUPLICATE FOUND (Traditional (Name+Company+Other)): 456bd78f-68ce-4ffb-b1bd-09cad0407474 (Ana Vargas) <-> f4f75bd1-baa8-44a7-8403-d9cbe1a2595c (Ana Vargas)
+2025-09-02 19:04:20,664 - duplicate_patient_manager - INFO -   -> Matching DOB: 04/04/1947
+2025-09-02 19:04:20,669 - duplicate_patient_manager - INFO - DUPLICATE FOUND (Traditional (Name+Company+Other)): f0f00c82-5eae-4e2f-980e-fdf72ab2a44a (LUZ SANTOS) <-> bf6b2cad-0b95-4232-a6be-a1d7ef099527 (LUZ SANTOS)
+2025-09-02 19:04:20,669 - duplicate_patient_manager - INFO -   -> Matching DOB: 09/03/1943
+2025-09-02 19:04:20,672 - duplicate_patient_manager - INFO - DUPLICATE FOUND (Traditional (Name+Company+Other)): 250b6fc9-c2f0-4af8-ae1f-c32c506a201f (Ida Rodriguez) <-> c91b20d0-198b-41f4-a9b1-83731b2b548a (Ida Rodriguez)
+2025-09-02 19:04:20,672 - duplicate_patient_manager - INFO -   -> Matching DOB: 08/16/1949
+2025-09-02 19:04:20,681 - duplicate_patient_manager - INFO - DUPLICATE FOUND (Traditional (Name+Company+Other)): be87c047-5bcc-46f8-97df-df7a18b978be (RITA MARTINEZ) <-> 83410b90-e3ff-497c-b3cc-bda6ac95451e (Rita Martinez)
+2025-09-02 19:04:20,681 - duplicate_patient_manager - INFO -   -> Matching DOB: 08/30/1951
+2025-09-02 19:04:20,690 - duplicate_patient_manager - INFO - DUPLICATE FOUND (Traditional (Name+Company+Other)): 68958591-825d-4a74-b6e5-210bde9e3eee (ANA HINOA) <-> 01b95668-8a04-472b-89e8-bb0b8f174ba3 (HINOA ANA)
+2025-09-02 19:04:20,690 - duplicate_patient_manager - INFO -   -> Matching MRN: 0026
+2025-09-02 19:04:20,691 - duplicate_patient_manager - INFO -   -> Matching DOB: 08/29/1969
+2025-09-02 19:04:20,694 - duplicate_patient_manager - INFO - DUPLICATE FOUND (Traditional (Name+Company+Other)): 5d789dbf-f7d0-42f0-9d80-25cd78a1c71e (Felix Delerme) <-> bd70e57c-4f4e-4a16-b28a-d81acda021a1 (Felix Delerme)
+2025-09-02 19:04:20,696 - duplicate_patient_manager - INFO -   -> Matching DOB: 09/20/1957
+2025-09-02 19:04:20,702 - duplicate_patient_manager - INFO - DUPLICATE FOUND (Traditional (Name+Company+Other)): daa703e5-24c1-48d7-97d2-1ce4a5f2a489 (MILAGROS ARGUINZONI) <-> 655aea5d-3b69-4a57-bda1-515ecc9d2485 (Milagros Arguinzoni)
+2025-09-02 19:04:20,702 - duplicate_patient_manager - INFO -   -> Matching DOB: 11/27/1951
+2025-09-02 19:04:20,706 - duplicate_patient_manager - INFO - DUPLICATE FOUND (Traditional (Name+Company+Other)): 101d7657-b186-4ccb-8ea7-c0c4157dc464 (DOLORES ALVAREZ) <-> 590f1c45-061f-4dd9-9a0b-8055bc5b3637 (Dolores Alvarez)
+2025-09-02 19:04:20,707 - duplicate_patient_manager - INFO -   -> Matching DOB: 03/18/1942
+2025-09-02 19:04:20,713 - duplicate_patient_manager - INFO - DUPLICATE FOUND (Traditional (Name+Company+Other)): f7f185ae-d1b4-412f-9147-0378fe2499bc (Quito-Lluvicura, Maria) <-> 6eaf84d4-aac8-4e77-a750-3179e097da20 (Maria Quito-Lluvicura)
+2025-09-02 19:04:20,713 - duplicate_patient_manager - INFO -   -> Matching MRN: 160850200
+2025-09-02 19:04:20,713 - duplicate_patient_manager - INFO -   -> Matching DOB: 03/21/1945
+2025-09-02 19:04:20,718 - duplicate_patient_manager - INFO - DUPLICATE FOUND (Traditional (Name+Company+Other)): bb65be17-08f5-4bd3-b39a-78b8f7e95ca4 (Ortega, Jacoba) <-> e7807fd1-a505-442e-b2ef-8a5acdc706d2 (Jacoba Ortega)
+2025-09-02 19:04:20,718 - duplicate_patient_manager - INFO -   -> Matching MRN: 123620150
+2025-09-02 19:04:20,719 - duplicate_patient_manager - INFO -   -> Matching DOB: 11/28/1965
+2025-09-02 19:04:20,829 - duplicate_patient_manager - INFO - Found 10 duplicate groups
+2025-09-02 19:04:20,829 - __main__ - INFO - Found 10 duplicate groups for testing
+2025-09-02 19:04:20,829 - __main__ - INFO - 
+--- Testing PDF extraction for duplicate group 1 ---
+2025-09-02 19:04:20,829 - __main__ - INFO - Testing PDF extraction for patient: Unknown (456bd78f-68ce-4ffb-b1bd-09cad0407474)
+2025-09-02 19:04:20,829 - __main__ - ERROR - Error testing PDF extraction for patient 456bd78f-68ce-4ffb-b1bd-09cad0407474: 'DuplicatePatientManager' object has no attribute 'api_client'
+2025-09-02 19:04:20,830 - __main__ - INFO - Testing PDF extraction for patient: Unknown (f4f75bd1-baa8-44a7-8403-d9cbe1a2595c)
+2025-09-02 19:04:20,831 - __main__ - ERROR - Error testing PDF extraction for patient f4f75bd1-baa8-44a7-8403-d9cbe1a2595c: 'DuplicatePatientManager' object has no attribute 'api_client'
+2025-09-02 19:04:20,831 - __main__ - INFO - 
+--- Testing PDF extraction for duplicate group 2 ---
+2025-09-02 19:04:20,831 - __main__ - INFO - Testing PDF extraction for patient: Unknown (f0f00c82-5eae-4e2f-980e-fdf72ab2a44a)
+2025-09-02 19:04:20,831 - __main__ - ERROR - Error testing PDF extraction for patient f0f00c82-5eae-4e2f-980e-fdf72ab2a44a: 'DuplicatePatientManager' object has no attribute 'api_client'
+2025-09-02 19:04:20,832 - __main__ - INFO - Testing PDF extraction for patient: Unknown (bf6b2cad-0b95-4232-a6be-a1d7ef099527)
+2025-09-02 19:04:20,833 - __main__ - ERROR - Error testing PDF extraction for patient bf6b2cad-0b95-4232-a6be-a1d7ef099527: 'DuplicatePatientManager' object has no attribute 'api_client'
+2025-09-02 19:04:20,834 - __main__ - INFO - 
+--- Testing PDF extraction for duplicate group 3 ---
+2025-09-02 19:04:20,834 - __main__ - INFO - Testing PDF extraction for patient: Unknown (250b6fc9-c2f0-4af8-ae1f-c32c506a201f)
+2025-09-02 19:04:20,835 - __main__ - ERROR - Error testing PDF extraction for patient 250b6fc9-c2f0-4af8-ae1f-c32c506a201f: 'DuplicatePatientManager' object has no attribute 'api_client'
+2025-09-02 19:04:20,835 - __main__ - INFO - Testing PDF extraction for patient: Unknown (c91b20d0-198b-41f4-a9b1-83731b2b548a)
+2025-09-02 19:04:20,835 - __main__ - ERROR - Error testing PDF extraction for patient c91b20d0-198b-41f4-a9b1-83731b2b548a: 'DuplicatePatientManager' object has no attribute 'api_client'
+2025-09-02 19:04:20,835 - __main__ - INFO - 
+============================================================
+2025-09-02 19:04:20,835 - __main__ - INFO - PDF EXTRACTION TEST SUMMARY
+2025-09-02 19:04:20,835 - __main__ - INFO - ============================================================
+2025-09-02 19:04:20,836 - __main__ - INFO - Total patients tested: 0
+2025-09-02 19:04:20,836 - __main__ - INFO - Successful PDF extractions: 0
+2025-09-02 19:04:20,836 - __main__ - INFO - 0%
+2025-09-02 19:04:20,836 - __main__ - INFO - Cases where Azure OpenAI found better MRN: 0
+2025-09-02 19:04:20,836 - __main__ - INFO - Cases where Azure OpenAI found better DOB: 0
