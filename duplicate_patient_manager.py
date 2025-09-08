@@ -229,16 +229,29 @@ class DuplicatePatientManager:
         print(f"  Cross Match 2: {result['lname_fname_cross']}%")
         print("=" * 40)
 
+    def safe_get_patient_name(self, patient: Dict[str, Any]) -> str:
+        """Safely extract patient name, handling None values"""
+        agency_info = patient.get('agencyInfo', {})
+        fname = agency_info.get('patientFName') or ''
+        lname = agency_info.get('patientLName') or ''
+        return f"{fname} {lname}".strip()
+    
+    def safe_strip(self, value: Any) -> str:
+        """Safely strip a value, handling None cases"""
+        if value is None:
+            return ''
+        return str(value).strip()
+
     def are_patients_duplicates(self, patient1: Dict[str, Any], patient2: Dict[str, Any]) -> Dict[str, Any]:
         """Check if two patients are duplicates and return match details"""
         agency1 = patient1.get('agencyInfo', {})
         agency2 = patient2.get('agencyInfo', {})
         
-        # Extract relevant fields
-        fname1 = agency1.get('patientFName', '').strip()
-        lname1 = agency1.get('patientLName', '').strip()
-        fname2 = agency2.get('patientFName', '').strip()
-        lname2 = agency2.get('patientLName', '').strip()
+        # Extract relevant fields safely
+        fname1 = self.safe_strip(agency1.get('patientFName', ''))
+        lname1 = self.safe_strip(agency1.get('patientLName', ''))
+        fname2 = self.safe_strip(agency2.get('patientFName', ''))
+        lname2 = self.safe_strip(agency2.get('patientLName', ''))
         
         dob1 = agency1.get('dob', '')
         dob2 = agency2.get('dob', '')
@@ -456,7 +469,7 @@ class DuplicatePatientManager:
         to_delete = sorted_patients[1:]
         
         # Enhanced logging
-        primary_name = f"{primary.get('agencyInfo', {}).get('patientFName', '')} {primary.get('agencyInfo', {}).get('patientLName', '')}".strip()
+        primary_name = self.safe_get_patient_name(primary)
         data_counts = primary.get('_data_counts', {})
         
         self.logger.info(f"Selected primary patient: {primary_name} ({primary['id']})")
@@ -466,7 +479,7 @@ class DuplicatePatientManager:
         
         # Log comparison with other candidates
         for i, patient in enumerate(to_delete, 1):
-            patient_name = f"{patient.get('agencyInfo', {}).get('patientFName', '')} {patient.get('agencyInfo', {}).get('patientLName', '')}".strip()
+            patient_name = self.safe_get_patient_name(patient)
             patient_counts = patient.get('_data_counts', {})
             self.logger.info(f"  Alternative #{i}: {patient_name} ({patient['id']}) - Score: {patient.get('_data_score', 0)} (Orders: {patient_counts.get('orders', 0)}, CC Notes: {patient_counts.get('cc_notes', 0)})")
         
@@ -794,7 +807,7 @@ class DuplicatePatientManager:
             for i, patient in enumerate(duplicate_group, 1):
                 patient_id = patient.get('id', 'Unknown')
                 agency_info = patient.get('agencyInfo', {})
-                patient_name = f"{agency_info.get('patientFName', '')} {agency_info.get('patientLName', '')}".strip()
+                patient_name = self.safe_get_patient_name(patient)
                 if not patient_name:
                     patient_name = 'Unknown'
                 
@@ -844,7 +857,7 @@ class DuplicatePatientManager:
                 verified_patients.append(patient)
                 
                 agency_info = patient.get('agencyInfo', {})
-                patient_name = f"{agency_info.get('patientFName', '')} {agency_info.get('patientLName', '')}".strip()
+                patient_name = self.safe_get_patient_name(patient)
                 if not patient_name:
                     patient_name = 'Unknown'
                 self.logger.info(f"   {patient_name}: Score = {score} ({', '.join(score_details) if score_details else 'No PDF matches'})")
@@ -867,7 +880,7 @@ class DuplicatePatientManager:
             # Show what will happen to other patients
             for patient in to_delete:
                 patient_agency_info = patient.get('agencyInfo', {})
-                patient_name = f"{patient_agency_info.get('patientFName', '')} {patient_agency_info.get('patientLName', '')}".strip()
+                patient_name = self.safe_get_patient_name(patient)
                 if not patient_name:
                     patient_name = 'Unknown'
                 self.logger.info(f"Will delete: {patient_name} ({patient['id']}) - Score: {patient.get('_verification_score', 0)}")
@@ -1019,7 +1032,7 @@ class DuplicatePatientManager:
         
         for patient_to_delete in patients_to_delete:
             patient_id = patient_to_delete['id']
-            patient_name = f"{patient_to_delete.get('agencyInfo', {}).get('patientFName', '')} {patient_to_delete.get('agencyInfo', {}).get('patientLName', '')}".strip()
+            patient_name = self.safe_get_patient_name(patient_to_delete)
             
             # Track counts for this specific patient
             patient_orders_moved = 0
@@ -1119,7 +1132,7 @@ class DuplicatePatientManager:
                 merge_results['skipped_patient_ids'].append(patient_id)
         
         # Log final summary
-        primary_name = f"{primary_patient.get('agencyInfo', {}).get('patientFName', '')} {primary_patient.get('agencyInfo', {}).get('patientLName', '')}".strip()
+        primary_name = self.safe_get_patient_name(primary_patient)
         
         deleted_count = len(merge_results['deleted_patient_ids'])
         skipped_count = len(merge_results['skipped_patient_ids'])
