@@ -926,11 +926,16 @@ class DuplicatePatientManager:
             return False
     
     def merge_duplicate_patients(self, primary_patient: Dict[str, Any], patients_to_delete: List[Dict[str, Any]]) -> Dict[str, Any]:
-        """Merge duplicate patients by moving orders and CC notes"""
+        """
+        Merge duplicate patients by moving orders and CC notes
+        Safety Logic: Move orders first -> if successful, move CCNotes -> then delete patient
+        If orders fail to move, don't delete the patient
+        """
         primary_id = primary_patient['id']
         merge_results = {
             'primary_patient_id': primary_id,
             'deleted_patient_ids': [],
+            'skipped_patient_ids': [],  # Patients not deleted due to failures
             'moved_orders': 0,
             'moved_cc_notes': 0,
             'errors': []
@@ -943,46 +948,74 @@ class DuplicatePatientManager:
             # Track counts for this specific patient
             patient_orders_moved = 0
             patient_cc_notes_moved = 0
+            orders_failed = False
+            ccnotes_failed = False
             
             try:
-                # Fetch orders (exclude CCNote type)
+                self.logger.info(f"\n--- Processing patient: {patient_name} ({patient_id}) ---")
+                
+                # STEP 1: Fetch and move orders (exclude CCNote type)
                 orders = self.fetch_orders(patient_id)
                 orders_to_move = [order for order in orders if order.get('entityType') != 'CCNote']
                 
-                self.logger.info(f"Found {len(orders_to_move)} orders to move from patient {patient_id} to primary patient {primary_id}")
+                self.logger.info(f"STEP 1: Moving {len(orders_to_move)} orders from {patient_name} to primary patient")
                 
-                # Move orders
+                # Move orders first
                 for order in orders_to_move:
                     order_type = order.get('entityType', 'Unknown')
                     order_id = order['id']
                     
                     if self.update_order(order_id, order, primary_id):
-                        merge_results['moved_orders'] += 1
                         patient_orders_moved += 1
-                        self.logger.info(f"   ✓ Moved order: {order_type} (ID: {order_id}) from {patient_name} ({patient_id}) to primary patient")
+                        self.logger.info(f"   ✓ Moved order: {order_type} (ID: {order_id})")
                     else:
-                        merge_results['errors'].append(f"Failed to move order {order_id}")
-                        self.logger.error(f"   ✗ Failed to move order: {order_type} (ID: {order_id}) from {patient_name} ({patient_id}) to primary patient")
+                        orders_failed = True
+                        error_msg = f"Failed to move order {order_type} (ID: {order_id}) from {patient_name}"
+                        merge_results['errors'].append(error_msg)
+                        self.logger.error(f"   ✗ {error_msg}")
                 
-                # Fetch and move CC notes
+                # Check if any orders failed to move
+                if orders_failed:
+                    self.logger.warning(f"⚠️  ORDERS FAILED: Cannot proceed with {patient_name} ({patient_id}) - some orders failed to move")
+                    self.logger.warning(f"   Patient will NOT be deleted to prevent data loss")
+                    merge_results['skipped_patient_ids'].append(patient_id)
+                    continue  # Skip to next patient, don't move CCNotes or delete
+                
+                self.logger.info(f"✓ ORDERS SUCCESS: All {patient_orders_moved} orders moved successfully")
+                
+                # STEP 2: Only proceed to CCNotes if orders were successful
                 cc_notes = self.fetch_cc_notes(patient_id)
-                self.logger.info(f"Found {len(cc_notes)} CC notes to move from patient {patient_name} ({patient_id}) to primary patient")
+                self.logger.info(f"STEP 2: Moving {len(cc_notes)} CC notes from {patient_name} to primary patient")
                 
                 for note in cc_notes:
                     note_id = note['id']
                     note_type = note.get('noteType', 'CC Note')
                     
                     if self.update_cc_note(note_id, note, primary_id):
-                        merge_results['moved_cc_notes'] += 1
                         patient_cc_notes_moved += 1
-                        self.logger.info(f"   ✓ Moved CC Note: {note_type} (ID: {note_id}) from {patient_name} ({patient_id}) to primary patient")
+                        self.logger.info(f"   ✓ Moved CC Note: {note_type} (ID: {note_id})")
                     else:
-                        merge_results['errors'].append(f"Failed to move CC note {note_id}")
-                        self.logger.error(f"   ✗ Failed to move CC Note: {note_type} (ID: {note_id}) from {patient_name} ({patient_id}) to primary patient")
+                        ccnotes_failed = True
+                        error_msg = f"Failed to move CC note {note_type} (ID: {note_id}) from {patient_name}"
+                        merge_results['errors'].append(error_msg)
+                        self.logger.error(f"   ✗ {error_msg}")
                 
-                # Delete patient
+                # Check if any CCNotes failed to move
+                if ccnotes_failed:
+                    self.logger.warning(f"⚠️  CCNOTES FAILED: Cannot proceed with {patient_name} ({patient_id}) - some CC notes failed to move")
+                    self.logger.warning(f"   Patient will NOT be deleted to prevent data loss")
+                    merge_results['skipped_patient_ids'].append(patient_id)
+                    continue  # Skip to next patient, don't delete
+                
+                self.logger.info(f"✓ CCNOTES SUCCESS: All {patient_cc_notes_moved} CC notes moved successfully")
+                
+                # STEP 3: Only delete patient if both orders and CCNotes moved successfully
+                self.logger.info(f"STEP 3: Deleting patient {patient_name} ({patient_id})")
+                
                 if self.delete_patient(patient_id):
                     merge_results['deleted_patient_ids'].append(patient_id)
+                    merge_results['moved_orders'] += patient_orders_moved
+                    merge_results['moved_cc_notes'] += patient_cc_notes_moved
                     
                     # Log summary for this patient
                     self.logger.info(f"✓ COMPLETED: {patient_name} ({patient_id}) - Moved {patient_orders_moved} orders and {patient_cc_notes_moved} CC notes, then deleted patient")
@@ -1000,17 +1033,29 @@ class DuplicatePatientManager:
                         self.logger.info("RCM API calls disabled in configuration")
                 else:
                     merge_results['errors'].append(f"Failed to delete patient {patient_id}")
-                    self.logger.error(f"✗ FAILED: Could not delete {patient_name} ({patient_id}) after moving {patient_orders_moved} orders and {patient_cc_notes_moved} CC notes")
+                    merge_results['skipped_patient_ids'].append(patient_id)
+                    self.logger.error(f"✗ DELETION FAILED: Could not delete {patient_name} ({patient_id}) even though data was moved")
                 
             except Exception as e:
                 error_msg = f"Error processing patient {patient_id}: {e}"
                 self.logger.error(error_msg)
                 merge_results['errors'].append(error_msg)
+                merge_results['skipped_patient_ids'].append(patient_id)
         
         # Log final summary
         primary_name = f"{primary_patient.get('agencyInfo', {}).get('patientFName', '')} {primary_patient.get('agencyInfo', {}).get('patientLName', '')}".strip()
-        self.logger.info(f"MERGE COMPLETE: Primary patient {primary_name} ({primary_id}) now has all data from {len(merge_results['deleted_patient_ids'])} deleted duplicate(s)")
+        
+        deleted_count = len(merge_results['deleted_patient_ids'])
+        skipped_count = len(merge_results['skipped_patient_ids'])
+        total_processed = deleted_count + skipped_count
+        
+        self.logger.info(f"\n{'='*60}")
+        self.logger.info(f"MERGE COMPLETE: Primary patient {primary_name} ({primary_id})")
+        self.logger.info(f"Processed: {total_processed} duplicate patient(s)")
+        self.logger.info(f"Deleted: {deleted_count} patient(s)")
+        self.logger.info(f"Skipped: {skipped_count} patient(s) (due to transfer failures)")
         self.logger.info(f"TOTALS: {merge_results['moved_orders']} orders and {merge_results['moved_cc_notes']} CC notes moved")
+        self.logger.info(f"{'='*60}")
         
         return merge_results
     
