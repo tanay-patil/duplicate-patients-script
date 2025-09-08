@@ -45,20 +45,38 @@ def main():
     
     # List of all PG Company IDs to process
     pg_companies = [
-        # Original 11 companies
-        {"name": "AcoHealth", "id": "d074279d-8ff6-47ab-b340-04f21c0f587e"},
-        {"name": "Carney Hospital", "id": "14761337-cd76-4e76-8bdd-18a96465624e"},
-        {"name": "Dr. Resil Claude", "id": "042a7278-25b6-4a9b-a18d-1981ab0daf11"},
-        {"name": "Health Quality Primary Care", "id": "f0d98fdc-c432-4e05-b75e-af146aa0e27d"},
-        {"name": "Caring", "id": "03657233-8677-4c81-92c8-c19c3f64fc84"},
-        {"name": "BestSelf Primary Care", "id": "c5c1a894-08ac-4cb9-bfd1-0ad1384b890e"},
-        {"name": "CARE DIMENSION", "id": "da7d760b-e3a8-4c92-9006-eca464ce8e1e"},
-        {"name": "Riverside Medical Group", "id": "ca5314fe-cf71-42e5-9482-81507666328c"},
-        {"name": "Family medical associates", "id": "38511e46-cc15-4856-92bc-718c5ec56cbf"},
-        {"name": "Upham", "id": "acfcd97b-0533-4c95-9f5d-4744c5f9c64c"},
-        {"name": "Orthopaedic Specialists of Massachusetts", "id": "cdabc85a-9c13-4fae-9dbf-d2e22e12f466"},
+        # Texas/Southern Region
+        {"name": "HousecallMD", "id": "bc3a6a28-dd03-4cf3-95ba-2c5976619818"},
+        {"name": "Los Cerros", "id": "9d8d2765-0b51-489b-868c-a217b4283c62"},
+        {"name": "Paragon Medical Associates", "id": "84e35202-3422-4de4-b5cb-efe5461b1312"},
+        {"name": "Rocky Mountain", "id": "4e594a84-7340-469e-82fb-b41b91930db5"},
+        {"name": "Brownfield Family Physicians", "id": "b62429db-642c-4fdb-9bf3-29e381d20e22"},
+        {"name": "WellLife Family Medicine", "id": "1a959ae5-7ba2-47e5-b044-64690eeced93"},
+        {"name": "APPLEMD", "id": "83de8c79-1a28-4d0b-90bc-5deaf95949e5"},
+        {"name": "ANAND BALASUBRIMUNIUM", "id": "1726e467-f4b0-4c11-b2b7-a39eb1328d91"},
+        {"name": "WoundCentrics, LLC", "id": "0367ce80-57a9-45e7-8afe-18f665a6a640"},
+        {"name": "Visiting Practitioners And Palliative Care LLC", "id": "f6464e98-d46b-4c7a-a9bc-254c02aa8e1c"},
+        {"name": "Responsive Infectious Diseases Solutions", "id": "ee74f247-b46e-480c-a4e4-9ae6b8a5dc35"},
+        {"name": "Doctor at your service", "id": "e749dda4-60ab-48d3-afc6-728a15d74182"},
+        {"name": "san antonio family phsician", "id": "6c2414e8-b2d3-4d94-953e-967a64c31488"},
+        {"name": "UT Health Geriatrics & Supportive Care Clinic", "id": "b50483ad-042c-4d64-96d7-4427c7862f9e"},
+        {"name": "Centric Physicians Group", "id": "5bce99a2-a71f-48e4-9c06-c16d9ab78ad5"},
+        {"name": "Goldstein Alasdair MD", "id": "ea4c3d61-28fa-473f-8bdd-685075343711"},
+        {"name": "BSZ Medical PA", "id": "3e387a9f-5535-4984-9419-483bed5e63f1"},
+        {"name": "Boyer family practice", "id": "8b15ea65-269e-412f-88ce-785959be023f"},
+        {"name": "Clinic of north Texas", "id": "398b825d-5e6d-4a86-88df-79992a36f536"},
+        {"name": "Diverse care", "id": "daf14002-92e8-4024-b6bf-62cd1a2f8606"},
+        {"name": "Doctors at Home - Mary Snellings MD", "id": "de385408-1cd6-46a2-be58-ff4b8eeeddc7"},
+        {"name": "Morning Star Healthcare Services PA", "id": "9c9bd7d0-bd70-4197-98f7-a77b4e781ab1"},
+        {"name": "Spectrum (Community First Primary Care)", "id": "6f4180aa-b472-4d5c-b7aa-98e06bb4fd6f"},
+        {"name": "Royal V.P., LLC", "id": "eaba3c1c-217f-458d-aa2f-172e3ffbab1e"},
+        {"name": "CityWide Housecalls, LLC", "id": "534ca7a5-2db0-4c75-8988-89f73064c5e5"},
+        {"name": "Prime MD Geriatrics", "id": "ef8847e7-ed2a-4dc0-a08b-49b1d6b2b5f7"},
+        {"name": "Americare Medical Group", "id": "c147e1f1-ccdb-4e22-8526-60a93ad4a678"},
+        {"name": "Texas Infectious Disease Institute", "id": "a3b8a6c5-db61-42b4-8eee-64e1098c0336"},
+        {"name": "Atrium HouseCall", "id": "bb158a70-b51a-4008-9600-e94484485b61"},
         
-        # Additional 36 companies
+        # Oklahoma Region
         {"name": "Traveling at doctors", "id": "8cd766e5-6e19-492e-a1a9-6595d81d20ee"},
         {"name": "SSM Health Bone & Joint Hospital.", "id": "3bc728e7-6839-4807-92ed-bb6c712020de"},
         {"name": "The Clinic @ Central Oklahoma Family Medical Center", "id": "3642cb84-6d4f-492c-8be1-4dd388bcea19"},
@@ -84,6 +102,19 @@ def main():
         {"name": "Prima CARE", "id": "d10f46ad-225d-4ba2-882c-149521fcead5"},
         {"name": "Hawthorn", "id": "4b51c8b7-c8c4-4779-808c-038c057f026b"},
         {"name": "Trucare", "id": "7c40b6f6-5874-4ab8-96d4-e03b0d2f8201"},
+        
+        # Massachusetts/Eastern Region  
+        {"name": "AcoHealth", "id": "d074279d-8ff6-47ab-b340-04f21c0f587e"},
+        {"name": "Carney Hospital", "id": "14761337-cd76-4e76-8bdd-18a96465624e"},
+        {"name": "Dr. Resil Claude", "id": "042a7278-25b6-4a9b-a18d-1981ab0daf11"},
+        {"name": "Health Quality Primary Care", "id": "f0d98fdc-c432-4e05-b75e-af146aa0e27d"},
+        {"name": "Caring", "id": "03657233-8677-4c81-92c8-c19c3f64fc84"},
+        {"name": "BestSelf Primary Care", "id": "c5c1a894-08ac-4cb9-bfd1-0ad1384b890e"},
+        {"name": "CARE DIMENSION", "id": "da7d760b-e3a8-4c92-9006-eca464ce8e1e"},
+        {"name": "Riverside Medical Group", "id": "ca5314fe-cf71-42e5-9482-81507666328c"},
+        {"name": "Family medical associates", "id": "38511e46-cc15-4856-92bc-718c5ec56cbf"},
+        {"name": "Upham", "id": "acfcd97b-0533-4c95-9f5d-4744c5f9c64c"},
+        {"name": "Orthopaedic Specialists of Massachusetts", "id": "cdabc85a-9c13-4fae-9dbf-d2e22e12f466"},
         {"name": "Brockton", "id": "d80b9f6a-d8e8-42bc-8db7-043675a5b86b"},
         {"name": "Total Family Healthcare Clinic PLLC", "id": "7ec965fe-9777-4d52-8124-b056b4d90224"},
         {"name": "Lowell", "id": "b92e8240-61f7-475f-8cbe-f1442b6389b5"},
@@ -142,7 +173,7 @@ def main():
             try:
                 # Run production processing (no confirmation needed)
                 logger.info(f"Starting production processing for {company_name}...")
-                manager.run_production(company_id)
+                manager.run_production(company_id, company_name)
                 
                 processing_time = datetime.now() - company_start_time
                 successful_companies += 1

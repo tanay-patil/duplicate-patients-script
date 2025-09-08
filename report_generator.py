@@ -15,19 +15,27 @@ class ReportGenerator:
     def __init__(self):
         self.logger = logging.getLogger(__name__)
     
-    def generate_html_report(self, results: Dict[str, Any]) -> str:
+    def generate_html_report(self, results: Dict[str, Any], company_name: str = None) -> str:
         """Generate HTML report from processing results"""
         try:
-            html_content = self._build_html_report(results)
+            html_content = self._build_html_report(results, company_name)
             self.logger.info("HTML report generated successfully")
             return html_content
         except Exception as e:
             self.logger.error(f"Error generating HTML report: {e}")
             return self._generate_error_report(str(e))
     
-    def _build_html_report(self, results: Dict[str, Any]) -> str:
+    def _build_html_report(self, results: Dict[str, Any], company_name: str = None) -> str:
         """Build the complete HTML report"""
         timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        
+        # Build title based on company name
+        if company_name:
+            report_title = f"Duplicate Patient Management Report - {company_name}"
+            header_title = f"🏥 Duplicate Patient Management Report - {company_name}"
+        else:
+            report_title = "Duplicate Patient Management Report"
+            header_title = "🏥 Duplicate Patient Management Report"
         
         html = f"""
 <!DOCTYPE html>
@@ -35,7 +43,7 @@ class ReportGenerator:
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Duplicate Patient Management Report</title>
+    <title>{report_title}</title>
     <style>
         {self._get_css_styles()}
     </style>
@@ -43,7 +51,7 @@ class ReportGenerator:
 <body>
     <div class="container">
         <header class="header">
-            <h1>🏥 Duplicate Patient Management Report</h1>
+            <h1>{header_title}</h1>
             <p class="timestamp">Generated on: {timestamp}</p>
         </header>
         

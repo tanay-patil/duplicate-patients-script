@@ -1337,9 +1337,15 @@ class DuplicatePatientManager:
         self.logger.info("Duplicate processing completed")
         return results
     
-    def run_production(self, pg_company_id: str) -> None:
+    def run_production(self, pg_company_id: str, company_name: str = None) -> None:
         """Run production duplicate management"""
         try:
+            # Log with company name if provided
+            if company_name:
+                self.logger.info(f"Starting production processing for {company_name} (PG ID: {pg_company_id})")
+            else:
+                self.logger.info(f"Starting production processing for PG Company ID: {pg_company_id}")
+            
             # Fetch all patients first for Excel export
             self.logger.info("Fetching all patients for Excel export...")
             all_patients = self.fetch_patients(pg_company_id)
@@ -1355,15 +1361,19 @@ class DuplicatePatientManager:
                 self.logger.error(f"Failed to generate Excel report: {e}")
             
             # Generate HTML report
-            report_html = self.report_generator.generate_html_report(results)
+            report_html = self.report_generator.generate_html_report(results, company_name)
             
             # Prepare attachments
             attachments = []
             if excel_filename and os.path.exists(excel_filename):
                 attachments.append(excel_filename)
             
-            # Send email with attachments
-            subject = f"Duplicate Patient Management Report - PG Company {pg_company_id}"
+            # Send email with attachments - include company name in subject
+            if company_name:
+                subject = f"Duplicate Patient Management Report - {company_name} (PG: {pg_company_id})"
+            else:
+                subject = f"Duplicate Patient Management Report - PG Company {pg_company_id}"
+            
             self.email_sender.send_email(
                 to_email=self.config.REPORT_EMAIL,
                 subject=subject,
