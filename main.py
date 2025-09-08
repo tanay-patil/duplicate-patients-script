@@ -1,14 +1,16 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Main entry point for Duplicate Patient Manager
+Automated Duplicate Patient Manager
 
-This script provides an interactive interface to run the duplicate patient manager.
-It prompts for the PG Company ID and runs the duplicate processing.
+This script processes all specified PG Company IDs automatically in production mode
+without requiring user confirmation for each step.
 """
 
 import sys
 import os
+import logging
+from datetime import datetime
 
 # Set UTF-8 encoding for Windows console
 if sys.platform.startswith('win'):
@@ -20,131 +22,208 @@ from config import Config
 from duplicate_patient_manager import DuplicatePatientManager
 
 
+def setup_logging():
+    """Set up comprehensive logging"""
+    # Create logs directory if it doesn't exist
+    os.makedirs('logs', exist_ok=True)
+    
+    # Set up logging with both console and file output
+    logging.basicConfig(
+        level=logging.INFO,
+        format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+        handlers=[
+            logging.StreamHandler(sys.stdout),
+            logging.FileHandler(f'logs/automated_processing_{datetime.now().strftime("%Y%m%d_%H%M%S")}.log', encoding='utf-8')
+        ]
+    )
+
+
 def main():
-    """Main interactive entry point"""
-    print("=" * 60)
-    print("DUPLICATE PATIENT MANAGER")
-    print("=" * 60)
-    print()
+    """Main automated processing function"""
+    setup_logging()
+    logger = logging.getLogger(__name__)
+    
+    # List of all PG Company IDs to process
+    pg_companies = [
+        # Original 11 companies
+        {"name": "AcoHealth", "id": "d074279d-8ff6-47ab-b340-04f21c0f587e"},
+        {"name": "Carney Hospital", "id": "14761337-cd76-4e76-8bdd-18a96465624e"},
+        {"name": "Dr. Resil Claude", "id": "042a7278-25b6-4a9b-a18d-1981ab0daf11"},
+        {"name": "Health Quality Primary Care", "id": "f0d98fdc-c432-4e05-b75e-af146aa0e27d"},
+        {"name": "Caring", "id": "03657233-8677-4c81-92c8-c19c3f64fc84"},
+        {"name": "BestSelf Primary Care", "id": "c5c1a894-08ac-4cb9-bfd1-0ad1384b890e"},
+        {"name": "CARE DIMENSION", "id": "da7d760b-e3a8-4c92-9006-eca464ce8e1e"},
+        {"name": "Riverside Medical Group", "id": "ca5314fe-cf71-42e5-9482-81507666328c"},
+        {"name": "Family medical associates", "id": "38511e46-cc15-4856-92bc-718c5ec56cbf"},
+        {"name": "Upham", "id": "acfcd97b-0533-4c95-9f5d-4744c5f9c64c"},
+        {"name": "Orthopaedic Specialists of Massachusetts", "id": "cdabc85a-9c13-4fae-9dbf-d2e22e12f466"},
+        
+        # Additional 36 companies
+        {"name": "Traveling at doctors", "id": "8cd766e5-6e19-492e-a1a9-6595d81d20ee"},
+        {"name": "SSM Health Bone & Joint Hospital.", "id": "3bc728e7-6839-4807-92ed-bb6c712020de"},
+        {"name": "The Clinic @ Central Oklahoma Family Medical Center", "id": "3642cb84-6d4f-492c-8be1-4dd388bcea19"},
+        {"name": "SSM Health Shawnee", "id": "ee54c7f2-a7ba-4b9a-90b0-7df96330b9f7"},
+        {"name": "Community Physician Group-CPG Clinics", "id": "45d72b92-6c6c-4bef-84f0-a36852d5f868"},
+        {"name": "Infectious Diseases Consultants of Oklahoma City- (Idcokc)", "id": "198e2b2d-c22a-415d-9ebd-9656091d0308"},
+        {"name": "Pushmataha Family Medical Center", "id": "ecad2da6-91a7-4e26-8152-58d588eab134"},
+        {"name": "Crescent Infectious Diseases", "id": "f86dc96a-777c-4bdc-ae87-f147b1e5568e"},
+        {"name": "Norman Regional - Ortho Central", "id": "3c002ed5-f9b5-4d07-914a-4856c268c977"},
+        {"name": "Triton Health PLLC Dr. Sullivan, Cary", "id": "d09df8cc-a549-4229-a03a-ce29fb09aea2"},
+        {"name": "Internal Medicine Associates OKC", "id": "c6ad87d9-79de-49bd-aa0a-6ef01400a83d"},
+        {"name": "Chickasaw Nation Medical Center", "id": "e8f2df67-c5a5-4c74-9daa-d9b41d8eb5d7"},
+        {"name": "Southeast Oklahoma Medical Clinic - Dr. Richard Helton", "id": "108bbba4-5d5d-41d9-b1c6-0eaac5538f6c"},
+        {"name": "Terry Draper / Restore Family Medical clinic", "id": "be52e9cc-f825-4ff2-b336-508d6b9ad63b"},
+        {"name": "TPCH Practice/ Dr. Tradewell", "id": "8e53f8ea-bb0b-472f-8560-0b9b4808c0fa"},
+        {"name": "Community Health Centers,Inc Oklahoma", "id": "69f909d4-b4c5-4d8a-8d2e-eb52d467ef3c"},
+        {"name": "KATES, LINDSAY / Primary care of Ada", "id": "2aeb18f5-4461-496d-8f74-66ba6f269cd3"},
+        {"name": "Anibal Avila MA P,C", "id": "13c9e1d2-fbde-498a-b384-f530c29d0745"},
+        {"name": "Doctors 2 U", "id": "ced25ca7-8e1e-401b-b8fe-d181f688ac90"},
+        {"name": "Grace At Home", "id": "2f607136-c370-422c-890d-f01bdaba6bae"},
+        {"name": "Covenant care", "id": "ec35b120-0883-4d1f-b63d-89bd43d6d89e"},
+        {"name": "MD Primary care", "id": "29e46ad6-8ca8-400b-b049-48c17c0b831d"},
+        {"name": "Prima CARE", "id": "d10f46ad-225d-4ba2-882c-149521fcead5"},
+        {"name": "Hawthorn", "id": "4b51c8b7-c8c4-4779-808c-038c057f026b"},
+        {"name": "Trucare", "id": "7c40b6f6-5874-4ab8-96d4-e03b0d2f8201"},
+        {"name": "Brockton", "id": "d80b9f6a-d8e8-42bc-8db7-043675a5b86b"},
+        {"name": "Total Family Healthcare Clinic PLLC", "id": "7ec965fe-9777-4d52-8124-b056b4d90224"},
+        {"name": "Lowell", "id": "b92e8240-61f7-475f-8cbe-f1442b6389b5"},
+        {"name": "Associates in Internal Medicine - Norwood", "id": "0245a889-31da-445b-9f1e-51f97ea6d37e"},
+        {"name": "Northeast Medical Group", "id": "e7ca529f-bc5e-4706-b61f-0f682a3f6e23"},
+        {"name": "New Bedford Internal Medicine and Geriatrics", "id": "716be0f8-9710-4fee-90b2-09dc30f229c9"},
+        {"name": "Renaissance Primary Care", "id": "251b9883-1316-4689-bb95-9124cc1e3e43"},
+        {"name": "Hyde Park Health Associates", "id": "a48aa403-d9c4-4778-88c5-36e68fa5f246"},
+        {"name": "Boston Senior Medicine", "id": "61e6dd93-452b-41b0-aca4-8d67fbe71e78"},
+        {"name": "BIDMC", "id": "0c2c11e0-ce99-4282-9172-7d06c7a12dda"},
+        {"name": "Bowdoin", "id": "5f173aaa-338d-4510-9d2d-c856d8771aa8"},
+        {"name": "St. Elizabeth Medical Center Orthopedics", "id": "ceece087-093e-421d-92c0-b1aff03405e6"},
+        {"name": "Neurology Center Of New England, PC", "id": "c0926069-e956-4ed5-8775-1f462f6cff36"}
+    ]
+    
+    print("=" * 80)
+    print("AUTOMATED DUPLICATE PATIENT PROCESSING - PRODUCTION MODE")
+    print(f"Processing {len(pg_companies)} PG Companies")
+    print("=" * 80)
+    
+    logger.info("=" * 80)
+    logger.info("STARTING AUTOMATED DUPLICATE PATIENT PROCESSING")
+    logger.info(f"Total PG Companies to process: {len(pg_companies)}")
+    logger.info("=" * 80)
+    
+    # Initialize tracking variables
+    total_companies = len(pg_companies)
+    successful_companies = 0
+    failed_companies = 0
+    
+    # Processing summary for final report
+    processing_summary = []
     
     try:
         # Load configuration
-        print("Loading configuration...")
         config = Config()
-        print("Configuration loaded successfully")
-        print()
-        
-        # Get PG Company ID from user
-        while True:
-            pg_company_id = input("Enter PG Company ID: ").strip()
-            
-            if not pg_company_id:
-                print("PG Company ID cannot be empty. Please try again.")
-                continue
-            
-            # Validate format (basic UUID format check)
-            if len(pg_company_id) != 36 or pg_company_id.count('-') != 4:
-                print("Warning: PG Company ID doesn't look like a valid UUID format.")
-                confirm = input("Do you want to continue anyway? (y/n): ").strip().lower()
-                if confirm not in ['y', 'yes']:
-                    continue
-            
-            break
-        
-        print(f"Processing duplicates for PG Company ID: {pg_company_id}")
-        print()
-        
-        # Initialize manager
         manager = DuplicatePatientManager(config)
         
-        # Ask for operation mode
-        print("Select operation mode:")
-        print("1. TEST MODE - Dry run to see what would be processed")
-        print("2. PRODUCTION MODE - Actually process and merge duplicates")
-        print()
-        
-        while True:
-            mode_choice = input("Enter your choice (1 or 2): ").strip()
+        # Process each company
+        for i, company in enumerate(pg_companies, 1):
+            company_name = company["name"]
+            company_id = company["id"]
             
-            if mode_choice == "1":
-                print("\nRunning in TEST MODE...")
-                # For test mode, just show what would be processed
-                test_results = manager.process_duplicates_test_mode(pg_company_id)
-                print_test_results(test_results)
-                break
-            elif mode_choice == "2":
-                print("\nPRODUCTION MODE WARNING:")
-                print("This will actually merge and delete duplicate patients!")
-                print("Make sure you have a backup of your data.")
-                confirm = input("Are you sure you want to continue? (yes/no): ").strip().lower()
+            print(f"\n{'='*60}")
+            print(f"[{i}/{total_companies}] Processing: {company_name}")
+            print(f"PG Company ID: {company_id}")
+            print(f"{'='*60}")
+            
+            logger.info(f"\n{'='*60}")
+            logger.info(f"[{i}/{total_companies}] PROCESSING: {company_name}")
+            logger.info(f"PG Company ID: {company_id}")
+            logger.info(f"{'='*60}")
+            
+            company_start_time = datetime.now()
+            
+            try:
+                # Run production processing (no confirmation needed)
+                logger.info(f"Starting production processing for {company_name}...")
+                manager.run_production(company_id)
                 
-                if confirm == "yes":
-                    print("\nRunning in PRODUCTION MODE...")
-                    manager.run_production(pg_company_id)
-                    print("Production run completed!")
-                    print("Check your email for the detailed report.")
-                else:
-                    print("Production run cancelled.")
-                break
-            else:
-                print("Invalid choice. Please enter 1 or 2.")
+                processing_time = datetime.now() - company_start_time
+                successful_companies += 1
+                
+                logger.info(f"✓ COMPLETED: {company_name} (Processing time: {processing_time})")
+                print(f"✓ COMPLETED: {company_name}")
+                
+                # Add to summary
+                processing_summary.append({
+                    'company_name': company_name,
+                    'company_id': company_id,
+                    'status': 'SUCCESS',
+                    'processing_time': str(processing_time),
+                    'error': None
+                })
+                
+            except Exception as e:
+                processing_time = datetime.now() - company_start_time
+                failed_companies += 1
+                error_msg = str(e)
+                
+                logger.error(f"✗ FAILED: {company_name} - {error_msg} (Processing time: {processing_time})")
+                print(f"✗ FAILED: {company_name} - {error_msg}")
+                
+                # Add to summary
+                processing_summary.append({
+                    'company_name': company_name,
+                    'company_id': company_id,
+                    'status': 'FAILED',
+                    'processing_time': str(processing_time),
+                    'error': error_msg
+                })
+                
+                # Continue with next company even if this one failed
+                continue
         
-    except KeyboardInterrupt:
-        print("\n\nOperation cancelled by user.")
-        sys.exit(1)
+        # Final summary
+        print(f"\n{'='*80}")
+        print("AUTOMATED PROCESSING COMPLETED")
+        print(f"{'='*80}")
+        print(f"Total Companies: {total_companies}")
+        print(f"Successful: {successful_companies}")
+        print(f"Failed: {failed_companies}")
+        print(f"Success Rate: {(successful_companies/total_companies*100):.1f}%")
+        print(f"{'='*80}")
+        
+        logger.info(f"\n{'='*80}")
+        logger.info("AUTOMATED PROCESSING COMPLETED")
+        logger.info(f"{'='*80}")
+        logger.info(f"Total Companies: {total_companies}")
+        logger.info(f"Successful: {successful_companies}")
+        logger.info(f"Failed: {failed_companies}")
+        logger.info(f"Success Rate: {(successful_companies/total_companies*100):.1f}%")
+        
+        # Detailed summary
+        logger.info(f"\nDETAILED RESULTS:")
+        for summary in processing_summary:
+            status_symbol = "✓" if summary['status'] == 'SUCCESS' else "✗"
+            logger.info(f"{status_symbol} {summary['company_name']}: {summary['status']} ({summary['processing_time']})")
+            if summary['error']:
+                logger.info(f"    Error: {summary['error']}")
+        
+        logger.info(f"{'='*80}")
+        
+        if failed_companies == 0:
+            print("🎉 ALL COMPANIES PROCESSED SUCCESSFULLY!")
+            logger.info("🎉 ALL COMPANIES PROCESSED SUCCESSFULLY!")
+        else:
+            print(f"⚠️  {failed_companies} companies had processing errors - check logs for details")
+            logger.warning(f"⚠️  {failed_companies} companies had processing errors")
+        
+        print("\nDetailed reports and logs have been generated in the output/ and logs/ directories.")
+        logger.info("Processing completed. Check output/ directory for reports and logs/ for detailed logs.")
+            
     except Exception as e:
-        print(f"\nError: {e}")
-        print("\nCheck the log files for more details.")
-        sys.exit(1)
-
-
-def print_test_results(results):
-    """Print test results in a user-friendly format"""
-    print("\n" + "=" * 50)
-    print("TEST RESULTS SUMMARY")
-    print("=" * 50)
+        logger.error(f"Critical error in automated processing: {e}")
+        print(f"❌ Critical error: {e}")
+        return 1
     
-    print(f"Total Patients: {results.get('total_patients', 0)}")
-    print(f"Duplicate Groups Found: {results.get('duplicate_groups_found', 0)}")
-    print(f"Patients That Would Be Processed: {results.get('patients_processed', 0)}")
-    print(f"Patients That Would Be Deleted: {results.get('patients_deleted', 0)}")
-    print(f"Orders That Would Be Moved: {results.get('orders_moved', 0)}")
-    print(f"CC Notes That Would Be Moved: {results.get('cc_notes_moved', 0)}")
-    
-    if results.get('errors'):
-        print(f"Errors: {len(results.get('errors', []))}")
-    
-    print("\n" + "-" * 50)
-    print("PROCESSING DETAILS")
-    print("-" * 50)
-    
-    if results.get('processing_details'):
-        for detail in results.get('processing_details', []):
-            print(f"\nGroup {detail.get('group_number', 'N/A')}:")
-            print(f"   Primary Patient: {detail.get('primary_patient_name', 'N/A')} ({detail.get('primary_patient_id', 'N/A')})")
-            
-            # Show PDF extraction details if available
-            if detail.get('pdf_extractions'):
-                print(f"   PDF Extraction Results:")
-                for extraction in detail.get('pdf_extractions', []):
-                    print(f"      {extraction.get('patient_name', 'Unknown')}: MRN='{extraction.get('pdf_mrn', 'Not found')}', DOB='{extraction.get('pdf_dob', 'Not found')}' (Score: {extraction.get('score', 0)})")
-            
-            deleted_ids = detail.get('deleted_patient_ids', [])
-            if deleted_ids:
-                print(f"   Would Delete: {len(deleted_ids)} patient(s)")
-                for patient_id in deleted_ids:
-                    print(f"      - {patient_id}")
-            
-            print(f"   Orders to Move: {detail.get('moved_orders', 0)}")
-            print(f"   CC Notes to Move: {detail.get('moved_cc_notes', 0)}")
-            
-            if detail.get('errors'):
-                print(f"   Errors: {len(detail.get('errors', []))}")
-    else:
-        print("No duplicate groups found - no action needed!")
-    
-    print("\n" + "=" * 50)
+    return 0 if failed_companies == 0 else 1
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())
