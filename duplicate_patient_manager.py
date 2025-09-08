@@ -378,22 +378,98 @@ class DuplicatePatientManager:
         self.logger.info(f"Found {len(duplicate_groups)} duplicate groups")
         return duplicate_groups
     
+    def calculate_patient_data_score(self, patient: Dict[str, Any]) -> int:
+        """Calculate a data score for a patient based on actual orders and CC notes count"""
+        patient_id = patient['id']
+        score = 0
+        
+        try:
+            # Get actual orders count (excluding CCNotes)
+            orders = self.fetch_orders(patient_id)
+            actual_orders = [order for order in orders if order.get('entityType') != 'CCNote']
+            orders_count = len(actual_orders)
+            
+            # Get actual CC notes count
+            cc_notes = self.fetch_cc_notes(patient_id)
+            cc_notes_count = len(cc_notes)
+            
+            # Calculate score: orders worth 10 points each, CC notes worth 5 points each
+            score = (orders_count * 10) + (cc_notes_count * 5)
+            
+            # Add bonus points for data completeness
+            agency_info = patient.get('agencyInfo', {})
+            
+            # Basic demographic data (1 point each)
+            if agency_info.get('patientFName'):
+                score += 1
+            if agency_info.get('patientLName'):
+                score += 1
+            if agency_info.get('patientDOB'):
+                score += 1
+            if agency_info.get('patientMRN'):
+                score += 1
+            if agency_info.get('patientPhone'):
+                score += 1
+            if agency_info.get('patientEmail'):
+                score += 1
+            if agency_info.get('patientAddress'):
+                score += 1
+            
+            # Store the detailed counts for logging
+            patient['_data_counts'] = {
+                'orders': orders_count,
+                'cc_notes': cc_notes_count,
+                'total_score': score
+            }
+            
+            self.logger.debug(f"Patient {patient_id} data score: {score} (Orders: {orders_count}, CC Notes: {cc_notes_count})")
+            return score
+            
+        except Exception as e:
+            self.logger.warning(f"Error calculating data score for patient {patient_id}: {e}")
+            # Fallback to the totalOrders field if API call fails
+            fallback_orders = int(patient.get('agencyInfo', {}).get('totalOrders', '0') or '0')
+            return fallback_orders * 10
+    
     def select_primary_patient(self, duplicate_group: List[Dict[str, Any]]) -> Tuple[Dict[str, Any], List[Dict[str, Any]]]:
-        """Select the primary patient to keep and return others to delete"""
+        """
+        Select the primary patient to keep based on data richness and return others to delete
+        Priority: 1) Most actual data (orders + CC notes), 2) Data completeness, 3) Earliest created date
+        """
         if len(duplicate_group) <= 1:
             return duplicate_group[0], []
         
-        # Sort by criteria: total orders (desc), data completeness (desc), created date (asc)
+        self.logger.info(f"Evaluating {len(duplicate_group)} duplicate patients to select primary...")
+        
+        # Calculate data scores for all patients
+        for patient in duplicate_group:
+            patient['_data_score'] = self.calculate_patient_data_score(patient)
+        
+        # Sort by criteria: data score (desc), data completeness (desc), created date (asc)
         sorted_patients = sorted(duplicate_group, key=lambda p: (
-            -int(p.get('agencyInfo', {}).get('totalOrders', '0') or '0'),
-            -bool(p.get('agencyInfo', {}).get('dataCompleteness')),
-            p.get('agencyInfo', {}).get('createdOn', '9999-12-31')
+            -p.get('_data_score', 0),  # Higher data score = more data = better candidate
+            -bool(p.get('agencyInfo', {}).get('dataCompleteness')),  # Data completeness flag
+            p.get('agencyInfo', {}).get('createdOn', '9999-12-31')  # Earlier date = older record = better
         ))
         
         primary = sorted_patients[0]
         to_delete = sorted_patients[1:]
         
-        self.logger.info(f"Selected primary patient: {primary['id']} with {primary.get('agencyInfo', {}).get('totalOrders', '0')} orders")
+        # Enhanced logging
+        primary_name = f"{primary.get('agencyInfo', {}).get('patientFName', '')} {primary.get('agencyInfo', {}).get('patientLName', '')}".strip()
+        data_counts = primary.get('_data_counts', {})
+        
+        self.logger.info(f"Selected primary patient: {primary_name} ({primary['id']})")
+        self.logger.info(f"  ✓ Data Score: {primary.get('_data_score', 0)}")
+        self.logger.info(f"  ✓ Orders: {data_counts.get('orders', 0)}")
+        self.logger.info(f"  ✓ CC Notes: {data_counts.get('cc_notes', 0)}")
+        
+        # Log comparison with other candidates
+        for i, patient in enumerate(to_delete, 1):
+            patient_name = f"{patient.get('agencyInfo', {}).get('patientFName', '')} {patient.get('agencyInfo', {}).get('patientLName', '')}".strip()
+            patient_counts = patient.get('_data_counts', {})
+            self.logger.info(f"  Alternative #{i}: {patient_name} ({patient['id']}) - Score: {patient.get('_data_score', 0)} (Orders: {patient_counts.get('orders', 0)}, CC Notes: {patient_counts.get('cc_notes', 0)})")
+        
         return primary, to_delete
     
     def fetch_pdf_from_url(self, url: str) -> Optional[bytes]:
